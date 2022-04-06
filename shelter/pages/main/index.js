@@ -71,7 +71,6 @@ menuLinks.forEach((el, i) => {
         document.querySelector(".header__link-active").classList.remove("header__link-active");
         e.target.classList.add("header__link-active");
     });
-    if([2, 3].includes(i)) el.style.pointerEvents = "none";
 })
 
 help.forEach(el => {
@@ -153,3 +152,9 @@ shadow.addEventListener("click", () => {
 })
 
 getPost();
+
+const burger = document.querySelector(".burger");
+burger.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    document.querySelector(".header__menu").classList.toggle("open");
+})
