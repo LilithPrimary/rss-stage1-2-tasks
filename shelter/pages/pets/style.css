@@ -87,25 +87,39 @@ body {
   display: grid;
   grid-template: 120px auto 350px / 1fr minmax(auto, 1280px) 1fr;
 }
-.header {
-  grid-area: 1 / 2;
-  position: relative;
-  color: white;
+@media (max-width: 1280px) {
+  .wrapper {
+    grid-template: 90px auto 639px / 1fr minmax(auto, 1280px) 1fr;
+  }
 }
-.header__background {
-  position: absolute;
-  top: 0;
-  left: 0;
+@media (max-width: 767px) {
+  .wrapper {
+    grid-template: 90px auto 809px / 1fr minmax(auto, 1280px) 1fr;
+  }
+}
+.header {
+  position: fixed;
   width: 100%;
-  height: 908px;
+  max-width: 1280px;
+  /* height: 100%; */
+  color: white;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: white;
 }
 .header__container {
   position: relative;
   z-index: 1;
   height: 120px;
-  padding: 60px 40px 0;
+  padding: 30px 40px;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 1255px) {
+  .header__container {
+    height: 90px;
+    padding: 30px 30px 0;
+  }
 }
 .header__logo {
   width: 184px;
@@ -194,28 +208,78 @@ body {
     width: 100%;
   }
 }
-
+@media (max-width: 700px) {
+  .header__menu {
+    position: fixed;
+    height: 100vh;
+    width: 320px;
+    right: -300vw;
+    top: 0;
+    background-color: var(--color-black-2);
+    justify-content: center;
+    transition: 0.5s;
+  }
+  .header__menu.open {
+    right: 0;
+  }
+  .header__list {
+    flex-direction: column;
+    row-gap: 40px;
+    width: auto;
+  }
+  .header__link {
+    font-family: Arial;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+  .burger {
+    position: fixed;
+    right: 53px;
+    top: 49px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    cursor: pointer;
+    animation: rotate-1 0.5s ease-in-out forwards;
+  }
+  .burger span {
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-beige);
+  }
+  .burger.open {
+    animation: rotate 0.5s ease-in-out forwards;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-90deg);
+    }
+  }
+  @keyframes rotate-1 {
+    0% {
+      transform: rotate(-90deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  .header__container {
+    height: 90px;
+    padding: 30px 15px 0;
+  }
+}
 .main {
-  margin-top: 60px;
   grid-area: 2 / 2;
-  display: grid;
-  justify-self: center;
-  grid-template: repeat(4, auto) / minmax(auto, 1280px);
-}
-.make-friend {
-  height: 728px;
-  padding: 163px 40px 243px;
-  position: relative;
-  z-index: 2;
-  background-image: url("../../assets/img/start-screen-puppy.png");
-  background-repeat: no-repeat;
-  background-position: bottom 0 right 40px;
-}
-.make-friend__items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 42px;
+  padding: 80px 40px 100px;
+  background-color: #f6f6f6;
 }
 .section__header {
   font-family: Georgia;
@@ -226,15 +290,6 @@ body {
   letter-spacing: 0.06em;
   color: var(--color-black);
 }
-.make-friend__header {
-  width: 310px;
-  font-size: 44px;
-  font-weight: 400;
-  line-height: 57px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: white;
-}
 .main__text {
   font-family: Arial;
   font-size: 15px;
@@ -243,10 +298,6 @@ body {
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
-}
-.make-friend__text {
-  width: 460px;
-  color: var(--color-grey);
 }
 .button {
   font-family: Georgia;
@@ -266,56 +317,25 @@ body {
 .button:active {
   transform: scale(0.95);
 }
-.make-friend__button {
-  width: 207px;
-}
 .button:hover {
   background: var(--color-beige-light);
 }
-.section {
-  padding: 80px 40px 100px;
-  background-color: #f6f6f6;
-}
-.section:nth-child(even) {
-  background-color: white;
-}
-.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 9.375%;
-}
-.about__image {
-  height: 408px;
-  width: 300px;
-  background-image: url("../../assets/img/about-pets.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-.about__items {
+.pets {
   display: flex;
   flex-direction: column;
-  row-gap: 25px;
-  align-items: flex-start;
-}
-.about__header {
-  width: 370px;
-}
-.about__text {
-  width: 430px;
-}
-.pets {
-  background-color: #f6f6f6;
-  display: grid;
-  grid-template: repeat(3, auto) / 52px 1fr 52px;
   row-gap: 60px;
+  align-items: center;
+  justify-content: center;
 }
 .pets__header {
   grid-area: 1 / 2;
   width: 400px;
   text-align: center;
   justify-self: center;
+}
+.pets__buttons {
+  display: flex;
+  column-gap: 20px;
 }
 .round__button {
   height: 52px;
@@ -326,6 +346,12 @@ body {
   align-self: center;
   cursor: var(--pointer);
   transition: 0.3s;
+  font-family: Georgia;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: center;
 }
 .round__button:hover {
   border: solid var(--color-beige-light) 2px;
@@ -334,17 +360,19 @@ body {
 .round__button:active {
   transform: scale(0.9);
 }
-.back {
-  grid-area: 2 / 1;
+.disable {
+  border: solid var(--color-grey) 2px;
+  color: var(--color-grey);
+  pointer-events: none;
+}
+.center {
+  background-color: var(--color-beige);
 }
 .pets__items {
-  grid-area: 2 / 2;
-  padding: 0 53px;
-  display: grid;
-  grid-template-columns: repeat(3, 270px);
-  justify-content: space-between;
-  overflow: hidden;
-  overflow-wrap: normal;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 30px;
 }
 @media (max-width: 1280px) {
   .pets__items {
@@ -374,6 +402,11 @@ body {
 .pet:hover {
   background-color: white;
 }
+.pet:hover button{
+  background-color: var(--color-beige-light);
+  border: none;
+  border: var(--color-beige-light) solid 2px;
+}
 .pet__img {
   height: 270px;
   width: 270px;
@@ -398,9 +431,7 @@ body {
 .pet__button:hover {
   border: var(--color-beige-light);
 }
-.forward {
-  grid-area: 2 / 3;
-}
+
 .pets__button {
   grid-area: 3 / 2;
   width: 261px;
@@ -408,119 +439,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.help {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 60px;
-}
-.help__header {
-  width: 310px;
-  text-align: center;
-}
-.help__items {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 120px;
-  row-gap: 55px;
-  justify-content: center;
-}
-.item {
-  height: 113px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (max-width: 886px) {
-  .help__items {
-    column-gap: 60px;
-  }
-  .item {
-    width: 170px;
-  }
-}
-.item__picture {
-  height: 60px;
-  width: 60px;
-}
-.item__title {
-  font-family: Georgia;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 23px;
-  letter-spacing: 0.06em;
-}
-.donat {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 30px;
-}
-.donat__img {
-  height: 261px;
-  width: 505px;
-  background-image: url("../../assets/img/donation-dog.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.donat__items {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-}
-.donat__header {
-  width: 300px;
-}
-.donat__text {
-  font-family: Georgia;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0.06em;
-}
-.donat__card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
-  width: 349px;
-  height: 43px;
-  background-color: var(--color-beige);
-  border-radius: 9px;
-  font-family: Georgia;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 23px;
-  letter-spacing: 0.06em;
-  transition: 0.3s;
-  cursor: var(--pointer);
-}
-.donat__card:hover {
-  background-color: var(--color-beige-light);
-}
-.donat__card:active {
-  transform: scale(0.99);
-}
-.card__img {
-  width: 30px;
-  height: 23px;
-}
-.donat__info {
-  width: 380px;
-  font-family: Arial;
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: 0px;
-  text-align: left;
 }
 .footer {
   height: 100%;

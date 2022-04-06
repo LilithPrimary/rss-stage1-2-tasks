@@ -393,6 +393,9 @@ body {
 }
 .make-friend__button {
   width: 207px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 1255px) {
   .make-friend__button {
