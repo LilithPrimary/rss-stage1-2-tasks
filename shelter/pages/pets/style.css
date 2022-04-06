@@ -366,6 +366,7 @@ body {
 }
 .center {
   background-color: var(--color-beige);
+  pointer-events: none;
 }
 .pets__items {
   display: flex;
