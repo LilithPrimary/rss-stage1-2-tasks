@@ -57,11 +57,10 @@ class PetCard2 {
     }
 }
 
-const helpItems = document.querySelector(".help__items");
 const menuLinks = document.querySelectorAll(".header__link");
 const petsArea = document.querySelector(".pets__items");
-const btnForward = document.querySelector(".forward");
-const btnBack = document.querySelector(".back");
+// const btnForward = document.querySelector(".forward");
+// const btnBack = document.querySelector(".back");
 const shadow = document.querySelector(".shadow");
 let petCards;
 
@@ -100,11 +99,6 @@ async function getPost () {
     const data = await response.json();
     petCards = fillCards2(data);
     fillPetsArea(petCards);
-    [btnForward, btnBack].forEach(el => el.addEventListener("click", () => {
-        petsArea.innerHTML = "";
-        fillPetsArea(petCards);
-        showModalWindow();        
-    }));
     showModalWindow();
 }
 
