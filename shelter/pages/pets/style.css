@@ -101,7 +101,6 @@ body {
   position: fixed;
   width: 100%;
   max-width: 1280px;
-  /* height: 100%; */
   color: white;
   left: 50%;
   transform: translate(-50%, 0);
@@ -402,10 +401,9 @@ body {
 .pet:hover {
   background-color: white;
 }
-.pet:hover button{
+.pet:hover button {
+  border: var(--color-beige-light);
   background-color: var(--color-beige-light);
-  border: none;
-  border: var(--color-beige-light) solid 2px;
 }
 .pet__img {
   height: 270px;
@@ -427,9 +425,6 @@ body {
   width: 187px;
   background: transparent;
   border: var(--color-beige) solid 2px;
-}
-.pet__button:hover {
-  border: var(--color-beige-light);
 }
 
 .pets__button {

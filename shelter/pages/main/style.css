@@ -575,6 +575,10 @@ body {
 .pet:hover {
   background-color: white;
 }
+.pet:hover button {
+  border: var(--color-beige-light);
+  background-color: var(--color-beige-light);
+}
 .pet__img {
   height: 270px;
   width: 270px;
