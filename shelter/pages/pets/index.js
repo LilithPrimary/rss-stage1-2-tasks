@@ -81,12 +81,13 @@ function fillPetsArea(arr) {
         default: n = 6;
     }
     for (let i = 0; i < n; i++) {
-        let card = getRandomCard(arr);
-        petsArea.append(card.getPetCard());
-        card.isShow = true;
-        nowCards.push(card);
+        // let card = getRandomCard(arr);
+        // petsArea.append(card.getPetCard());
+        petsArea.append(arr[i].getPetCard());
+        // card.isShow = true;
+        // nowCards.push(card);
     }
-    arr.forEach(el => el.isShow = nowCards.includes(el) ? true : false);
+    // arr.forEach(el => el.isShow = nowCards.includes(el) ? true : false);
 }
 
 function getRandomCard(arr) {

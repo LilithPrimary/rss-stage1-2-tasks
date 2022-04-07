@@ -95,12 +95,13 @@ function fillPetsArea(arr) {
         default: n = 2;
     }
     for (let i = 0; i < n; i++) {
-        let card = getRandomCard(arr);
-        petsArea.append(card.getPetCard());
-        card.isShow = true;
-        nowCards.push(card);
+        // let card = getRandomCard(arr);
+        // petsArea.append(card.getPetCard());
+        // card.isShow = true;
+        // nowCards.push(card);
+        petsArea.append(arr[i].getPetCard());
     }
-    arr.forEach(el => el.isShow = nowCards.includes(el) ? true : false);
+    // arr.forEach(el => el.isShow = nowCards.includes(el) ? true : false);
 }
 
 function getRandomCard(arr) {
@@ -137,7 +138,11 @@ function fillCards2(array) {
     array.forEach(el => arrOfPets.push(new PetCard2(el)));
     return arrOfPets;
 }
-
+window.addEventListener("resize", () => {
+    petsArea.innerHTML = "";
+    fillPetsArea(petCards);
+    showModalWindow();   
+});
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("pet-card__close")) {
         e.target.parentNode.parentNode.classList.remove("pet__show-more");
