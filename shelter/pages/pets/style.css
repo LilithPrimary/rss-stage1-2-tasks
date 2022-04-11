@@ -4,7 +4,6 @@
   --color-grey: #cdcdcd;
   --color-black: #545454;
   --color-black-2: #292929;
-  --center-burger: 12.3px;
   --pointer: url(../../assets/svg/pointer.svg), pointer;
 }
 
@@ -87,23 +86,23 @@ body {
   display: grid;
   grid-template: 120px auto 350px / 1fr minmax(auto, 1280px) 1fr;
 }
-@media (max-width: 1280px) {
+/* @media (max-width: 1280px) {
   .wrapper {
     grid-template: 90px auto 639px / 1fr minmax(auto, 1280px) 1fr;
   }
-}
-@media (max-width: 767px) {
+} */
+@media (max-width: 700px) {
   .wrapper {
     grid-template: 90px auto 809px / 1fr minmax(auto, 1280px) 1fr;
   }
 }
 .header {
-  position: fixed;
+  grid-area: 1 / 2 ;
+  position: sticky;
   width: 100%;
   max-width: 1280px;
   color: white;
-  left: 50%;
-  transform: translate(-50%, 0);
+  top: 0;
   background-color: white;
 }
 .header__container {
@@ -237,6 +236,7 @@ body {
   }
   .burger {
     position: fixed;
+    z-index: 500;
     right: 53px;
     top: 49px;
     width: 30px;
@@ -249,7 +249,7 @@ body {
   .burger span {
     height: 2px;
     width: 100%;
-    background-color: var(--color-beige);
+    background-color: black;
   }
   .burger.open {
     animation: rotate 0.5s ease-in-out forwards;
@@ -257,6 +257,9 @@ body {
   @keyframes rotate {
     0% {
       transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-180deg);
     }
     100% {
       transform: rotate(-90deg);
@@ -268,6 +271,53 @@ body {
     }
     100% {
       transform: rotate(0deg);
+    }
+  }
+  .burger__shadow {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    animation: disappear 0.5s linear forwards;
+}
+  .burger__shadow.open {
+    animation: appear 0.5s linear forwards;
+    backdrop-filter: blur(5px);
+  }
+  @keyframes appear {
+      0% {
+          height: 100vh;
+          width: 100vw;
+          background-color: none;
+      }
+      0.0001% {
+          height: 100vh;
+          width: 100vw;
+          background-color: none;
+      }
+      100% {     
+          height: 100vh;
+          width: 100vw;
+          background-color:   rgba(0, 0, 0, 0.5);
+      }
+  }
+  
+  @keyframes disappear {
+    0% {
+        height: 100vh;
+        width: 100vw;
+        background-color:   rgba(0, 0, 0, 0.5);
+    }
+    99.999999% {
+        height: 100vh;
+        width: 100vw;
+        background-color: none;
+    }
+    100% {
+        height: 0;
+        width: 0;
+        background-color: none;
     }
   }
   .header__container {
@@ -473,7 +523,7 @@ body {
   bottom: 0;
   background-image: url("../../assets/img/footer-puppy.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
 }
 @media (max-width: 1280px) {
   .footer::after {
@@ -484,7 +534,7 @@ body {
 
 .footer * {
   position: relative;
-  z-index: 2;
+  /* z-index: 2; */
 }
 .footer__wrapper {
   display: flex;
@@ -507,6 +557,12 @@ body {
 
 .footer__header {
   color: white;
+  font-family: Georgia;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
 }
 .footer__contact {
   color: var(--color-beige);
@@ -520,6 +576,10 @@ body {
   align-items: center;
   column-gap: 20px;
   cursor: var(--pointer);
+  transition: .3s;
+}
+.footer__contact:hover {
+  color: var(--color-beige-light);
 }
 .footer__img {
   height: 32px;
@@ -538,6 +598,20 @@ body {
     width: 300px;
     column-gap: 40px;
     height: auto;
+  }
+  .footer__contacts {
+    align-items: center;
+  }
+  .footer__header {
+    color: white;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    width: 270px;
+    align-self: center;
   }
   .footer__wrapper {
     flex-direction: column;
@@ -679,6 +753,7 @@ body {
   height: 500vh;
   width: 500vw;
   background: rgb(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
 }
 .shadow.hide {
   display: none;
