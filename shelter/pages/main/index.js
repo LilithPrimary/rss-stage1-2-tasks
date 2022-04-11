@@ -70,6 +70,9 @@ menuLinks.forEach((el, i) => {
     el.addEventListener("click", (e) =>{
         document.querySelector(".header__link-active").classList.remove("header__link-active");
         e.target.classList.add("header__link-active");
+        burger.classList.remove("open");
+        document.querySelector(".header__menu").classList.remove("open");
+        burgerShadow.classList.remove("open"); 
     });
 })
 
@@ -100,8 +103,10 @@ function fillPetsArea(arr) {
         // card.isShow = true;
         // nowCards.push(card);
         petsArea.append(arr[i].getPetCard());
+        nowCards.push(arr[i]);
     }
     // arr.forEach(el => el.isShow = nowCards.includes(el) ? true : false);
+    return nowCards;
 }
 
 function getRandomCard(arr) {
@@ -113,13 +118,28 @@ async function getPost () {
     const response = await fetch ("../../static/pets.json");
     const data = await response.json();
     petCards = fillCards2(data);
-    fillPetsArea(petCards);
+    let nowCards = fillPetsArea(petCards);
     [btnForward, btnBack].forEach(el => el.addEventListener("click", () => {
         petsArea.innerHTML = "";
-        fillPetsArea(petCards);
+        nowCards = fillPetsArea(petCards);
         showModalWindow();        
     }));
     showModalWindow();
+    window.addEventListener("resize", () => {
+        setTimeout(() => {
+            let n;
+            switch (true) {
+                case window.screen.width >= 1280: n = 3; break;
+                case window.screen.width < 768: n = 1; break;
+                default: n = 2;
+            }
+            n = n <= nowCards.length ? n : nowCards.length;
+            petsArea.innerHTML = "";
+            for (let i = 0; i < n; i++) {
+                petsArea.append(nowCards[i].getPetCard());
+            }
+        }, 1000);
+    });
 }
 
 function showModalWindow() {
@@ -138,11 +158,6 @@ function fillCards2(array) {
     array.forEach(el => arrOfPets.push(new PetCard2(el)));
     return arrOfPets;
 }
-window.addEventListener("resize", () => {
-    petsArea.innerHTML = "";
-    fillPetsArea(petCards);
-    showModalWindow();   
-});
 document.addEventListener("click", (e) => {
     if (e.target.classList.contains("pet-card__close")) {
         e.target.parentNode.parentNode.classList.remove("pet__show-more");
@@ -157,9 +172,12 @@ shadow.addEventListener("click", () => {
 })
 
 getPost();
-
 const burger = document.querySelector(".burger");
+const burgerShadow = document.querySelector(".burger__shadow");
 burger.addEventListener("click", () => {
     burger.classList.toggle("open");
     document.querySelector(".header__menu").classList.toggle("open");
+    burgerShadow.classList.toggle("open");
 })
+
+console.log(menuLinks);
