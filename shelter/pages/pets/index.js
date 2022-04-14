@@ -64,11 +64,13 @@ const petsArea = document.querySelector(".pets__items");
 const shadow = document.querySelector(".shadow");
 let petCards;
 
-
 menuLinks.forEach((el, i) => {
     el.addEventListener("click", (e) =>{
         document.querySelector(".header__link-active").classList.remove("header__link-active");
         e.target.classList.add("header__link-active");
+        burger.classList.remove("open");
+        document.querySelector(".header__menu").classList.remove("open");
+        burgerShadow.classList.remove("open"); 
     });
 })
 
@@ -135,8 +137,10 @@ shadow.addEventListener("click", () => {
 
 getPost();
 
-// const burger = document.querySelector(".burger");
-// burger.addEventListener("click", () => {
-//     burger.classList.toggle("open");
-//     document.querySelector(".header__menu").classList.toggle("open");
-// })
+const burger = document.querySelector(".burger");
+const burgerShadow = document.querySelector(".burger__shadow");
+burger.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    document.querySelector(".header__menu").classList.toggle("open");
+    burgerShadow.classList.toggle("open");
+})
