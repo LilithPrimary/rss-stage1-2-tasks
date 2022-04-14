@@ -101,24 +101,8 @@ async function getPost () {
     const response = await fetch ("../../static/pets.json");
     const data = await response.json();
     petCards = fillCards2(data);
-    // let nowCards = fillPetsArea(petCards);
     fillPetsArea(petCards);
     showModalWindow();
-    window.addEventListener("resize", () => {
-        setTimeout(() => {
-            let n;
-            switch (true) {
-                case window.screen.width >= 1280: n = 8; break;
-                case window.screen.width < 768: n = 3; break;
-                default: n = 6;
-            }
-            n = n <= nowCards.length ? n : nowCards.length;
-            petsArea.innerHTML = "";
-            for (let i = 0; i < n; i++) {
-                petsArea.append(nowCards[i].getPetCard());
-            }
-        }, 1000);
-    });
 }
 
 function showModalWindow() {
