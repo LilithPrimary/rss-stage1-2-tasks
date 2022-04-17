@@ -113,6 +113,37 @@ body {
   align-items: center;
   row-gap: 10px;
   cursor: var(--pointer);
+  overflow: hidden;
+  animation: logo-disappere 0.5s ease-in-out forwards;
+}
+
+@keyframes logo-disappere {
+  0% {
+    width: 184px;
+    position: fixed;
+    top: 30px;
+    right: 126px;
+    z-index: 30;
+  }
+  49% {
+    width: 0;
+    position: fixed;
+    top: 30px;
+    right: 126px;
+    z-index: 30;
+  }
+  50% {
+    width: 0;
+    position: relative;
+    top: 0;
+    right: 0;;
+  }
+  100% {
+    width: 184px;
+    position: relative;
+    top: 0;
+    right: 0;
+  }
 }
 .header__logo h1 {
   font-family: "Georgia";
@@ -580,6 +611,8 @@ body {
   }
   .pets {
     row-gap: 30px;
+    width: 580px;
+    margin: 0 auto;
   }
   .pets__buttons {
     margin-top: 10px;
@@ -665,11 +698,8 @@ body {
     0% {
       transform: rotate(0deg);
     }
-    50% {
-      transform: rotate(-180deg);
-    }
     100% {
-      transform: rotate(-90deg);
+      transform: rotate(-450deg);
     }
   }
   @keyframes rotate-1 {
@@ -731,6 +761,42 @@ body {
     padding: 30px 10px;
     height: 120px;
   }
+  .header__logo.open {
+    /* position: fixed; */
+    /* top: 30px;
+    right: 126px; */
+    /* z-index: 30; */
+    animation: logo-appere 0.5s ease-in-out forwards;
+  }
+
+  @keyframes logo-appere {
+    0% {
+      width: 184px;
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+    49% {
+      width: 0;
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+    50% {
+      width: 0;
+      position: fixed;
+      top: 30px;
+      right: 126px;
+      z-index: 30;
+    }
+    100% {
+      width: 184px;
+      position: fixed;
+      top: 30px;
+      right: 126px;
+      z-index: 30;
+    }
+  }
 
   .section__header {
     font-size: 25px;
@@ -742,6 +808,7 @@ body {
     width: 100%;
   }
   .pets {
+    width: 300px;
     row-gap: 42px;
   }
   .pets__buttons {
