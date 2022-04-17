@@ -64,13 +64,14 @@ const btnForward = document.querySelector(".forward");
 const btnBack = document.querySelector(".back");
 const shadow = document.querySelector(".shadow");
 let petCards;
-
+const logo = document.querySelector(".header__logo");
 
 menuLinks.forEach((el, i) => {
     el.addEventListener("click", (e) =>{
         document.querySelector(".header__link-active").classList.remove("header__link-active");
         e.target.classList.add("header__link-active");
         burger.classList.remove("open");
+        logo.classList.remove("open");
         document.querySelector(".header__menu").classList.remove("open");
         burgerShadow.classList.remove("open"); 
     });
@@ -117,6 +118,7 @@ function getRandomCard(arr) {
 async function getPost () {
     const response = await fetch ("../../static/pets.json");
     const data = await response.json();
+    console.log(data);
     petCards = fillCards2(data);
     let nowCards = fillPetsArea(petCards);
     [btnForward, btnBack].forEach(el => el.addEventListener("click", () => {
@@ -178,6 +180,7 @@ burger.addEventListener("click", () => {
     burger.classList.toggle("open");
     document.querySelector(".header__menu").classList.toggle("open");
     burgerShadow.classList.toggle("open");
+    logo.classList.toggle("open");
 })
 
 console.log(menuLinks);

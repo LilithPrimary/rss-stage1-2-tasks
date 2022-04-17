@@ -88,8 +88,10 @@ function fillPetsArea(arr) {
         petsArea.append(arr[i].getPetCard());
         // card.isShow = true;
         // nowCards.push(card);
+        nowCards.push(arr[i]);
     }
     // arr.forEach(el => el.isShow = nowCards.includes(el) ? true : false);
+    return nowCards;
 }
 
 function getRandomCard(arr) {
@@ -101,8 +103,23 @@ async function getPost () {
     const response = await fetch ("../../static/pets.json");
     const data = await response.json();
     petCards = fillCards2(data);
-    fillPetsArea(petCards);
+    let nowCards = fillPetsArea(petCards);
     showModalWindow();
+    window.addEventListener("resize", () => {
+        setTimeout(() => {
+            let n;
+            switch (true) {
+                case window.screen.width >= 1280: n = 8; break;
+                case window.screen.width < 768: n = 3; break;
+                default: n = 6;
+            }
+            n = n <= nowCards.length ? n : nowCards.length;
+            petsArea.innerHTML = "";
+            for (let i = 0; i < n; i++) {
+                petsArea.append(nowCards[i].getPetCard());
+            }
+        }, 1000);
+    });
 }
 
 function showModalWindow() {
