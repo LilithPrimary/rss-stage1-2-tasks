@@ -59,6 +59,7 @@ class PetCard2 {
 
 const menuLinks = document.querySelectorAll(".header__link");
 const petsArea = document.querySelector(".pets__items");
+const logo = document.querySelector(".header__logo");
 // const btnForward = document.querySelector(".forward");
 // const btnBack = document.querySelector(".back");
 const shadow = document.querySelector(".shadow");
@@ -69,6 +70,7 @@ menuLinks.forEach((el, i) => {
         document.querySelector(".header__link-active").classList.remove("header__link-active");
         e.target.classList.add("header__link-active");
         burger.classList.remove("open");
+        logo.classList.remove("open");
         document.querySelector(".header__menu").classList.remove("open");
         burgerShadow.classList.remove("open"); 
     });
@@ -158,6 +160,7 @@ const burger = document.querySelector(".burger");
 const burgerShadow = document.querySelector(".burger__shadow");
 burger.addEventListener("click", () => {
     burger.classList.toggle("open");
+    logo.classList.toggle("open");
     document.querySelector(".header__menu").classList.toggle("open");
     burgerShadow.classList.toggle("open");
 })
