@@ -4,7 +4,7 @@
   --color-grey: #cdcdcd;
   --color-black: #545454;
   --color-black-2: #292929;
-  --pointer: url(../../assets/svg/pointer.svg), pointer;
+  /* --pointer: url(../../assets/svg/pointer.svg), pointer; */
 }
 
 *,
@@ -38,7 +38,7 @@ h6 {
 }
 html,
 body {
-  cursor: url(../../assets/svg/cursor.svg), default;
+  /* cursor: url(../../assets/svg/cursor.svg), default; */
   scroll-behavior: smooth;
   background-color: white;
   min-height: 100vh;
@@ -113,7 +113,7 @@ body {
   justify-content: center;
   align-items: center;
   row-gap: 10px;
-  cursor: var(--pointer);
+  cursor: pointer;
   overflow: hidden;
   animation: logo-disappere 0.5s ease-in-out forwards;
 }
@@ -189,7 +189,7 @@ body {
   letter-spacing: 0px;
   text-align: left;
   color: var(--color-black);
-  cursor: var(--pointer);
+  cursor: pointer;
   transition: 0.3s;
   padding-bottom: 3px;
 }
@@ -259,7 +259,7 @@ body {
   width: 207px;
   color: var(--color-black-2);
   border-radius: 100px;
-  cursor: var(--pointer);
+  cursor: pointer;
   background: var(--color-beige);
   transition: 0.3s;
 }
@@ -293,7 +293,7 @@ body {
   background: transparent;
   border-radius: 50%;
   align-self: center;
-  cursor: var(--pointer);
+  cursor: pointer;
   transition: 0.3s;
   font-family: "Georgia";
   font-size: 20px;
@@ -335,7 +335,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 9px;
-  cursor: var(--pointer);
+  cursor: pointer;
 }
 
 .pet:hover {
@@ -450,7 +450,7 @@ body {
   display: flex;
   align-items: center;
   column-gap: 20px;
-  cursor: var(--pointer);
+  cursor: pointer;
   transition: .3s;
 }
 .footer__contact:hover {
@@ -587,8 +587,8 @@ body {
   top: 0;
   height: 500vh;
   width: 500vw;
-  background: rgb(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
+  background: rgba(41, 41, 41, 0.6);
+  /* backdrop-filter: blur(5px); */
 }
 .shadow.hide {
   display: none;
@@ -627,7 +627,18 @@ body {
     height: 350px;
     width: 350px;
   }
-
+  .pet__show-more .pet-card {
+    row-gap: 20px;
+    width: 260px;
+    margin: 10px 9px 0 0;
+  }
+  .pet-card__description {
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .pet-card__bottom {
+    row-gap: 5px;
+  }
   .footer {
     justify-content: center;
   }
@@ -721,7 +732,7 @@ body {
 }
   .burger__shadow.open {
     animation: appear 0.5s linear forwards;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
   }
   @keyframes appear {
       0% {
@@ -737,7 +748,7 @@ body {
       100% {     
           height: 100vh;
           width: 100vw;
-          background-color:   rgba(0, 0, 0, 0.5);
+          background-color:   rgba(41, 41, 41, 0.6);
       }
   }
   
@@ -799,6 +810,9 @@ body {
     }
   }
 
+  .main {
+    padding: 42px 10px;
+  }
   .section__header {
     font-size: 25px;
     font-style: normal;
@@ -820,8 +834,35 @@ body {
     grid-template-columns: repeat(1, 270px);
     justify-content: center;
   }
-  .main {
-    padding: 42px 10px;
+  .pet__show-more {
+    height: auto;
+    width: 240px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .pet__show-more .pet-card {
+    width: 220px;
+    margin: 0;
+    gap: 0;
+  }
+  .pet-card__description {
+    font-family: Georgia;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.06em;
+    text-align: justify;
+    padding-top: 20px;
+    padding-bottom: 24px;
+    align-self: center;
+  }
+  .pet-card__bottom {
+    row-gap: 5px;
+  }
+  .pet__show-more .pet__img {
+    display: none;
   }
 
   .footer__contacts,
