@@ -49,6 +49,8 @@ body {
   font-weight: 400;
   font-style: normal;
   box-sizing: border-box;
+}
+body {
   overflow-x: hidden;
 }
 @font-face {
