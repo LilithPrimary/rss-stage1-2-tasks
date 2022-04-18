@@ -50,6 +50,8 @@ body {
   font-weight: 400;
   font-style: normal;
   box-sizing: border-box;
+}
+body {
   overflow-x: hidden;
 }
 @font-face {
@@ -678,7 +680,7 @@ body {
   height: 23px;
 }
 .donat__info {
-  width: 383px;
+  width: 380px;
   font-family: Arial;
   font-size: 12px;
   font-style: italic;
