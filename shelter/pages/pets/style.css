@@ -598,7 +598,7 @@ body {
 
 /* MEDIA 1279-768 */
 
-@media (max-width: 1279px) {
+@media (max-width: 1279.9px) {
   .wrapper {
     grid-template: 120px auto 639px / 1fr minmax(auto, 1280px) 1fr;
   }
@@ -656,7 +656,7 @@ body {
 
 /* MEDIA 767-320 */
 
-@media (max-width: 767px) {
+@media (max-width: 767.9px) {
   .wrapper {
     grid-template: 120px auto 809px / 1fr minmax(auto, 1280px) 1fr;
   }
