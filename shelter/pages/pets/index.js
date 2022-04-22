@@ -164,3 +164,7 @@ burger.addEventListener("click", () => {
     document.querySelector(".header__menu").classList.toggle("open");
     burgerShadow.classList.toggle("open");
 })
+
+document.addEventListener("click", (e) => {
+    console.log(e.target);
+})
