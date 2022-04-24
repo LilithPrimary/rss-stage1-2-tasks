@@ -420,7 +420,7 @@ body {
   flex-shrink: 0;
   column-gap: 90px;
 }
-.carousel_item {
+.carousel__item {
   width: 990px;
   display: flex;
   justify-content: space-between;
@@ -432,13 +432,12 @@ body {
 }
 .move-right {
   left: -2160px;
-  transition: 1s;
+  transition: .7s;
 }
 .move-left {
   left: 0;
-  transition: 1s;
+  transition: .7s;
 }
-
 .pet {
   width: 270px;
   height: 435px;
@@ -451,12 +450,11 @@ body {
   border-radius: 9px;
   cursor: pointer;
 }
-
 .pet:hover {
   background-color: white;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
-.pet:hover button {
+.pet:hover .button {
   border: var(--color-beige-light);
   background-color: var(--color-beige-light);
 }
@@ -483,9 +481,6 @@ body {
 }
 .pet__button:hover {
   border: var(--color-beige-light);
-}
-.pet .pet-card {
-  display: none;
 }
 
 .pet__dialog {
@@ -876,7 +871,7 @@ body {
     left: -620px;
     column-gap: 40px;
   }
-  .carousel_item {
+  .carousel__item {
     width: 580px;
     position: relative;
   }
@@ -944,15 +939,16 @@ body {
     position: fixed;
     height: 100vh;
     width: 320px;
-    right: -300vw;
+    right: -200vw;
     top: 0;
     background-color: var(--color-black-2);
     justify-content: center;
-    transition: 0.5s;
+    transition: 2s;
   }
   .header__menu.open {
     right: 0;
     z-index: 3;
+    transition: 0.5s;
   }
   .header__list {
     flex-direction: column;
@@ -1185,7 +1181,7 @@ body {
     left: -290px;
     column-gap: 20px;
   }
-  .carousel_item {
+  .carousel__item {
     width: 270px;
     justify-content: center;
   }
@@ -1336,6 +1332,16 @@ body {
   }
   .footer::after {
     background-size: 260px 269px;
+  }
+}
+
+@media (max-height: 550px) {
+  .header__list {
+    row-gap: 0;
+    margin: 100px 0 10px;
+  }
+  .header__link {
+    font-size: 20px;
   }
 }
 
