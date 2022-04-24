@@ -36,10 +36,11 @@ class PetCard2 {
         this.buttonClose = document.createElement("button");
         this.buttonClose.classList.add("round__button", "material-icons", "pet-card__close");
         this.buttonClose.textContent = "close";
+        this.petCard = document.createElement("div");
     }
 
     getPetCard() {
-        this.petCard = document.createElement("div");
+        // this.petCard = document.createElement("div");
         this.petCard.classList.add("pets__item", "pet");
         const petInfo = document.createElement("div");
         petInfo.classList.add("pet__info", "pet-card");
@@ -58,21 +59,19 @@ class PetCard2 {
         petInfo.append(this.buttonClose, top, this.description, this.petInfo);
         this.petDialog.append(cardImg, petInfo);
 
-
-        this.petCard.append(this.img, this.petName, this.button);
-        this.div = document.createElement("div");
-        this.div.append(this.petCard, this.petDialog);
-
-        return this.div;
+        this.petCard.append(this.img, this.petName, this.button, this.petDialog);
+        return this.petCard;
     }
 
     showDialog() {
-        this.button.addEventListener("click", () => {
+        this.petCard.addEventListener("click", (e) => {
+            console.log("action");
             this.petDialog.classList.remove("hide");
             shadow.classList.remove("hide");
             document.body.style.overflowY = "hidden";
         })
-        this.buttonClose.addEventListener("click", () => {
+        this.buttonClose.addEventListener("click", (e) => {
+            e.stopPropagation();
             this.petDialog.classList.add("hide");
             shadow.classList.add("hide");
             document.body.style.overflowY = "auto";
@@ -91,17 +90,29 @@ const btnBack = document.querySelector(".back");
 const shadow = document.querySelector(".shadow");
 let petCards;
 const logo = document.querySelector(".header__logo");
+const burger = document.querySelector(".burger");
+const burgerShadow = document.querySelector(".burger__shadow");
 
-menuLinks.forEach((el, i) => {
+[...menuLinks, logo].forEach((el, i) => {
     el.addEventListener("click", (e) =>{
         document.querySelector(".header__link-active").classList.remove("header__link-active");
         e.target.classList.add("header__link-active");
         burger.classList.remove("open");
         logo.classList.remove("open");
         document.querySelector(".header__menu").classList.remove("open");
-        burgerShadow.classList.remove("open"); 
+        burgerShadow.classList.remove("open");
+        document.body.style.overflowY = "auto";
     });
-})
+});
+[burger, burgerShadow].forEach(el => el.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    document.querySelector(".header__menu").classList.toggle("open");
+    burgerShadow.classList.toggle("open");
+    logo.classList.toggle("open");
+    if (document.body.style.overflowY === "hidden") document.body.style.overflowY = "auto";
+    else document.body.style.overflowY = "hidden";
+    
+}))
 
 help.forEach(el => {
     const item = document.createElement("div");
@@ -147,7 +158,7 @@ async function getPost () {
     let nowCards = fillPetsArea(petCards, petsArea);
     const btns = [btnForward, btnBack];
     btns.forEach(el => el.addEventListener("click", (e) => {
-        btns.forEach(el => el.style.pointerEvents = "none");
+        document.body.style.pointerEvents = "none";
         if (e.target.classList.contains("forward")) {
             carouselRight.innerHTML = "";
             nowCards = fillPetsArea(petCards, carouselRight);
@@ -163,8 +174,8 @@ async function getPost () {
             nowCards.forEach(el => petsArea.append(el.getPetCard()));
             if (e.target.classList.contains("forward")) carousel.classList.remove("move-right");
             else carousel.classList.remove("move-left");
-            btns.forEach(el => el.style.pointerEvents = "inherit");
-        }, 1200);      
+            document.body.style.pointerEvents = "inherit";
+        }, 800);      
     }));
     petCards.forEach(el => {
         el.showDialog();
@@ -205,12 +216,3 @@ shadow.addEventListener("mouseout", () => {
 })
 
 getPost();
-
-const burger = document.querySelector(".burger");
-const burgerShadow = document.querySelector(".burger__shadow");
-burger.addEventListener("click", () => {
-    burger.classList.toggle("open");
-    document.querySelector(".header__menu").classList.toggle("open");
-    burgerShadow.classList.toggle("open");
-    logo.classList.toggle("open");
-})

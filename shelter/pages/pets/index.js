@@ -33,16 +33,22 @@ class PetCard2 {
         this.button.classList.add("button", "pet__button");
         this.button.textContent = "Learn more";
         this.isShow = false;
-    }
-
-    getPetCard() {
-        this.petCard = document.createElement("div");
-        this.petCard.classList.add("pets__item", "pet");
-        const petInfo = document.createElement("div");
-        petInfo.classList.add("pet__info", "pet-card");
         this.buttonClose = document.createElement("button");
         this.buttonClose.classList.add("round__button", "material-icons", "pet-card__close");
         this.buttonClose.textContent = "close";
+        this.petCard = document.createElement("div");
+    }
+
+    getPetCard() {
+        this.petCard.classList.add("pets__item", "pet");
+        const petInfo = document.createElement("div");
+        petInfo.classList.add("pet__info", "pet-card");
+
+        this.petDialog = document.createElement("div");
+        this.petDialog.classList.add("pet__dialog", "hide");
+        const cardImg = document.createElement("div");
+        cardImg.classList.add("pet-card__img");
+        cardImg.style.backgroundImage = this.img.style.backgroundImage;
         const top = document.createElement("div");
         top.classList.add("pet-card__top");
         const petNameModal = document.createElement("h3");
@@ -50,121 +56,203 @@ class PetCard2 {
         petNameModal.textContent = this.petName.textContent;
         top.append(petNameModal, this.breed);
         petInfo.append(this.buttonClose, top, this.description, this.petInfo);
-        this.petCard.append(this.img, this.petName, petInfo, this.button);
-        this.div = document.createElement("div");
-        this.div.append(this.petCard);
-        return this.div;
+        this.petDialog.append(cardImg, petInfo);
+
+        this.petCard.append(this.img, this.petName, this.button, this.petDialog);
+        return this.petCard;
+    }
+
+    showDialog() {
+        this.petCard.addEventListener("click", (e) => {
+            console.log("action");
+            this.petDialog.classList.remove("hide");
+            shadow.classList.remove("hide");
+            document.body.style.overflowY = "hidden";
+        })
+        this.buttonClose.addEventListener("click", (e) => {
+            e.stopPropagation();
+            this.petDialog.classList.add("hide");
+            shadow.classList.add("hide");
+            document.body.style.overflowY = "auto";
+        })
     }
 }
 
+Array.prototype.shuffle = function() {
+    for (var i = this.length - 1; i > 0; i--) {
+        var num = Math.floor(Math.random() * (i + 1));
+        var d = this[num];
+        this[num] = this[i];
+        this[i] = d;
+    }
+    return this;
+}
+
+const helpItems = document.querySelector(".help__items");
 const menuLinks = document.querySelectorAll(".header__link");
 const petsArea = document.querySelector(".pets__items");
-const logo = document.querySelector(".header__logo");
-// const btnForward = document.querySelector(".forward");
-// const btnBack = document.querySelector(".back");
+const btnForward = document.querySelector(".forward");
+const btnForwardForce = document.querySelector(".forward-force");
+const btnBack = document.querySelector(".back");
+const btnBackForce = document.querySelector(".back-force");
 const shadow = document.querySelector(".shadow");
 let petCards;
+const logo = document.querySelector(".header__logo");
+const burger = document.querySelector(".burger");
+const burgerShadow = document.querySelector(".burger__shadow");
+const pageNumber = document.querySelector(".center");
+let n;
+let screenSize;
 
-menuLinks.forEach((el, i) => {
+[...menuLinks, logo].forEach((el, i) => {
     el.addEventListener("click", (e) =>{
         document.querySelector(".header__link-active").classList.remove("header__link-active");
         e.target.classList.add("header__link-active");
         burger.classList.remove("open");
         logo.classList.remove("open");
         document.querySelector(".header__menu").classList.remove("open");
-        burgerShadow.classList.remove("open"); 
+        burgerShadow.classList.remove("open");
+        document.body.style.overflowY = "auto";
     });
-})
+});
+[burger, burgerShadow].forEach(el => el.addEventListener("click", () => {
+    burger.classList.toggle("open");
+    document.querySelector(".header__menu").classList.toggle("open");
+    burgerShadow.classList.toggle("open");
+    logo.classList.toggle("open");
+    if (document.body.style.overflowY === "hidden") document.body.style.overflowY = "auto";
+    else document.body.style.overflowY = "hidden";
+    
+}));
+const btns = [btnBack, btnBackForce, btnForward, btnForwardForce];
+btns.forEach(el => {
+    el.addEventListener("click", (e) => {
+        let page = +pageNumber.textContent;
+        switch(true) {
+            case e.target.classList.contains("back"): page--; break;
+            case e.target.classList.contains("forward"): page++; break;
+            case e.target.classList.contains("back-force"): page = 1; break;
+            case e.target.classList.contains("forward-force"): page = petCards.length / n;
+        }
+        setPage(page);
+        fillPetsArea(petCards, page);
+    })
+});
 
-function fillPetsArea(arr) {
-    let n;
-    const nowCards = [];
-    switch (true) {
-        case window.screen.width >= 1280: n = 8; break;
-        case window.screen.width < 768: n = 3; break;
-        default: n = 6;
+function setPage (page) {
+    switch(page) {
+        case 1:
+            [btnBack, btnBackForce].forEach(el => el.classList.add("disable"));
+            [btnForward, btnForwardForce].forEach(el => el.classList.remove("disable"));
+            break;
+        case petCards.length / n:
+            [btnForward, btnForwardForce].forEach(el => el.classList.add("disable"));
+            [btnBack, btnBackForce].forEach(el => el.classList.remove("disable"));
+            break;
+        default: btns.forEach(el => el.classList.remove("disable"));
     }
-    for (let i = 0; i < n; i++) {
-        // let card = getRandomCard(arr);
-        // petsArea.append(card.getPetCard());
-        petsArea.append(arr[i].getPetCard());
-        // card.isShow = true;
-        // nowCards.push(card);
-        nowCards.push(arr[i]);
-    }
-    // arr.forEach(el => el.isShow = nowCards.includes(el) ? true : false);
-    return nowCards;
+    pageNumber.textContent = page;
 }
 
-function getRandomCard(arr) {
-    let i = Math.floor(Math.random()*arr.length);
-    return arr[i].isShow ? getRandomCard(arr) : arr[i];
+function checkSize() {
+    switch (true) {
+        case window.screen.width >= 1280:
+            screenSize = 1280;
+            break;
+        case window.screen.width < 768:
+            screenSize = 320;
+            break;
+        default:
+            screenSize = 768;
+    }
+}
+
+function setNumberOfElements() {
+    switch (screenSize) {
+        case 1280:
+            n = 8;
+            break;
+        case 320:
+            n = 3;
+            break;
+        default:
+            n = 6;
+    }
+}
+
+function fillPetsArea(arr, page) {
+    petsArea.innerHTML = "";
+    const nowCards = [];
+    page--;
+    let startIndex = page*n;
+    for (let i = startIndex; i < startIndex + n; i++) {
+        petsArea.append(arr[i].getPetCard());
+        nowCards.push(arr[i]);
+    }
+    return nowCards;
 }
 
 async function getPost () {
     const response = await fetch ("../../static/pets.json");
     const data = await response.json();
+    let page = 1;
+    setPage(page);
+    checkSize();
+    setNumberOfElements();
     petCards = fillCards2(data);
-    let nowCards = fillPetsArea(petCards);
-    showModalWindow();
+    let nowCards = fillPetsArea(petCards, page);
     window.addEventListener("resize", () => {
-        setTimeout(() => {
-            let n;
-            switch (true) {
-                case window.screen.width >= 1280: n = 8; break;
-                case window.screen.width < 768: n = 3; break;
-                default: n = 6;
-            }
-            n = n <= nowCards.length ? n : nowCards.length;
-            petsArea.innerHTML = "";
-            for (let i = 0; i < n; i++) {
-                petsArea.append(nowCards[i].getPetCard());
-            }
-        }, 1000);
-    });
-}
-
-function showModalWindow() {
-    petCards.forEach(el => {
-        if (el.div) {
-            el.div.addEventListener("click", () => {
-                el.petCard.classList.add("pet__show-more");
-                shadow.classList.remove("hide");
-            });
+        let currentScreenSize = screenSize;
+        checkSize();
+        if (currentScreenSize !== screenSize) {
+            console.log(currentScreenSize, screenSize);
+            setTimeout(() => {
+                    getPost();
+            }, 1000);
         }
+    });
+    petCards.forEach(el => {
+        el.showDialog();
     })
 }
 
+function getRandomArray(array) {
+    let fullArr = [];
+    if (n === 8) {
+        while(fullArr.length !== 48) {
+            let arr = array.shuffle();
+            fullArr.push(...array);
+        }
+    } else {
+        while(fullArr.length !== 48) {
+            fullArr.push(...array);
+        }
+        let buffer = [];
+        for (let i = 0; i < fullArr.length; i += 6) {
+            buffer.push(...fullArr.slice(i, i+6).shuffle());
+        }
+        fullArr = buffer;
+    }
+    return fullArr;
+} 
+
 function fillCards2(array) {
+    const fullArr = getRandomArray(array);
     const arrOfPets = [];
-    array.forEach(el => arrOfPets.push(new PetCard2(el)));
+    fullArr.forEach(el => arrOfPets.push(new PetCard2(el)));
     return arrOfPets;
 }
 
-document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("pet-card__close")) {
-        e.target.parentNode.parentNode.classList.remove("pet__show-more");
-        shadow.classList.add("hide");
-    }
-});
 shadow.addEventListener("click", () => {
-    if (document.querySelector(".pet__show-more")) {
-        document.querySelector(".pet__show-more").classList.remove("pet__show-more");
-    }
     shadow.classList.add("hide");
+    document.querySelectorAll(".pet__dialog").forEach(el => el.classList.add("hide"));
+    document.body.style.overflowY = "auto";
+})
+shadow.addEventListener("mouseover", () => {
+    document.querySelectorAll(".pet-card__close").forEach(el => el.classList.add("hover"))
+})
+shadow.addEventListener("mouseout", () => {
+    document.querySelectorAll(".pet-card__close").forEach(el => el.classList.remove("hover"))
 })
 
 getPost();
-
-const burger = document.querySelector(".burger");
-const burgerShadow = document.querySelector(".burger__shadow");
-burger.addEventListener("click", () => {
-    burger.classList.toggle("open");
-    logo.classList.toggle("open");
-    document.querySelector(".header__menu").classList.toggle("open");
-    burgerShadow.classList.toggle("open");
-})
-
-document.addEventListener("click", (e) => {
-    console.log(e.target);
-})
