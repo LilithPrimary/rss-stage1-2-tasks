@@ -1335,7 +1335,7 @@ body {
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 550px) and (max-width: 767.9px) {
   .header__list {
     row-gap: 0;
     margin: 100px 0 10px;
