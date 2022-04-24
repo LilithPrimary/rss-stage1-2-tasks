@@ -127,15 +127,19 @@ let screenSize;
 const btns = [btnBack, btnBackForce, btnForward, btnForwardForce];
 btns.forEach(el => {
     el.addEventListener("click", (e) => {
-        let page = +pageNumber.textContent;
-        switch(true) {
-            case e.target.classList.contains("back"): page--; break;
-            case e.target.classList.contains("forward"): page++; break;
-            case e.target.classList.contains("back-force"): page = 1; break;
-            case e.target.classList.contains("forward-force"): page = petCards.length / n;
-        }
-        setPage(page);
-        fillPetsArea(petCards, page);
+        petsArea.classList.add("disappere");
+        setTimeout(() => {
+            let page = +pageNumber.textContent;
+            switch(true) {
+                case e.target.classList.contains("back"): page--; break;
+                case e.target.classList.contains("forward"): page++; break;
+                case e.target.classList.contains("back-force"): page = 1; break;
+                case e.target.classList.contains("forward-force"): page = petCards.length / n;
+            }
+            setPage(page);
+            fillPetsArea(petCards, page);
+            petsArea.classList.remove("disappere");
+        }, 300);
     })
 });
 

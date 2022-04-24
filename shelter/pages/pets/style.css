@@ -307,7 +307,21 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 30px;
+  transition: .3s;
+  opacity: 1;
 }
+.disappere {
+  opacity: 0;
+}
+
+/* @keyframes disap {
+  0% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+} */
 .pet {
   width: 270px;
   height: 435px;
@@ -901,7 +915,7 @@ body {
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 550px) and (max-width: 767.9px) {
   .header__list {
     row-gap: 0;
     margin: 100px 0 10px;
