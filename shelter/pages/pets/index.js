@@ -126,6 +126,7 @@ let screenSize;
 const btns = [btnBack, btnBackForce, btnForward, btnForwardForce];
 btns.forEach(el => {
     el.addEventListener("click", (e) => {
+        document.body.style.pointerEvents = "none";
         petsArea.classList.add("disappere");
         setTimeout(() => {
             let page = +pageNumber.textContent;
@@ -138,6 +139,7 @@ btns.forEach(el => {
             setPage(page);
             fillPetsArea(petCards, page);
             petsArea.classList.remove("disappere");
+            document.body.style.pointerEvents = "inherit";
         }, 300);
     })
 });
