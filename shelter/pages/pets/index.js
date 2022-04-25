@@ -64,7 +64,6 @@ class PetCard2 {
 
     showDialog() {
         this.petCard.addEventListener("click", (e) => {
-            console.log("action");
             this.petDialog.classList.remove("hide");
             shadow.classList.remove("hide");
             document.body.style.overflowY = "hidden";
@@ -209,7 +208,6 @@ async function getPost () {
         let currentScreenSize = screenSize;
         checkSize();
         if (currentScreenSize !== screenSize) {
-            console.log(currentScreenSize, screenSize);
             setTimeout(() => {
                     getPost();
             }, 1000);
@@ -237,6 +235,7 @@ function getRandomArray(array) {
         }
         fullArr = buffer;
     }
+    console.log("массив из 48 элементов:", fullArr);
     return fullArr;
 } 
 

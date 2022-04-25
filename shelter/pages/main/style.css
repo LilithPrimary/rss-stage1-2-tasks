@@ -56,6 +56,7 @@ body {
 }
 body {
   overflow-x: hidden;
+  width: 100vw;
 }
 @font-face {
   font-family: "Arial";
@@ -168,7 +169,7 @@ body {
 }
 
 .header__logo h1 {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -178,7 +179,7 @@ body {
   color: var(--color-beige);
 }
 .header__logo span {
-  font-family: Arial;
+  font-family: "Arial";
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
@@ -201,7 +202,7 @@ body {
 }
 .header__link {
   position: relative;
-  font-family: Arial;
+  font-family: "Arial";
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -274,7 +275,7 @@ body {
   row-gap: 42px;
 }
 .section__header {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
@@ -292,7 +293,7 @@ body {
   color: white;
 }
 .main__text {
-  font-family: Arial;
+  font-family: "Arial";
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -305,7 +306,7 @@ body {
   color: var(--color-grey);
 }
 .button {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
@@ -466,7 +467,7 @@ body {
   border-radius: 9px 9px 0 0;
 }
 .pet__name {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -532,7 +533,7 @@ body {
   row-gap: 10px;
 }
 .pet-card__name {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
@@ -540,7 +541,7 @@ body {
   letter-spacing: 0.06em;
 }
 .pet-card__breed {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -548,7 +549,7 @@ body {
   letter-spacing: 0.06em;
 }
 .pet-card__description {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -559,7 +560,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -586,7 +587,7 @@ body {
   right: -42px;
 }
 
-.pet-card__close.hover {
+.shadow:hover ~ .wrapper > .main > .pets > .pets__items > .carousel > .carousel__center > .pet > .pet__dialog > .pet-card > .pet-card__close {
   border: solid var(--color-beige-light) 2px;
   background-color: var(--color-beige-light);
 }
@@ -635,7 +636,7 @@ body {
   width: 60px;
 }
 .item__title {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -666,7 +667,7 @@ body {
   width: 300px;
 }
 .donat__text {
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -682,7 +683,7 @@ body {
   height: 43px;
   background-color: var(--color-beige);
   border-radius: 9px;
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -703,7 +704,7 @@ body {
 }
 .donat__info {
   width: 380px;
-  font-family: Arial;
+  font-family: "Arial";
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -776,7 +777,7 @@ body {
 }
 .footer__contact {
   color: var(--color-beige);
-  font-family: Georgia;
+  font-family: "Georgia";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -881,6 +882,10 @@ body {
   .move-left {
     left: 0;
   }
+  .pet:last-child {
+    display: none;
+  }
+
   .pet__dialog {
     width: 630px;
     height: 350px;
@@ -956,7 +961,7 @@ body {
     width: auto;
   }
   .header__link {
-    font-family: Arial;
+    font-family: "Arial";
     font-size: 32px;
     font-style: normal;
     font-weight: 400;
@@ -965,7 +970,7 @@ body {
     text-align: left;
   }
   .burger {
-    position: fixed;
+    position: absolute;
     z-index: 500;
     right: 53px;
     top: 49px;
@@ -1170,6 +1175,9 @@ body {
     grid-area: 3 / 2;
     justify-self: flex-start;
   }
+  .pet:not(:first-child) {
+    display: none;
+  }
   .pets__items {
     margin-top: 42px;
     margin-bottom: 20px;
@@ -1208,7 +1216,7 @@ body {
     gap: 0;
   }
   .pet-card__description {
-    font-family: Georgia;
+    font-family: "Georgia";
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -1295,7 +1303,7 @@ body {
   }
   .donat__info {
     width: 280px;
-    font-family: Arial;
+    font-family: "Arial";
     font-size: 12px;
     font-style: italic;
     font-weight: 400;
