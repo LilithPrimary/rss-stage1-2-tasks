@@ -40,7 +40,6 @@ class PetCard2 {
     }
 
     getPetCard() {
-        // this.petCard = document.createElement("div");
         this.petCard.classList.add("pets__item", "pet");
         const petInfo = document.createElement("div");
         petInfo.classList.add("pet__info", "pet-card");
@@ -65,7 +64,6 @@ class PetCard2 {
 
     showDialog() {
         this.petCard.addEventListener("click", (e) => {
-            console.log("action");
             this.petDialog.classList.remove("hide");
             shadow.classList.remove("hide");
             document.body.style.overflowY = "hidden";
@@ -92,6 +90,7 @@ let petCards;
 const logo = document.querySelector(".header__logo");
 const burger = document.querySelector(".burger");
 const burgerShadow = document.querySelector(".burger__shadow");
+let screenSize; 
 
 [...menuLinks, logo].forEach((el, i) => {
     el.addEventListener("click", (e) =>{
@@ -128,13 +127,9 @@ help.forEach(el => {
 })
 
 function fillPetsArea(arr, area) {
-    let n;
+    // let n = getCardsNumber();
+    let n = 3;
     const nowCards = [];
-    switch (true) {
-        case window.screen.width >= 1280: n = 3; break;
-        case window.screen.width < 768: n = 1; break;
-        default: n = 2;
-    }
     for (let i = 0; i < n; i++) {
         let card = getRandomCard(arr);
         area.append(card.getPetCard());
@@ -153,7 +148,6 @@ function getRandomCard(arr) {
 async function getPost () {
     const response = await fetch ("../../static/pets.json");
     const data = await response.json();
-    console.log(data);
     petCards = fillCards2(data);
     let nowCards = fillPetsArea(petCards, petsArea);
     const btns = [btnForward, btnBack];
@@ -180,21 +174,40 @@ async function getPost () {
     petCards.forEach(el => {
         el.showDialog();
     })
-    window.addEventListener("resize", () => {
-        setTimeout(() => {
-            let n;
-            switch (true) {
-                case window.screen.width >= 1280: n = 3; break;
-                case window.screen.width < 768: n = 1; break;
-                default: n = 2;
-            }
-            n = n <= nowCards.length ? n : nowCards.length;
-            petsArea.innerHTML = "";
-            for (let i = 0; i < n; i++) {
-                petsArea.append(nowCards[i].getPetCard());
-            }
-        }, 1000);
-    });
+    // window.addEventListener("resize", () => {
+    //     const currentSize = screenSize;
+    //     getScreenSize();
+    //     if (currentSize !== screenSize) {
+    //         setTimeout(() => {
+    //             console.log("works");
+    //             let n = getCardsNumber();
+    //             n = n <= nowCards.length ? n : nowCards.length;
+    //             petsArea.innerHTML = "";
+    //             for (let i = 0; i < n; i++) {
+    //                 petsArea.append(nowCards[i].getPetCard());
+    //             }
+    //         }, 500);
+    //     }
+    // });
+}
+
+function getScreenSize() {
+    switch (true) {
+        case window.screen.width >= 1280: screenSize = 1280; break;
+        case window.screen.width < 768: screenSize = 320; break;
+        default: screenSize = 768;
+    }
+}
+
+function getCardsNumber() {
+    getScreenSize();
+    let n;
+    switch (screenSize) {
+        case 1280: n = 3; break;
+        case 768: n = 2; break;
+        default: n = 1;
+    }
+    return n;
 }
 
 function fillCards2(array) {
@@ -207,12 +220,6 @@ shadow.addEventListener("click", () => {
     shadow.classList.add("hide");
     document.querySelectorAll(".pet__dialog").forEach(el => el.classList.add("hide"));
     document.body.style.overflowY = "auto";
-})
-shadow.addEventListener("mouseover", () => {
-    document.querySelectorAll(".pet-card__close").forEach(el => el.classList.add("hover"))
-})
-shadow.addEventListener("mouseout", () => {
-    document.querySelectorAll(".pet-card__close").forEach(el => el.classList.remove("hover"))
 })
 
 getPost();

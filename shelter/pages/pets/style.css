@@ -53,6 +53,7 @@ body {
 }
 body {
   overflow-x: hidden;
+  width: 100vw;
 }
 @font-face {
   font-family: "Arial";
@@ -314,14 +315,6 @@ body {
   opacity: 0;
 }
 
-/* @keyframes disap {
-  0% {
-    opacity: 1;
-  }
-  0% {
-    opacity: 0;
-  }
-} */
 .pet {
   width: 270px;
   height: 435px;
