@@ -213,7 +213,7 @@ body {
 }
 .header__link-active {
   color: var(--color-black-2);
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 .header__link-active::before {
   position: absolute;
