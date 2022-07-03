@@ -4,12 +4,11 @@ import  { IApiKey } from '../types/controller';
 class Loader {  
     constructor(public baseLink: string,
                 public options: IApiKey) {
-            console.log("base:", baseLink, "opt", options);
             this.baseLink = baseLink;
             this.options = options;
         }
 
-    getResp<T>( { endpoint, options = {}}: { endpoint: string, options: {sources?: string} }, callback: (data: T) => void = () => {
+    getResp<T>( { endpoint, options = {}}: { endpoint: string, options?: {sources?: string} }, callback: (data: T) => void = () => {
             console.error('No callback for GET response');
     }){
         this.load('GET', endpoint, callback, options);
