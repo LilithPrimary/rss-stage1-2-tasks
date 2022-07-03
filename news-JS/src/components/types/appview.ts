@@ -3,11 +3,15 @@ import  { IData } from './data';
 
 export interface IDrawNewsData {
   articles: IData[];
-  status: string;
+  status: "ok" | "error";
+  code?: string;
+  message?: string;
   totalResults: number;
 }
 
 export interface IDrawSourcesData {
   sources: ISources[];
-  status: string;
+  status: "ok" | "error";
+  code?: string;
+  message?: string;
 }
