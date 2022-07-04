@@ -8,6 +8,24 @@
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
+.sources::-webkit-scrollbar {
+    height: 7px;
+    border-radius: 15px;
+    background-color: #f9f9fd;
+  }
+  
+  .sources::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #30c5ff;
+  }
+  
+  .sources::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: lightgrey;
+    opacity: 0.5;
+  }
+
 .source__item {
     background: none;
     border: 2px solid #30c5ff;
@@ -58,5 +76,8 @@
 @media(max-width: 420px) {
     .sources {
         padding-top: 97px;
+    }
+    .source__item {
+        padding: 1em 1em;
     }
 }
