@@ -1,5 +1,5 @@
 import  { IApiKey } from '../types/controller';
-// import  { IDrawSourcesData } from '../types/appview';
+import  { GFoo } from '../types/controller';
 
 class Loader {  
     constructor(public baseLink: string,
@@ -8,7 +8,7 @@ class Loader {
             this.options = options;
         }
 
-    getResp<T>( { endpoint, options = {}}: { endpoint: string, options?: {sources?: string} }, callback: (data: T) => void = () => {
+    getResp<T>( { endpoint, options = {}}: { endpoint: string, options?: {sources?: string} }, callback: GFoo<T> = () => {
             console.error('No callback for GET response');
     }){
         this.load('GET', endpoint, callback, options);
@@ -35,7 +35,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: string, endpoint: string, callback: (data: T) => void, options: {sources?: string} = {}) {
+    load<T>(method: string, endpoint: string, callback: GFoo<T>, options: {sources?: string} = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
