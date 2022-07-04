@@ -9,21 +9,18 @@
 }
 
 .sources::-webkit-scrollbar {
-    height: 7px;
-    border-radius: 15px;
-    background-color: #f9f9fd;
+    height: 5px;
+    width: 0;
   }
-  
+   
   .sources::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #30c5ff;
+    background: #30c5ff;
+    border-radius: 20px;
   }
   
   .sources::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    background-color: lightgrey;
-    opacity: 0.5;
+    background: #999;
+    border-radius: 20px;
   }
 
 .source__item {
@@ -74,9 +71,11 @@
 }
 
 @media(max-width: 420px) {
+
     .sources {
         padding-top: 97px;
     }
+
     .source__item {
         padding: 1em 1em;
     }
