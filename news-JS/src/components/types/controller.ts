@@ -4,7 +4,9 @@ export type IOptions = {
 
 export type GFoo<T> = (data: T) => void;
 
+export type Endpoint = "everything" | "sources";
+
 export interface IEndPOptions {
-  endpoint: "everything" | "sources";
+  endpoint: Endpoint;
   options?: IOptions;
 }

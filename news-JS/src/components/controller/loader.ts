@@ -1,4 +1,4 @@
-import  { GFoo, IEndPOptions, IOptions } from '../types/controller';
+import  { GFoo, IEndPOptions, IOptions, Endpoint } from '../types/controller';
 
 class Loader {  
     constructor(public baseLink: string,
@@ -23,7 +23,7 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: IOptions, endpoint: string) {
+    makeUrl(options: IOptions, endpoint: Endpoint) {
         const urlOptions: IOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -34,7 +34,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: string, endpoint: string, callback: GFoo<T>, options: IOptions = {}) {
+    load<T>(method: string, endpoint: Endpoint, callback: GFoo<T>, options: IOptions = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())

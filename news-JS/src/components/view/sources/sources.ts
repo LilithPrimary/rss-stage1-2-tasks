@@ -3,7 +3,7 @@ import  { ISources } from '../../types/sources'
 
 class Sources {
     draw(data: ISources[]) {
-        const fragment = document.createDocumentFragment();
+        const fragment = document.createDocumentFragment() as DocumentFragment;
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
         data.forEach((item) => {
