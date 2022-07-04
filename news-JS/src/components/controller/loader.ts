@@ -1,14 +1,13 @@
-import  { IApiKey } from '../types/controller';
-import  { GFoo } from '../types/controller';
+import  { GFoo, IEndPOptions, IOptions } from '../types/controller';
 
 class Loader {  
     constructor(public baseLink: string,
-                public options: IApiKey) {
+                public options: IOptions) {
             this.baseLink = baseLink;
             this.options = options;
         }
 
-    getResp<T>( { endpoint, options = {}}: { endpoint: string, options?: {sources?: string} }, callback: GFoo<T> = () => {
+    getResp<T>( { endpoint, options = {}}: IEndPOptions, callback: GFoo<T> = () => {
             console.error('No callback for GET response');
     }){
         this.load('GET', endpoint, callback, options);
@@ -24,8 +23,8 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: {sources?: string}, endpoint: string) {
-        const urlOptions: { [key: string]: string } = { ...this.options, ...options };
+    makeUrl(options: IOptions, endpoint: string) {
+        const urlOptions: IOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
@@ -35,7 +34,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: string, endpoint: string, callback: GFoo<T>, options: {sources?: string} = {}) {
+    load<T>(method: string, endpoint: string, callback: GFoo<T>, options: IOptions = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
