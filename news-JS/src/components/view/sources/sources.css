@@ -32,3 +32,31 @@
     font-weight: 400;
     white-space: nowrap;
 }
+
+@media(max-width: 768px) {
+    .sources {
+        position: fixed;
+        z-index: 5;
+        right: -150vw;
+        top: 0;
+        border-left:  5px solid #30c5ff;
+        flex-direction: column;
+        width: 75%;
+        padding: 130px 7vw;
+        min-width: 250px;
+        height: 100vh;
+        align-items: flex-start;
+        transition: 0.3s;
+        background-color: black;
+    }
+
+    .sources--open {
+        right: 0;
+    }
+}
+
+@media(max-width: 420px) {
+    .sources {
+        padding-top: 97px;
+    }
+}

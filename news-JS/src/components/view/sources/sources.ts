@@ -1,5 +1,6 @@
 import './sources.css';
 import  { ISources } from '../../types/sources'
+import { adaptive } from '../../adaptive/adaptive';
 
 class Sources {
     draw(data: ISources[]) {
@@ -16,6 +17,7 @@ class Sources {
         });
 
         (document.querySelector('.sources') as HTMLDivElement).append(fragment);
+        adaptive();
     }
 }
 
