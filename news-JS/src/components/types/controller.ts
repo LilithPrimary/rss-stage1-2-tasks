@@ -1,11 +1,13 @@
-export type IOptions = {
+export interface IOptions {
   [key: string]: string | number;
 }
 
-export type GFoo<T> = (data: T) => void;
+export type CallbackTypeGeneric<T> = (data: T) => void;
 
-export type Endpoint = 'everything' | 'sources';
-
+enum Endpoint {
+  everything = 'everything',
+  sources = 'sources'
+}
 export interface IEndPOptions {
   endpoint: Endpoint;
   options?: IOptions;

@@ -1,4 +1,4 @@
-export function adaptive(): void {
+export function adaptive() {
   const menu = document.querySelector('.sources') as HTMLDivElement;
   const burger = document.querySelector('.header__burger') as HTMLDivElement;
   const buttons = document.querySelectorAll('.source__item') as NodeListOf<HTMLDivElement>;
@@ -12,7 +12,7 @@ export function adaptive(): void {
   buttons.forEach(el => el.addEventListener('click', () => {
     close();
   }))
-  document.addEventListener('click', (e: Event)  => {
+  document.addEventListener('click', (e)  => {
     if (menu.classList.contains('sources--open') && (<HTMLDivElement>e.target).tagName === 'HEADER') {
       close();
     }

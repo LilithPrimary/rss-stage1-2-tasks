@@ -1,4 +1,4 @@
-type Source = {
+interface Source {
   id: string | null;
   name: string;
 }

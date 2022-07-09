@@ -8,12 +8,13 @@ export class Search {
         input.addEventListener('input', () => {
           const str = input.value;
           const checked = this.buttons.filter(el => {
-            const data = (el.getAttribute('data-source-id') as string).split('-').join(' ');
+            const data = el.getAttribute('data-source-id')?.split('-').join(' ');
 
-            return data.toLowerCase().includes(str.toLowerCase());
+            return data ? data.toLowerCase().includes(str.toLowerCase()) : false;
             });
-            (document.querySelector('.sources') as HTMLDivElement).innerHTML = '';
-            (document.querySelector('.sources') as HTMLDivElement).append(...checked);
+            const sources = document.querySelector('.sources') as HTMLDivElement;
+            sources.innerHTML = '';
+            sources.append(...checked);
           
         })
     }

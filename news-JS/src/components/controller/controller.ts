@@ -1,8 +1,8 @@
 import AppLoader from './appLoader';
-import  { GFoo } from '../types/controller';
+import  { CallbackTypeGeneric } from '../types/controller';
 
 class AppController extends AppLoader {
-    getSources<T>(callback: GFoo<T>) {
+    getSources<T>(callback: CallbackTypeGeneric<T>) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,14 +11,15 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews<T>(e: Event, callback: GFoo<T>) {
+    getNews<T>(e:MouseEvent, callback: CallbackTypeGeneric<T>) {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
-                const sourceId = target.getAttribute('data-source-id') as string;
-                if (newsContainer.getAttribute('data-source') !== sourceId) {
+                const sourceId = target.getAttribute('data-source-id');
+
+                if (sourceId && newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(
                         {

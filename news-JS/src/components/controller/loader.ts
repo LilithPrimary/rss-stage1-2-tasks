@@ -1,4 +1,4 @@
-import  { GFoo, IEndPOptions, IOptions, Endpoint } from '../types/controller';
+import  { CallbackTypeGeneric, IEndPOptions, IOptions, Endpoint } from '../types/controller';
 
 class Loader {  
     constructor(public baseLink: string,
@@ -7,7 +7,7 @@ class Loader {
             this.options = options;
         }
 
-    getResp<T>( { endpoint, options = {}}: IEndPOptions, callback: GFoo<T> = () => {
+    getResp<T>( { endpoint, options = {}}: IEndPOptions, callback: CallbackTypeGeneric<T> = () => {
             console.error('No callback for GET response');
     }){
         this.load('GET', endpoint, callback, options);
@@ -34,7 +34,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: string, endpoint: Endpoint, callback: GFoo<T>, options: IOptions = {}) {
+    load<T>(method: string, endpoint: Endpoint, callback: CallbackTypeGeneric<T>, options: IOptions = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
