@@ -35,11 +35,14 @@ class Loader {
     }
 
     load<T>(method: string, endpoint: Endpoint, callback: CallbackTypeGeneric<T>, options: IOptions = {}) {
+        const loader = document.querySelector(".main__loader") as HTMLDivElement;
+        loader.style.display = "flex";
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
             .then((data: T) => callback(data))
-            .catch((err: Error) => console.error(err));
+            .catch((err: Error) => console.error(err))
+            .finally(() => loader.style.display = "none");
     }
 }
 

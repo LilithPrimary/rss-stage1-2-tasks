@@ -70,6 +70,36 @@ header h1 {
 
 main {
     min-height: calc(100vh - 230px);
+    position: relative;
+}
+
+.main__loader{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #17181c;
+    display: flex;
+    z-index: 5;
+}
+
+.main__loader-img {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #30c5ff;
+    animation: spin 0.5s ease forwards infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%)  rotate(-360deg);
+    }
 }
 
 footer {
@@ -132,6 +162,11 @@ footer .copyright:before {
 
     .block {
         overflow: hidden;
+    }
+
+    .main__loader-img {
+        width: 50px;
+        height: 50px;
     }
 }
 
