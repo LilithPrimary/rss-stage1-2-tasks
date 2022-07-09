@@ -11,17 +11,18 @@
 .sources::-webkit-scrollbar {
     height: 5px;
     width: 0;
-  }
-   
-  .sources::-webkit-scrollbar-thumb {
+    cursor: pointer;
+}
+
+.sources::-webkit-scrollbar-thumb {
     background: #30c5ff;
     border-radius: 20px;
-  }
-  
-  .sources::-webkit-scrollbar-track {
+}
+
+.sources::-webkit-scrollbar-track {
     background: #999;
     border-radius: 20px;
-  }
+}
 
 .source__item {
     background: none;

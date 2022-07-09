@@ -1,11 +1,7 @@
 import  { ISources } from './sources';
 import  { IData } from './data';
 
-enum Status {
-  ok = 'ok',
-  error = 'error'
-}
-
+type Status = 'ok' | 'error';
 export interface IDrawNewsData {
   articles: IData[];
   status: Status;

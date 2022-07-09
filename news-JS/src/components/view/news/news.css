@@ -1,13 +1,14 @@
-.news {
+/* .news {
     padding: 30px 0;
     display: flex;
     gap: 2rem;
     flex-direction: column;
-}
+} */
 .news__item {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 2rem auto;
+    margin-bottom: 1.6%;
     background: #fff;
     color: #333;
     line-height: 1.4;
@@ -130,6 +131,7 @@
     .news__item {
         flex-direction: row;
         max-width: 700px;
+        /* margin: 1rem auto; */
     }
 
     .news__item .news__meta {
