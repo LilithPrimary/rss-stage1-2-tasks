@@ -19,6 +19,9 @@ const baseConfig = {
                 exclude: /node_modules/,
                 use: {
                     loader: "ts-loader",
+                    options: {
+                        compilerOptions: { noEmit: false },
+                    }
                 },
             },
         ],
@@ -39,15 +42,15 @@ const baseConfig = {
         new ESLintPlugin({
             extensions: [`js`, `ts`],
             exclude: [
-              `/node_modules/`,
-              `/bower_components/`
+                `/node_modules/`,
+                `/bower_components/`
             ]
         }),
         new CopyPlugin({
             patterns: [
-              { from: "src/img", to: "img" },
+                { from: "src/img", to: "img" },
             ],
-        }), 
+        }),
     ],
 };
 
