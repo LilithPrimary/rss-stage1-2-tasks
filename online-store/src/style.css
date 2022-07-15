@@ -1,0 +1,47 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header__wrapper {
+  height: 490px;
+  background-image: url("./assets/img/header-img.jpg");
+}
+
+.main__container {
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+}
+
+.сard__obverse {
+  display: flex;
+  align-items: center;
+}
+
+.card__description {
+  width: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card__img {
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  background-image: url("./assets/img/sprite.jpg");
+  background-position: top -160px left -1120px;
+}
