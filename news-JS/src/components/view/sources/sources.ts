@@ -8,9 +8,8 @@ class Sources {
         const fragment: DocumentFragment = document.createDocumentFragment();
         const sourceItemTemp: HTMLTemplateElement | null = document.querySelector('#sourceItemTemp');
 
-        // if (sourceItemTemp)
         data.forEach((item) => {
-            const sourceClone = sourceItemTemp?.content.cloneNode(true) as Element;
+            const sourceClone = <Element>sourceItemTemp?.content.cloneNode(true);
 
             const itemName: HTMLSpanElement | null = sourceClone.querySelector('.source__item-name');
             if (itemName) itemName.textContent = item.name;
