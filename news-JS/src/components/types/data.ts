@@ -3,8 +3,8 @@ interface Source {
   name: string;
 }
 
-export interface IData {
-  author:  string | null;
+export interface INewsData {
+  author: string | null;
   content: string | null;
   description: string | null;
   publishedAt: string;

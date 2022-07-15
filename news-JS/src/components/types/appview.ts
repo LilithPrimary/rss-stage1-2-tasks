@@ -1,9 +1,9 @@
-import  { ISources } from './sources';
-import  { IData } from './data';
+import { ISources } from './sources';
+import { INewsData } from './data';
 
 type Status = 'ok' | 'error';
 export interface IDrawNewsData {
-  articles: IData[];
+  articles: INewsData[];
   status: Status;
   code?: string;
   message?: string;

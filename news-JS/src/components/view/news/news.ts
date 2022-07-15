@@ -1,9 +1,9 @@
 import './news.css';
-import { IData } from '../../types/data';
+import { INewsData } from '../../types/data';
 
 class News {
-    draw(data: IData[]) {
-        const news: IData[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
+    draw(data: INewsData[]) {
+        const news: INewsData[] = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
         const fragment: DocumentFragment = document.createDocumentFragment();
         const newsItemTemp: HTMLTemplateElement | null = document.querySelector('#newsItemTemp');
 
