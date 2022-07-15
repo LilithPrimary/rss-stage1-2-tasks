@@ -1,4 +1,4 @@
-import { CallbackTypeGeneric, IEndPOptions, IOptions, Endpoint } from '../types/controller';
+import { CallbackTypeGeneric, IEndpointOptions, IOptions, Endpoint } from '../types/controller';
 
 class Loader {
     constructor(public baseLink: string,
@@ -7,7 +7,7 @@ class Loader {
         this.options = options;
     }
 
-    getResp<T>({ endpoint, options = {} }: IEndPOptions, callback: CallbackTypeGeneric<T> = () => {
+    getResp<T>({ endpoint, options = {} }: IEndpointOptions, callback: CallbackTypeGeneric<T> = () => {
         console.error('No callback for GET response');
     }) {
         this.load('GET', endpoint, callback, options);
