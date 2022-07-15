@@ -1,15 +1,15 @@
-import  { CallbackTypeGeneric, IEndPOptions, IOptions, Endpoint } from '../types/controller';
+import { CallbackTypeGeneric, IEndPOptions, IOptions, Endpoint } from '../types/controller';
 
-class Loader {  
+class Loader {
     constructor(public baseLink: string,
-                public options: IOptions) {
-            this.baseLink = baseLink;
-            this.options = options;
-        }
+        public options: IOptions) {
+        this.baseLink = baseLink;
+        this.options = options;
+    }
 
-    getResp<T>( { endpoint, options = {}}: IEndPOptions, callback: CallbackTypeGeneric<T> = () => {
-            console.error('No callback for GET response');
-    }){
+    getResp<T>({ endpoint, options = {} }: IEndPOptions, callback: CallbackTypeGeneric<T> = () => {
+        console.error('No callback for GET response');
+    }) {
         this.load('GET', endpoint, callback, options);
     }
 
@@ -35,14 +35,16 @@ class Loader {
     }
 
     load<T>(method: string, endpoint: Endpoint, callback: CallbackTypeGeneric<T>, options: IOptions = {}) {
-        const loader = document.querySelector(".main__loader") as HTMLDivElement;
-        loader.style.display = "flex";
-        fetch(this.makeUrl(options, endpoint), { method })
-            .then(this.errorHandler)
-            .then((res: Response) => res.json())
-            .then((data: T) => callback(data))
-            .catch((err: Error) => console.error(err))
-            .finally(() => loader.style.display = "none");
+        const loader: HTMLDivElement | null = document.querySelector(".main__loader");
+        if (loader) {
+            loader.style.display = "flex";
+            fetch(this.makeUrl(options, endpoint), { method })
+                .then(this.errorHandler)
+                .then((res: Response) => res.json())
+                .then((data: T) => callback(data))
+                .catch((err: Error) => console.error(err))
+                .finally(() => loader.style.display = "none");
+        }
     }
 }
 

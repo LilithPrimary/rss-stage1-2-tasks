@@ -1,8 +1,9 @@
 import AppLoader from './appLoader';
-import  { CallbackTypeGeneric } from '../types/controller';
+import { CallbackTypeGeneric } from '../types/controller';
+import { IDrawNewsData, IDrawSourcesData } from '../types/appview';
 
 class AppController extends AppLoader {
-    getSources<T>(callback: CallbackTypeGeneric<T>) {
+    getSources(callback: CallbackTypeGeneric<IDrawSourcesData>) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,9 +12,9 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews<T>(e:MouseEvent, callback: CallbackTypeGeneric<T>) {
-        let target = e.target as HTMLElement;
-        const newsContainer = e.currentTarget as HTMLElement;
+    getNews(e: Event, callback: CallbackTypeGeneric<IDrawNewsData>) {
+        let target = <HTMLElement>e.target;
+        const newsContainer = <HTMLElement>e.currentTarget;
 
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
@@ -33,7 +34,7 @@ class AppController extends AppLoader {
                 }
                 return;
             }
-            target = target.parentNode as HTMLElement;
+            target = <HTMLElement>target.parentNode;
         }
     }
 }
