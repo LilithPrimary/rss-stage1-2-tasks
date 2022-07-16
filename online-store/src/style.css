@@ -2,6 +2,13 @@
   --color-black: rgb(62, 66, 65);
   --color-blue: rgb(186, 221, 217);
   --color-orange: rgb(254, 204, 0);
+  --color-grey: #e8e8e8;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Icons";
+  text-align: center;
+  color: green;
 }
 
 .body {
@@ -10,6 +17,7 @@
   justify-content: space-between;
   font-family: Rubik;
   color: var(--color-black);
+  background-color: var(--color-grey);
 }
 
 .button {
@@ -53,12 +61,98 @@
   background-image: url("./assets/img/header-img.jpg");
 }
 
+.main__wrapper {
+  padding: 0 30px;
+}
+
 .main__container {
-  height: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  padding: 0 30px;
+  padding-top: 30px;
+}
+
+.options {
+  width: 100%;
+  max-width: 700px;
+  height: 500px;
+  margin: 0 auto;
+  top: -300px;
+  margin-bottom: -300px;
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.sort {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-filter {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-filter__color-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: transparent 1px solid;
+}
+
+.color-filter__color-wrapper:hover,
+.color-filter__color-wrapper--checked {
+  border: var(--color-orange) 1px solid;
+}
+
+.color-filter__color-wrapper span {
+  height: 15px;
+  width: 15px;
+  pointer-events: none;
+}
+
+.color-filter__red {
+  background-color: red;
+}
+
+.color-filter__yellow {
+  background-color: yellow;
+}
+
+.color-filter__orange {
+  background-color: orange;
+}
+
+.color-filter__blue {
+  background-color: blue;
+}
+
+.color-filter__black {
+  background-color: black;
+}
+
+.color-filter__brown {
+  background-color: rgb(56, 9, 9);
+}
+
+.color-filter__green {
+  background-color: green;
 }
 
 .card {
@@ -70,7 +164,6 @@
 }
 
 .сard__obverse {
-  box-shadow: 0px 0px 1px var(--color-black);
   height: 100%;
   width: 100%;
   display: flex;
@@ -79,6 +172,7 @@
   padding-right: 20px;
   gap: 20px;
   animation: appeare .3s ease-in-out forwards;
+  background-color: white;
 }
 
 .сard__obverse--close {
@@ -87,7 +181,6 @@
 
 .сard__reverse {
   cursor: pointer;
-  box-shadow: 0px 0px 1px var(--color-black);
   position: absolute;
   left: 0;
   right: 0;
@@ -166,4 +259,11 @@
   font-weight: bold;
   font-family: Rubik;
   align-self: center;
+  color: var(--color-orange);
+}
+
+@media(max-width: 900px) {
+  .main__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
