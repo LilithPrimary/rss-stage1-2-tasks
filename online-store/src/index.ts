@@ -5,3 +5,4 @@ import Cards from './components/model/Cards';
 const start = new Cards();
 start.fillCards();
 console.log(start.cards);
+document.addEventListener("click", (e) => console.log(e.target));

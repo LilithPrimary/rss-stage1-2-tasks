@@ -1,18 +1,17 @@
 import Card from "./Card";
 import { ICard } from "components/types/ICard";
+import items from "./items.json";
 
 class Cards {
   cards: Card[] = [];
 
-  async fillCards() {
-    const response: Response = await fetch('items.json');
-    const data: ICard[] = await response.json();
-    console.log(data);
+  fillCards() {
     const cardContainer = document.querySelector(".main__container") as HTMLDivElement;
-    data.forEach(el => {
-      const card = new Card(el);
+    items.forEach(el => {
+      const cardInfo: ICard = <ICard>el;
+      const card = new Card(cardInfo);
       this.cards.push(card);
-      cardContainer.append(card.fillCard());
+      cardContainer.append(card.card);
     });
   }
 

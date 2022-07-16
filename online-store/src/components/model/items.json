@@ -14,7 +14,14 @@
     "price": 31,
     "color": "orange",
     "kcal": 78,
-    "id": 1
+    "id": 1,
+    "date": [
+      2022,
+      11,
+      2
+    ],
+    "produced": "Turkey",
+    "quantity": 95
   },
   {
     "name": "Айва",
@@ -31,7 +38,14 @@
     "price": 7,
     "color": "yellow",
     "kcal": 69,
-    "id": 2
+    "id": 2,
+    "date": [
+      2022,
+      10,
+      16
+    ],
+    "produced": "Brazil",
+    "quantity": 29
   },
   {
     "name": "Апельсины",
@@ -48,7 +62,14 @@
     "price": 48,
     "color": "orange",
     "kcal": 84,
-    "id": 3
+    "id": 3,
+    "date": [
+      2022,
+      8,
+      17
+    ],
+    "produced": "Thailand",
+    "quantity": 22
   },
   {
     "name": "Арбуз",
@@ -65,7 +86,14 @@
     "price": 2,
     "color": "green",
     "kcal": 65,
-    "id": 4
+    "id": 4,
+    "date": [
+      2022,
+      9,
+      29
+    ],
+    "produced": "Portugal",
+    "quantity": 60
   },
   {
     "name": "Бананы",
@@ -82,7 +110,14 @@
     "price": 23,
     "color": "yellow",
     "kcal": 53,
-    "id": 5
+    "id": 5,
+    "date": [
+      2022,
+      9,
+      16
+    ],
+    "produced": "Israel",
+    "quantity": 92
   },
   {
     "name": "Гранат",
@@ -99,7 +134,14 @@
     "price": 37,
     "color": "red",
     "kcal": 38,
-    "id": 6
+    "id": 6,
+    "date": [
+      2022,
+      11,
+      21
+    ],
+    "produced": "Brazil",
+    "quantity": 40
   },
   {
     "name": "Грейпфрут",
@@ -116,7 +158,14 @@
     "price": 49,
     "color": "red",
     "kcal": 6,
-    "id": 7
+    "id": 7,
+    "date": [
+      2022,
+      8,
+      22
+    ],
+    "produced": "Egypt",
+    "quantity": 35
   },
   {
     "name": "Груша",
@@ -133,7 +182,14 @@
     "price": 45,
     "color": "yellow",
     "kcal": 53,
-    "id": 8
+    "id": 8,
+    "date": [
+      2022,
+      10,
+      26
+    ],
+    "produced": "Brazil",
+    "quantity": 66
   },
   {
     "name": "Дыня",
@@ -150,7 +206,14 @@
     "price": 38,
     "color": "yellow",
     "kcal": 25,
-    "id": 9
+    "id": 9,
+    "date": [
+      2022,
+      10,
+      17
+    ],
+    "produced": "Portugal",
+    "quantity": 49
   },
   {
     "name": "Канталупа",
@@ -167,7 +230,14 @@
     "price": 38,
     "color": "green",
     "kcal": 59,
-    "id": 10
+    "id": 10,
+    "date": [
+      2022,
+      11,
+      29
+    ],
+    "produced": "Brazil",
+    "quantity": 49
   },
   {
     "name": "Инжир",
@@ -184,7 +254,14 @@
     "price": 43,
     "color": "blue",
     "kcal": 85,
-    "id": 11
+    "id": 11,
+    "date": [
+      2022,
+      10,
+      26
+    ],
+    "produced": "Spain",
+    "quantity": 21
   },
   {
     "name": "Киви",
@@ -201,7 +278,14 @@
     "price": 31,
     "color": "green",
     "kcal": 100,
-    "id": 12
+    "id": 12,
+    "date": [
+      2022,
+      9,
+      16
+    ],
+    "produced": "Turkey",
+    "quantity": 13
   },
   {
     "name": "Лайм",
@@ -218,7 +302,14 @@
     "price": 22,
     "color": "green",
     "kcal": 15,
-    "id": 13
+    "id": 13,
+    "date": [
+      2022,
+      11,
+      3
+    ],
+    "produced": "Egypt",
+    "quantity": 68
   },
   {
     "name": "Лимон",
@@ -235,7 +326,14 @@
     "price": 8,
     "color": "yellow",
     "kcal": 34,
-    "id": 14
+    "id": 14,
+    "date": [
+      2022,
+      12,
+      11
+    ],
+    "produced": "Brazil",
+    "quantity": 69
   },
   {
     "name": "Мандарины",
@@ -252,7 +350,14 @@
     "price": 50,
     "color": "orange",
     "kcal": 16,
-    "id": 15
+    "id": 15,
+    "date": [
+      2022,
+      8,
+      23
+    ],
+    "produced": "Spain",
+    "quantity": 61
   },
   {
     "name": "Персик",
@@ -269,7 +374,14 @@
     "price": 13,
     "color": "orange",
     "kcal": 62,
-    "id": 16
+    "id": 16,
+    "date": [
+      2022,
+      8,
+      11
+    ],
+    "produced": "Turkey",
+    "quantity": 67
   },
   {
     "name": "Слива",
@@ -286,7 +398,14 @@
     "price": 28,
     "color": "blue",
     "kcal": 66,
-    "id": 17
+    "id": 17,
+    "date": [
+      2022,
+      11,
+      26
+    ],
+    "produced": "Israel",
+    "quantity": 74
   },
   {
     "name": "Хурма",
@@ -303,7 +422,14 @@
     "price": 45,
     "color": "orange",
     "kcal": 75,
-    "id": 18
+    "id": 18,
+    "date": [
+      2022,
+      12,
+      3
+    ],
+    "produced": "Israel",
+    "quantity": 91
   },
   {
     "name": "Яблоки",
@@ -320,7 +446,14 @@
     "price": 4,
     "color": "red",
     "kcal": 1,
-    "id": 19
+    "id": 19,
+    "date": [
+      2022,
+      12,
+      27
+    ],
+    "produced": "South Africa",
+    "quantity": 96
   },
   {
     "name": "Бузина",
@@ -337,7 +470,14 @@
     "price": 48,
     "color": "black",
     "kcal": 61,
-    "id": 20
+    "id": 20,
+    "date": [
+      2022,
+      8,
+      17
+    ],
+    "produced": "South Africa",
+    "quantity": 16
   },
   {
     "name": "Виноград",
@@ -354,7 +494,14 @@
     "price": 17,
     "color": "green",
     "kcal": 16,
-    "id": 21
+    "id": 21,
+    "date": [
+      2022,
+      9,
+      27
+    ],
+    "produced": "Israel",
+    "quantity": 34
   },
   {
     "name": "Вишня",
@@ -371,7 +518,14 @@
     "price": 12,
     "color": "red",
     "kcal": 61,
-    "id": 22
+    "id": 22,
+    "date": [
+      2022,
+      11,
+      10
+    ],
+    "produced": "Israel",
+    "quantity": 60
   },
   {
     "name": "Голубика",
@@ -388,7 +542,14 @@
     "price": 18,
     "color": "blue",
     "kcal": 50,
-    "id": 23
+    "id": 23,
+    "date": [
+      2022,
+      8,
+      23
+    ],
+    "produced": "Egypt",
+    "quantity": 55
   },
   {
     "name": "Ежевика",
@@ -405,7 +566,14 @@
     "price": 29,
     "color": "black",
     "kcal": 76,
-    "id": 24
+    "id": 24,
+    "date": [
+      2022,
+      10,
+      3
+    ],
+    "produced": "South Africa",
+    "quantity": 33
   },
   {
     "name": "Клубника",
@@ -422,7 +590,14 @@
     "price": 39,
     "color": "red",
     "kcal": 75,
-    "id": 25
+    "id": 25,
+    "date": [
+      2022,
+      8,
+      2
+    ],
+    "produced": "South Africa",
+    "quantity": 67
   },
   {
     "name": "Клюква",
@@ -436,7 +611,14 @@
     "price": 25,
     "color": "red",
     "kcal": 59,
-    "id": 26
+    "id": 26,
+    "date": [
+      2022,
+      11,
+      10
+    ],
+    "produced": "Portugal",
+    "quantity": 38
   },
   {
     "name": "Крыжовник",
@@ -450,7 +632,14 @@
     "price": 29,
     "color": "green",
     "kcal": 76,
-    "id": 27
+    "id": 27,
+    "date": [
+      2022,
+      12,
+      6
+    ],
+    "produced": "Spain",
+    "quantity": 13
   },
   {
     "name": "Малина",
@@ -464,7 +653,14 @@
     "price": 9,
     "color": "red",
     "kcal": 58,
-    "id": 28
+    "id": 28,
+    "date": [
+      2022,
+      11,
+      16
+    ],
+    "produced": "Egypt",
+    "quantity": 100
   },
   {
     "name": "Смородина",
@@ -478,7 +674,14 @@
     "price": 7,
     "color": "black",
     "kcal": 63,
-    "id": 29
+    "id": 29,
+    "date": [
+      2022,
+      8,
+      5
+    ],
+    "produced": "Israel",
+    "quantity": 35
   },
   {
     "name": "Авокадо",
@@ -492,7 +695,14 @@
     "price": 39,
     "color": "green",
     "kcal": 68,
-    "id": 30
+    "id": 30,
+    "date": [
+      2022,
+      8,
+      20
+    ],
+    "produced": "South Africa",
+    "quantity": 11
   },
   {
     "name": "Ананас",
@@ -506,7 +716,14 @@
     "price": 18,
     "color": "brown",
     "kcal": 34,
-    "id": 31
+    "id": 31,
+    "date": [
+      2022,
+      12,
+      20
+    ],
+    "produced": "Israel",
+    "quantity": 50
   },
   {
     "name": "Гуава",
@@ -520,7 +737,14 @@
     "price": 5,
     "color": "yellow",
     "kcal": 5,
-    "id": 32
+    "id": 32,
+    "date": [
+      2022,
+      8,
+      5
+    ],
+    "produced": "Israel",
+    "quantity": 22
   },
   {
     "name": "Джамболан",
@@ -534,7 +758,14 @@
     "price": 23,
     "color": "black",
     "kcal": 76,
-    "id": 33
+    "id": 33,
+    "date": [
+      2022,
+      10,
+      3
+    ],
+    "produced": "Brazil",
+    "quantity": 55
   },
   {
     "name": "Джекфрут",
@@ -548,7 +779,14 @@
     "price": 31,
     "color": "green",
     "kcal": 16,
-    "id": 34
+    "id": 34,
+    "date": [
+      2022,
+      10,
+      9
+    ],
+    "produced": "Brazil",
+    "quantity": 14
   },
   {
     "name": "Дуриан",
@@ -562,7 +800,14 @@
     "price": 7,
     "color": "green",
     "kcal": 83,
-    "id": 35
+    "id": 35,
+    "date": [
+      2022,
+      8,
+      7
+    ],
+    "produced": "Thailand",
+    "quantity": 77
   },
   {
     "name": "Кивано",
@@ -576,7 +821,14 @@
     "price": 24,
     "color": "orange",
     "kcal": 54,
-    "id": 36
+    "id": 36,
+    "date": [
+      2022,
+      9,
+      9
+    ],
+    "produced": "Spain",
+    "quantity": 4
   },
   {
     "name": "Клементин",
@@ -590,7 +842,14 @@
     "price": 20,
     "color": "orange",
     "kcal": 24,
-    "id": 37
+    "id": 37,
+    "date": [
+      2022,
+      11,
+      19
+    ],
+    "produced": "Turkey",
+    "quantity": 43
   },
   {
     "name": "Кумкват",
@@ -604,7 +863,14 @@
     "price": 29,
     "color": "orange",
     "kcal": 84,
-    "id": 38
+    "id": 38,
+    "date": [
+      2022,
+      9,
+      8
+    ],
+    "produced": "Israel",
+    "quantity": 77
   },
   {
     "name": "Личи",
@@ -618,7 +884,14 @@
     "price": 32,
     "color": "red",
     "kcal": 63,
-    "id": 39
+    "id": 39,
+    "date": [
+      2022,
+      8,
+      9
+    ],
+    "produced": "South Africa",
+    "quantity": 17
   },
   {
     "name": "Манго",
@@ -632,7 +905,14 @@
     "price": 25,
     "color": "orange",
     "kcal": 59,
-    "id": 40
+    "id": 40,
+    "date": [
+      2022,
+      10,
+      25
+    ],
+    "produced": "Spain",
+    "quantity": 8
   },
   {
     "name": "Маракуйя",
@@ -646,7 +926,14 @@
     "price": 3,
     "color": "brown",
     "kcal": 53,
-    "id": 41
+    "id": 41,
+    "date": [
+      2022,
+      10,
+      28
+    ],
+    "produced": "Portugal",
+    "quantity": 42
   },
   {
     "name": "Мушмула",
@@ -660,7 +947,14 @@
     "price": 7,
     "color": "orange",
     "kcal": 14,
-    "id": 42
+    "id": 42,
+    "date": [
+      2022,
+      11,
+      25
+    ],
+    "produced": "South Africa",
+    "quantity": 18
   },
   {
     "name": "Наранхилья",
@@ -674,7 +968,14 @@
     "price": 40,
     "color": "orange",
     "kcal": 22,
-    "id": 43
+    "id": 43,
+    "date": [
+      2022,
+      11,
+      16
+    ],
+    "produced": "Brazil",
+    "quantity": 5
   },
   {
     "name": "Папайя",
@@ -688,7 +989,14 @@
     "price": 7,
     "color": "green",
     "kcal": 57,
-    "id": 44
+    "id": 44,
+    "date": [
+      2022,
+      12,
+      22
+    ],
+    "produced": "Egypt",
+    "quantity": 58
   },
   {
     "name": "Помело",
@@ -702,7 +1010,14 @@
     "price": 17,
     "color": "yellow",
     "kcal": 49,
-    "id": 45
+    "id": 45,
+    "date": [
+      2022,
+      12,
+      19
+    ],
+    "produced": "South Africa",
+    "quantity": 50
   },
   {
     "name": "Карамбола",
@@ -716,7 +1031,14 @@
     "price": 33,
     "color": "yellow",
     "kcal": 82,
-    "id": 46
+    "id": 46,
+    "date": [
+      2022,
+      12,
+      20
+    ],
+    "produced": "Portugal",
+    "quantity": 37
   },
   {
     "name": "Тамаринд",
@@ -730,7 +1052,14 @@
     "price": 19,
     "color": "brown",
     "kcal": 8,
-    "id": 47
+    "id": 47,
+    "date": [
+      2022,
+      9,
+      21
+    ],
+    "produced": "Spain",
+    "quantity": 45
   },
   {
     "name": "Фейхоа",
@@ -744,7 +1073,14 @@
     "price": 17,
     "color": "green",
     "kcal": 98,
-    "id": 48
+    "id": 48,
+    "date": [
+      2022,
+      12,
+      23
+    ],
+    "produced": "Spain",
+    "quantity": 79
   },
   {
     "name": "Шелковица",
@@ -758,7 +1094,14 @@
     "price": 48,
     "color": "black",
     "kcal": 18,
-    "id": 49
+    "id": 49,
+    "date": [
+      2022,
+      9,
+      20
+    ],
+    "produced": "South Africa",
+    "quantity": 83
   },
   {
     "name": "Бананы сушёные",
@@ -772,7 +1115,14 @@
     "price": 14,
     "color": "blue",
     "kcal": 81,
-    "id": 50
+    "id": 50,
+    "date": [
+      2022,
+      9,
+      16
+    ],
+    "produced": "Portugal",
+    "quantity": 57
   },
   {
     "name": "Изюм",
@@ -786,7 +1136,14 @@
     "price": 13,
     "color": "yellow",
     "kcal": 4,
-    "id": 51
+    "id": 51,
+    "date": [
+      2022,
+      12,
+      10
+    ],
+    "produced": "Egypt",
+    "quantity": 64
   },
   {
     "name": "Курага",
@@ -800,7 +1157,14 @@
     "price": 39,
     "color": "orange",
     "kcal": 96,
-    "id": 52
+    "id": 52,
+    "date": [
+      2022,
+      10,
+      5
+    ],
+    "produced": "Thailand",
+    "quantity": 76
   },
   {
     "name": "Финики",
@@ -814,7 +1178,14 @@
     "price": 38,
     "color": "brown",
     "kcal": 38,
-    "id": 53
+    "id": 53,
+    "date": [
+      2022,
+      11,
+      15
+    ],
+    "produced": "Thailand",
+    "quantity": 92
   },
   {
     "name": "Чернослив",
@@ -828,7 +1199,14 @@
     "price": 26,
     "color": "black",
     "kcal": 65,
-    "id": 54
+    "id": 54,
+    "date": [
+      2022,
+      11,
+      5
+    ],
+    "produced": "Turkey",
+    "quantity": 66
   },
   {
     "name": "Батат",
@@ -842,6 +1220,13 @@
     "price": 8,
     "color": "brown",
     "kcal": 71,
-    "id": 55
+    "id": 55,
+    "date": [
+      2022,
+      10,
+      27
+    ],
+    "produced": "Turkey",
+    "quantity": 88
   }
 ]
