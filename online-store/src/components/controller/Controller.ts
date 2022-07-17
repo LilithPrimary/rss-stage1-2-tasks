@@ -10,8 +10,8 @@ export default class Controller {
   public cardsArea = <HTMLDivElement>document.querySelector(".main__container");
   public options: IFilterOptions = {
     sort: ["string", false],
-    color: ["red"],
-    nameEn: "",
+    color: [],
+    nameEn: [],
     like: [],
   };
 
@@ -22,7 +22,6 @@ export default class Controller {
 
   initCardsArray() {
     this.cardsArray = this.cards.cards;
-    this.options.color = [];
   }
 
   startTracking() {
@@ -31,6 +30,7 @@ export default class Controller {
     this.colorFilter();
     this.cartController();
     this.likeController();
+    this.nameFilter();
   }
 
   colorFilter() {
@@ -52,6 +52,16 @@ export default class Controller {
 
   startDateSort(ascending: boolean) {
     this.options.sort = ["Date Sort", ascending];
+    this.createCardsArray();
+  }
+
+  nameFilter() {
+    const input = <HTMLInputElement>document.querySelector(".name-filter__input");
+    input?.addEventListener("input", () => this.startNameFilter(input.value));
+  }
+
+  startNameFilter(value: string) {
+    this.options.nameEn[0] = value;
     this.createCardsArray();
   }
 

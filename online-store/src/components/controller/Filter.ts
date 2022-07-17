@@ -7,8 +7,12 @@ export default class Filter {
   }
 
   filterCards(options: IFilterOptions) {
-    if (!options.color.length) return this.cards;
-    const colors = new RegExp(`^(${options.color.join("|")})+$`);
-    return this.cards.filter(el => colors.test(<string>el.cardInfo.color));
+    console.log(options["nameEn"]);
+    ["color", "nameEn"].forEach(el => {
+      if (!options[el].length) return;
+      const filters = new RegExp(`(${options[el].join("|")})+`, 'i');
+      this.cards = this.cards.filter(element => filters.test(<string>element.cardInfo[el]));
+    });
+    return this.cards;
   }
 }
