@@ -6,9 +6,9 @@ export default class Filter {
     this.cards = cards;
   }
 
-  filter(options: IFilterOptions) {
-    if (!options.colors.length) return this.cards;
-    const colors = new RegExp(`^(${options.colors.join("|")})+$`);
+  filterCards(options: IFilterOptions) {
+    if (!options.color.length) return this.cards;
+    const colors = new RegExp(`^(${options.color.join("|")})+$`);
     return this.cards.filter(el => colors.test(<string>el.cardInfo.color));
   }
 }

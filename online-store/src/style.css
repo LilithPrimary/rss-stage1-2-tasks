@@ -59,6 +59,38 @@
 .header__wrapper {
   height: 490px;
   background-image: url("./assets/img/header-img.jpg");
+  display: flex;
+  justify-content: end;
+  padding-right: 30px;
+}
+
+.header__cart-wrapper {
+  position: relative;
+}
+
+.header__cart-img {
+  width: 60px;
+  height: 60px;
+  fill: white;
+}
+
+.header__cart-counter {
+  /* content: ""; */
+  color: var(--color-black);
+  display: inline-block;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.void-msg {
+  align-self: center;
+  justify-self: center;
+  grid-column: span 2;
 }
 
 .main__wrapper {
@@ -148,7 +180,7 @@
 }
 
 .color-filter__brown {
-  background-color: rgb(56, 9, 9);
+  background-color: rgb(112, 18, 18);
 }
 
 .color-filter__green {

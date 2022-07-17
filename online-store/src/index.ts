@@ -1,7 +1,7 @@
 import './styles/normalize.css';
 import './style.css';
 import Cards from './components/model/Cards';
-import DrawCards from './components/view/drawCards';
+import DrawCards from './components/view/DrawCards';
 import Controller from './components/controller/Controller';
 
 const cards = new Cards();

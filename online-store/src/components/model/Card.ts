@@ -13,8 +13,6 @@ class Card {
     this.fillCard();
     this.showMore();
     this.closeShowMore();
-    this.addToCart();
-    this.addToLike();
   }
 
   fillCard() {
@@ -73,7 +71,7 @@ class Card {
     this.obverse.append(cardImg, cardDescription, this.showMoreBtn, this.likeBtn, this.cartBtn);
     this.reverse.append(reverseTitle, itemType, bestBefore, produced, quantity);
     this.card.append(this.obverse, this.reverse);
-    this.cardInfo.like = false;
+    this.cardInfo.isLike = false;
     this.cardInfo.isInCart = false;
   }
 
@@ -85,27 +83,9 @@ class Card {
     this.reverse.addEventListener("click", () => this.spinCard());
   }
 
-  addToCart() {
-    this.cartBtn.addEventListener("click", () => this.cart());
-  }
-
-  addToLike() {
-    this.likeBtn.addEventListener("click", () => this.like());
-  }
-
   spinCard() {
     this.reverse.classList.toggle("card__reverse--open");
     this.obverse.classList.toggle("сard__obverse--close");
-  }
-
-  like() {
-    this.likeBtn.classList.toggle("card__like-btn--checked");
-    this.cardInfo.like = this.cardInfo.like ? false : true;
-  }
-
-  cart() {
-    this.cartBtn.classList.toggle("card__cart-btn--checked");
-    this.cardInfo.isInCart = this.cardInfo.like ? false : true;
   }
 
 }
