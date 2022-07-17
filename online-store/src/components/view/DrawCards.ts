@@ -6,6 +6,7 @@ export default class DrawCards {
   }
 
   draw() {
+    document.body.classList.add("preload");
     const cardContainer = <HTMLDivElement>document.querySelector(".main__container");
     if (!this.cards.length) {
       const voidArrayMsg = document.createElement("span");
@@ -14,5 +15,7 @@ export default class DrawCards {
       cardContainer.append(voidArrayMsg);
     } else
       this.cards.forEach(el => cardContainer.append(el.card));
+
+    setTimeout(() => document.body.classList.remove("preload"), 5000);
   }
 }

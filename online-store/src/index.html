@@ -13,7 +13,7 @@
   <title>Online store</title>
 </head>
 
-<body class="body">
+<body class="body preload">
   <header class="header">
     <div class="wrapper header__wrapper">
       <div class="header__cart-wrapper">
@@ -59,8 +59,8 @@
           <span class="color-filter__color-wrapper"><span class="color-filter__green" id="green"></span></span>
         </div>
         <div class="options__produced-filter produced-filter">
-          <span class="produced-filter__wrapper"><span id="spain">Spain</span></span>
-          <span class="produced-filter__wrapper"><span id="egypt">Egypt</span></span>
+          <span class="produced-filter__wrapper"><span id="Spain">Spain</span></span>
+          <span class="produced-filter__wrapper"><span id="Egypt">Egypt</span></span>
           <span class="produced-filter__wrapper"><span id="South Africa">South Africa</span></span>
           <span class="produced-filter__wrapper"><span id="Israel">Israel</span></span>
           <span class="produced-filter__wrapper"><span id="Portugal">Portugal</span></span>
@@ -79,8 +79,19 @@
           <span class="other-filter__wrapper" id="vegetable"><span>Vegetables</span></span>
           <span class="other-filter__wrapper" id="berry"><span>Berries</span></span>
         </div>
+        <div class="options__range-filters range-filters">
+          <div class="range-filter">
+            <div class="slider slider-price"></div>
+          </div>
+          <div class="range-filter">
+            <div class="slider slider-amount"></div>
+          </div>
+        </div>
         <div class="options__name-filter name-filter">
           <input type="search" placeholder="search by name" class="name-filter__input" autofocus autocomplete="off">
+        </div>
+        <div class="options__reset reset">
+          <button class="button reset-btn">Reset All Filters</button>
         </div>
       </div>
       <div class="main__container">
@@ -90,9 +101,17 @@
 
 
   <footer class="footer">
-    <div class="wrapper footer__wrapper"></div>
+    <div class="wrapper footer__wrapper">
+      <div>© 2022</div>
+      <a target="_blank" href="https://github.com/lilithprimary" class="link">LilithPrimary</a>
+      <a target="_blank" href="https://rs.school/" class="link">
+        <svg class="rslogo">
+          <use xlink:href="img/sprite.svg#rslogo"></use>
+        </svg>
+      </a>
+    </div>
   </footer>
-
+  <script> </script>
 </body>
 
 </html>

@@ -24,8 +24,11 @@ export default class Filter {
     return this.cards;
   }
 
-  // typeFilter() {
-  //   switch (true) {
-  //     case this.options.fruit 
-  //   }
+  slidersFilter() {
+    ["price", "quantity"].forEach(el => {
+      if (!this.options[el].length) return;
+      this.cards = this.cards.filter(element => element.cardInfo[el] > this.options[el][0] && element.cardInfo[el] < this.options[el][1]);
+    })
+    return this.cards;
+  }
 }
