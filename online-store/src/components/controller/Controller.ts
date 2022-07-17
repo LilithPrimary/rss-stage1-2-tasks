@@ -13,6 +13,10 @@ export default class Controller {
     color: [],
     nameEn: [],
     like: [],
+    produced: [],
+    isLike: [false],
+    vegan: [false],
+    type: [],
   };
 
   constructor(public cards: Cards) {
@@ -28,14 +32,42 @@ export default class Controller {
     console.log("Start tracking");
     this.sortBtns();
     this.colorFilter();
+    this.producedFilter();
     this.cartController();
     this.likeController();
     this.nameFilter();
+    this.otherFilter();
   }
 
   colorFilter() {
     const colorBtns = document.querySelectorAll(".color-filter__color-wrapper");
-    colorBtns.forEach(el => el.addEventListener("click", el => this.color(<Element>el.target)));
+    colorBtns.forEach(el => el.addEventListener("click", e => this.color(<Element>e.target)));
+  }
+
+  producedFilter() {
+    const producedBtns = document.querySelectorAll(".produced-filter__wrapper");
+    producedBtns.forEach(el => el.addEventListener("click", e => this.produced(<Element>e.target)));
+  }
+
+  otherFilter() {
+    const otherFilterBtns = document.querySelectorAll(".other-filter__wrapper");
+    otherFilterBtns.forEach(el => el.addEventListener("click", (e) => {
+      const id = (<Element>e.target)?.id;
+      this.startOtherFilter(<Element>e.target, id);
+    }))
+  }
+
+  startOtherFilter(element: Element, id: string) {
+    if (["isLike", "vegan"].includes(id))
+      this.options[id][0] = this.options[id][0] ? false : true
+    else if (this.options.type.includes(id)) {
+      const i = this.options.type.indexOf(id);
+      this.options.type.splice(i, 1);
+    } else {
+      this.options.type.push(id);
+    }
+    element.classList.toggle("other-filter__wrapper--checked");
+    this.createCardsArray();
   }
 
   sortBtns() {
@@ -66,15 +98,27 @@ export default class Controller {
   }
 
   color(element: Element) {
+    const color = <string>element.firstElementChild?.id;
     if (element.classList.contains("color-filter__color-wrapper--checked")) {
       element.classList.remove("color-filter__color-wrapper--checked");
-      const color = <string>element.firstElementChild?.id;
       const i = this.options.color.indexOf(color);
       this.options.color.splice(i, 1);
     } else {
       element.classList.add("color-filter__color-wrapper--checked");
-      const color = <string>element.firstElementChild?.id;
       this.options.color.push(color);
+    }
+    this.createCardsArray();
+  }
+
+  produced(element: Element) {
+    const country = <string>element.firstElementChild?.id;
+    if (element.classList.contains("produced-filter__wrapper--checked")) {
+      element.classList.remove("produced-filter__wrapper--checked");
+      const i = this.options.produced.indexOf(country);
+      this.options.produced.splice(i, 1);
+    } else {
+      element.classList.add("produced-filter__wrapper--checked");
+      this.options.produced.push(country);
     }
     this.createCardsArray();
   }
@@ -82,8 +126,9 @@ export default class Controller {
   createCardsArray() {
     const sorting = new Sort(this.cards.cards, this.options.sort);
     let cards = sorting.cardArr;
-    const colorsFilter = new Filter(this.cards.cards);
-    cards = colorsFilter.filterCards(this.options);
+    const optionsFilter = new Filter(this.cards.cards, this.options);
+    cards = optionsFilter.filterCards();
+    cards = optionsFilter.filterByValue();
     this.draw(cards);
   }
 
@@ -114,7 +159,7 @@ export default class Controller {
     this.cards.cards.forEach(el => el.likeBtn.addEventListener("click", () => {
 
       el.likeBtn.classList.toggle("card__like-btn--checked");
-      el.cardInfo.like = el.cardInfo.like ? false : true;
+      el.cardInfo.isLike = el.cardInfo.isLike ? false : true;
 
       const cards = this.cards.cards.filter(el => el.cardInfo.like);
       cards.forEach(el => this.options.like.push(<number>el.cardInfo.id));

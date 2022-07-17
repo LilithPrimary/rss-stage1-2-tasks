@@ -5,12 +5,6 @@
   --color-grey: #e8e8e8;
 }
 
-.material-symbols-outlined {
-  font-family: "Material Icons";
-  text-align: center;
-  color: green;
-}
-
 .body {
   display: flex;
   flex-direction: column;
@@ -25,11 +19,12 @@
   background: none;
   fill: rgba(62, 66, 65, 0.459);
   transition: 0.3s;
+  padding: 0 0 0 10px;
+  transition: 0.3s;
 }
 
-.button:hover {
-  fill: var(--color-orange);
-  color: var(--color-orange);
+.button:active {
+  transform: scale(0.7);
 }
 
 .card__like-btn--checked {
@@ -57,6 +52,7 @@
 }
 
 .header__wrapper {
+  position: relative;
   height: 490px;
   background-image: url("./assets/img/header-img.jpg");
   display: flex;
@@ -109,7 +105,7 @@
 .options {
   width: 100%;
   max-width: 700px;
-  height: 500px;
+  /* height: 500px; */
   margin: 0 auto;
   top: -300px;
   position: relative;
@@ -117,12 +113,41 @@
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.options__img {
+  height: 20px;
+  width: 20px;
+  fill: red;
 }
 
 .sort {
+  position: relative;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  box-shadow: 0 0 1px var(--color-black);
+}
+
+
+.sort::after {
+  content: "Sort";
+  display: block;
+  width: 40px;
+  height: 1rem;
+  background-color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  text-align: center;
 }
 
 .sort__item {
@@ -132,10 +157,26 @@
 }
 
 .color-filter {
+  padding: 20px 0;
+  box-shadow: 0 0 1px var(--color-black);
+  position: relative;
+  width: 100%;
   display: flex;
-  gap: 30px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.color-filter::after {
+  content: "Coose colors";
+  display: block;
+  width: 100px;
+  height: 1rem;
+  background-color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  text-align: center;
 }
 
 .color-filter__color-wrapper {
@@ -147,11 +188,6 @@
   cursor: pointer;
   transition: 0.3s;
   border: transparent 1px solid;
-}
-
-.color-filter__color-wrapper:hover,
-.color-filter__color-wrapper--checked {
-  border: var(--color-orange) 1px solid;
 }
 
 .color-filter__color-wrapper span {
@@ -189,13 +225,14 @@
 }
 
 .name-filter {
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .name-filter__input {
-  width: 70%;
+  width: 100%;
   padding: 10px;
   border: 1px solid var(--color-grey);
   border-radius: 10px;
@@ -205,6 +242,94 @@
 .name-filter__input:focus {
   border: 1px solid var(--color-black);
   color: var(--color-black);
+}
+
+.produced-filter {
+  padding: 20px 0;
+  box-shadow: 0 0 1px var(--color-black);
+  position: relative;
+  width: 100%;
+  display: flex;
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.produced-filter::after {
+  content: "Choose producer";
+  display: block;
+  width: 120px;
+  height: 1rem;
+  background-color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  text-align: center;
+}
+
+.produced-filter__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: transparent 1px solid;
+}
+
+.produced-filter__wrapper span {
+  pointer-events: none;
+}
+
+.other-filter {
+  padding: 20px 0;
+  box-shadow: 0 0 1px var(--color-black);
+  position: relative;
+  width: 100%;
+  display: flex;
+  row-gap: 20px;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.other-filter::after {
+  content: "Other filters";
+  display: block;
+  width: 120px;
+  height: 1rem;
+  background-color: white;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  text-align: center;
+}
+
+.other-filter__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: transparent 1px solid;
+}
+
+.other-filter__wrapper span {
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.other-filter__wrapper--checked,
+.produced-filter__wrapper--checked,
+.color-filter__color-wrapper--checked {
+  border: var(--color-orange) 1px solid;
 }
 
 .card {
@@ -225,6 +350,7 @@
   gap: 20px;
   animation: appeare .3s ease-in-out forwards;
   background-color: white;
+  flex-wrap: wrap;
 }
 
 .сard__obverse--close {
@@ -314,8 +440,28 @@
   color: var(--color-orange);
 }
 
-@media(max-width: 900px) {
+.material-symbols-outlined {
+  font-family: "Material Icons";
+  text-align: center;
+  padding: 0;
+  color: green;
+}
+
+@media(max-width: 940px) {
   .main__container {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media(min-width: 1024px) {
+  .button:hover {
+    fill: var(--color-orange);
+    color: var(--color-orange);
+  }
+
+  .other-filter__wrapper:hover,
+  .produced-filter__wrapper:hover,
+  .color-filter__color-wrapper:hover {
+    border: var(--color-orange) 1px solid;
   }
 }

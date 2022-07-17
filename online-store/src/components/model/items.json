@@ -2,11 +2,8 @@
   {
     "name": "Абрикос",
     "nameEn": "Apricot",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 160,
       "left": 1120
@@ -16,21 +13,19 @@
     "kcal": 78,
     "id": 1,
     "date": [
-      2022,
+      2002,
       11,
       2
     ],
     "produced": "Turkey",
-    "quantity": 95
+    "quantity": 95,
+    "type": "fruit"
   },
   {
     "name": "Айва",
     "nameEn": "Quince",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 80,
       "left": 2160
@@ -40,21 +35,19 @@
     "kcal": 69,
     "id": 2,
     "date": [
-      2022,
+      2002,
       10,
       16
     ],
     "produced": "Brazil",
-    "quantity": 29
+    "quantity": 29,
+    "type": "fruit"
   },
   {
     "name": "Апельсины",
     "nameEn": "Oranges",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 80,
       "left": 720
@@ -64,21 +57,19 @@
     "kcal": 84,
     "id": 3,
     "date": [
-      2022,
+      2002,
       8,
       17
     ],
     "produced": "Thailand",
-    "quantity": 22
+    "quantity": 22,
+    "type": "fruit"
   },
   {
     "name": "Арбуз",
     "nameEn": "Watermelon",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 160,
       "left": 240
@@ -88,21 +79,19 @@
     "kcal": 65,
     "id": 4,
     "date": [
-      2022,
+      2002,
       9,
       29
     ],
     "produced": "Portugal",
-    "quantity": 60
+    "quantity": 60,
+    "type": "fruit"
   },
   {
     "name": "Бананы",
     "nameEn": "Bananas",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 240,
       "left": 240
@@ -112,21 +101,19 @@
     "kcal": 53,
     "id": 5,
     "date": [
-      2022,
+      2002,
       9,
       16
     ],
     "produced": "Israel",
-    "quantity": 92
+    "quantity": 92,
+    "type": "fruit"
   },
   {
     "name": "Гранат",
     "nameEn": "Garnet",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 80,
       "left": 1760
@@ -136,21 +123,19 @@
     "kcal": 38,
     "id": 6,
     "date": [
-      2022,
+      2002,
       11,
       21
     ],
     "produced": "Brazil",
-    "quantity": 40
+    "quantity": 40,
+    "type": "fruit"
   },
   {
     "name": "Грейпфрут",
     "nameEn": "Grapefruit",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 240,
       "left": 1440
@@ -160,21 +145,19 @@
     "kcal": 6,
     "id": 7,
     "date": [
-      2022,
+      2002,
       8,
       22
     ],
     "produced": "Egypt",
-    "quantity": 35
+    "quantity": 35,
+    "type": "fruit"
   },
   {
     "name": "Груша",
     "nameEn": "Pear",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 320,
       "left": 1120
@@ -184,21 +167,19 @@
     "kcal": 53,
     "id": 8,
     "date": [
-      2022,
+      2002,
       10,
       26
     ],
     "produced": "Brazil",
-    "quantity": 66
+    "quantity": 66,
+    "type": "fruit"
   },
   {
     "name": "Дыня",
     "nameEn": "Melon",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 0,
       "left": 1920
@@ -208,21 +189,19 @@
     "kcal": 25,
     "id": 9,
     "date": [
-      2022,
+      2002,
       10,
       17
     ],
     "produced": "Portugal",
-    "quantity": 49
+    "quantity": 49,
+    "type": "fruit"
   },
   {
     "name": "Канталупа",
     "nameEn": "Cantaloupe",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 80,
       "left": 240
@@ -232,21 +211,19 @@
     "kcal": 59,
     "id": 10,
     "date": [
-      2022,
+      2002,
       11,
       29
     ],
     "produced": "Brazil",
-    "quantity": 49
+    "quantity": 49,
+    "type": "fruit"
   },
   {
     "name": "Инжир",
     "nameEn": "Figs",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 240,
       "left": 720
@@ -256,21 +233,19 @@
     "kcal": 85,
     "id": 11,
     "date": [
-      2022,
+      2002,
       10,
       26
     ],
     "produced": "Spain",
-    "quantity": 21
+    "quantity": 21,
+    "type": "fruit"
   },
   {
     "name": "Киви",
     "nameEn": "Kiwi",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 320,
       "left": 0
@@ -280,21 +255,19 @@
     "kcal": 100,
     "id": 12,
     "date": [
-      2022,
+      2002,
       9,
       16
     ],
     "produced": "Turkey",
-    "quantity": 13
+    "quantity": 13,
+    "type": "fruit"
   },
   {
     "name": "Лайм",
     "nameEn": "Lime",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 240,
       "left": 1920
@@ -304,21 +277,19 @@
     "kcal": 15,
     "id": 13,
     "date": [
-      2022,
+      2002,
       11,
       3
     ],
     "produced": "Egypt",
-    "quantity": 68
+    "quantity": 68,
+    "type": "fruit"
   },
   {
     "name": "Лимон",
     "nameEn": "Lemon",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 240,
       "left": 1600
@@ -328,21 +299,19 @@
     "kcal": 34,
     "id": 14,
     "date": [
-      2022,
+      2002,
       12,
       11
     ],
     "produced": "Brazil",
-    "quantity": 69
+    "quantity": 69,
+    "type": "fruit"
   },
   {
     "name": "Мандарины",
     "nameEn": "Tangerines",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 320,
       "left": 960
@@ -352,21 +321,19 @@
     "kcal": 16,
     "id": 15,
     "date": [
-      2022,
+      2002,
       8,
       23
     ],
     "produced": "Spain",
-    "quantity": 61
+    "quantity": 61,
+    "type": "fruit"
   },
   {
     "name": "Персик",
     "nameEn": "Peach",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 80,
       "left": 1520
@@ -376,21 +343,19 @@
     "kcal": 62,
     "id": 16,
     "date": [
-      2022,
+      2002,
       8,
       11
     ],
     "produced": "Turkey",
-    "quantity": 67
+    "quantity": 67,
+    "type": "fruit"
   },
   {
     "name": "Слива",
     "nameEn": "Plum",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 160,
       "left": 0
@@ -400,21 +365,19 @@
     "kcal": 66,
     "id": 17,
     "date": [
-      2022,
+      2002,
       11,
       26
     ],
     "produced": "Israel",
-    "quantity": 74
+    "quantity": 74,
+    "type": "fruit"
   },
   {
     "name": "Хурма",
     "nameEn": "Persimmon",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 80,
       "left": 1360
@@ -424,21 +387,19 @@
     "kcal": 75,
     "id": 18,
     "date": [
-      2022,
+      2002,
       12,
       3
     ],
     "produced": "Israel",
-    "quantity": 91
+    "quantity": 91,
+    "type": "fruit"
   },
   {
     "name": "Яблоки",
     "nameEn": "Apples",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 160,
       "left": 1440
@@ -448,21 +409,19 @@
     "kcal": 1,
     "id": 19,
     "date": [
-      2022,
+      2002,
       12,
       27
     ],
     "produced": "South Africa",
-    "quantity": 96
+    "quantity": 96,
+    "type": "fruit"
   },
   {
     "name": "Бузина",
     "nameEn": "Elderberry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": {
       "top": 240,
       "left": 640
@@ -472,21 +431,19 @@
     "kcal": 61,
     "id": 20,
     "date": [
-      2022,
+      2002,
       8,
       17
     ],
     "produced": "South Africa",
-    "quantity": 16
+    "quantity": 16,
+    "type": "berry"
   },
   {
     "name": "Виноград",
     "nameEn": "Grapes",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": false,
     "picture": {
       "top": 240,
       "left": 1280
@@ -496,21 +453,19 @@
     "kcal": 16,
     "id": 21,
     "date": [
-      2022,
+      2002,
       9,
       27
     ],
     "produced": "Israel",
-    "quantity": 34
+    "quantity": 34,
+    "type": "fruit"
   },
   {
     "name": "Вишня",
     "nameEn": "Cherry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": {
       "top": 160,
       "left": 2320
@@ -520,21 +475,19 @@
     "kcal": 61,
     "id": 22,
     "date": [
-      2022,
+      2002,
       11,
       10
     ],
     "produced": "Israel",
-    "quantity": 60
+    "quantity": 60,
+    "type": "berry"
   },
   {
     "name": "Голубика",
     "nameEn": "Blueberry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": {
       "top": 160,
       "left": 1920
@@ -544,21 +497,19 @@
     "kcal": 50,
     "id": 23,
     "date": [
-      2022,
+      2002,
       8,
       23
     ],
     "produced": "Egypt",
-    "quantity": 55
+    "quantity": 55,
+    "type": "berry"
   },
   {
     "name": "Ежевика",
     "nameEn": "Blackberry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": {
       "top": 0,
       "left": 2320
@@ -568,21 +519,19 @@
     "kcal": 76,
     "id": 24,
     "date": [
-      2022,
+      2002,
       10,
       3
     ],
     "produced": "South Africa",
-    "quantity": 33
+    "quantity": 33,
+    "type": "berry"
   },
   {
     "name": "Клубника",
     "nameEn": "Strawberries",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": {
       "top": 160,
       "left": 1120
@@ -592,641 +541,582 @@
     "kcal": 75,
     "id": 25,
     "date": [
-      2022,
+      2002,
       8,
       2
     ],
     "produced": "South Africa",
-    "quantity": 67
+    "quantity": 67,
+    "type": "berry"
   },
   {
     "name": "Клюква",
     "nameEn": "Cranberry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": "./img/items/cranberry.jpg",
     "price": 25,
     "color": "red",
     "kcal": 59,
     "id": 26,
     "date": [
-      2022,
+      2002,
       11,
       10
     ],
     "produced": "Portugal",
-    "quantity": 38
+    "quantity": 38,
+    "type": "berry"
   },
   {
     "name": "Крыжовник",
     "nameEn": "Gooseberry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": "./img/items/gooseberry.jpg",
     "price": 29,
     "color": "green",
     "kcal": 76,
     "id": 27,
     "date": [
-      2022,
+      2002,
       12,
       6
     ],
     "produced": "Spain",
-    "quantity": 13
+    "quantity": 13,
+    "type": "berry"
   },
   {
     "name": "Малина",
     "nameEn": "Raspberry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": "./img/items/raspberry.jpg",
     "price": 9,
     "color": "red",
     "kcal": 58,
     "id": 28,
     "date": [
-      2022,
+      2002,
       11,
       16
     ],
     "produced": "Egypt",
-    "quantity": 100
+    "quantity": 100,
+    "type": "berry"
   },
   {
     "name": "Смородина",
     "nameEn": "Currant",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": "./img/items/currant.jpg",
     "price": 7,
     "color": "black",
     "kcal": 63,
     "id": 29,
     "date": [
-      2022,
+      2002,
       8,
       5
     ],
     "produced": "Israel",
-    "quantity": 35
+    "quantity": 35,
+    "type": "berry"
   },
   {
     "name": "Авокадо",
     "nameEn": "Avocado",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/avocado.jpg",
     "price": 39,
     "color": "green",
     "kcal": 68,
     "id": 30,
     "date": [
-      2022,
+      2002,
       8,
       20
     ],
     "produced": "South Africa",
-    "quantity": 11
+    "quantity": 11,
+    "type": "fruit"
   },
   {
     "name": "Ананас",
     "nameEn": "Pineapple",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/pineapple.jpg",
     "price": 18,
     "color": "brown",
     "kcal": 34,
     "id": 31,
     "date": [
-      2022,
+      2002,
       12,
       20
     ],
     "produced": "Israel",
-    "quantity": 50
+    "quantity": 50,
+    "type": "fruit"
   },
   {
     "name": "Гуава",
     "nameEn": "Guava",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/guava.jpg",
     "price": 5,
     "color": "yellow",
     "kcal": 5,
     "id": 32,
     "date": [
-      2022,
+      2002,
       8,
       5
     ],
     "produced": "Israel",
-    "quantity": 22
+    "quantity": 22,
+    "type": "fruit"
   },
   {
     "name": "Джамболан",
     "nameEn": "Jambolan",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/jambolan.jpg",
     "price": 23,
     "color": "black",
     "kcal": 76,
     "id": 33,
     "date": [
-      2022,
+      2002,
       10,
       3
     ],
     "produced": "Brazil",
-    "quantity": 55
+    "quantity": 55,
+    "type": "fruit"
   },
   {
     "name": "Джекфрут",
     "nameEn": "Jackfruit",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/jackfruit.jpg",
     "price": 31,
     "color": "green",
     "kcal": 16,
     "id": 34,
     "date": [
-      2022,
+      2002,
       10,
       9
     ],
     "produced": "Brazil",
-    "quantity": 14
+    "quantity": 14,
+    "type": "fruit"
   },
   {
     "name": "Дуриан",
     "nameEn": "Durian",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/durian.jpg",
     "price": 7,
     "color": "green",
     "kcal": 83,
     "id": 35,
     "date": [
-      2022,
+      2002,
       8,
       7
     ],
     "produced": "Thailand",
-    "quantity": 77
+    "quantity": 77,
+    "type": "fruit"
   },
   {
     "name": "Кивано",
     "nameEn": "Kiwano",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/kiwano.jpg",
     "price": 24,
     "color": "orange",
     "kcal": 54,
     "id": 36,
     "date": [
-      2022,
+      2002,
       9,
       9
     ],
     "produced": "Spain",
-    "quantity": 4
+    "quantity": 4,
+    "type": "fruit"
   },
   {
     "name": "Клементин",
     "nameEn": "Clementine",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/clementine.jpg",
     "price": 20,
     "color": "orange",
     "kcal": 24,
     "id": 37,
     "date": [
-      2022,
+      2002,
       11,
       19
     ],
     "produced": "Turkey",
-    "quantity": 43
+    "quantity": 43,
+    "type": "fruit"
   },
   {
     "name": "Кумкват",
     "nameEn": "Kumquat",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/kumquat.jpg",
     "price": 29,
     "color": "orange",
     "kcal": 84,
     "id": 38,
     "date": [
-      2022,
+      2002,
       9,
       8
     ],
     "produced": "Israel",
-    "quantity": 77
+    "quantity": 77,
+    "type": "fruit"
   },
   {
     "name": "Личи",
     "nameEn": "Lychee",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/lychee.jpg",
     "price": 32,
     "color": "red",
     "kcal": 63,
     "id": 39,
     "date": [
-      2022,
+      2002,
       8,
       9
     ],
     "produced": "South Africa",
-    "quantity": 17
+    "quantity": 17,
+    "type": "fruit"
   },
   {
     "name": "Манго",
     "nameEn": "Mango",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/mango.jpg",
     "price": 25,
     "color": "orange",
     "kcal": 59,
     "id": 40,
     "date": [
-      2022,
+      2002,
       10,
       25
     ],
     "produced": "Spain",
-    "quantity": 8
+    "quantity": 8,
+    "type": "fruit"
   },
   {
     "name": "Маракуйя",
     "nameEn": "Passion fruit",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/passion-fruit.jpg",
     "price": 3,
     "color": "brown",
     "kcal": 53,
     "id": 41,
     "date": [
-      2022,
+      2002,
       10,
       28
     ],
     "produced": "Portugal",
-    "quantity": 42
+    "quantity": 42,
+    "type": "fruit"
   },
   {
     "name": "Мушмула",
     "nameEn": "Medlar",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/medlar.jpg",
     "price": 7,
     "color": "orange",
     "kcal": 14,
     "id": 42,
     "date": [
-      2022,
+      2002,
       11,
       25
     ],
     "produced": "South Africa",
-    "quantity": 18
+    "quantity": 18,
+    "type": "fruit"
   },
   {
     "name": "Наранхилья",
     "nameEn": "Naranjilla",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/naranjilla.jpg",
     "price": 40,
     "color": "orange",
     "kcal": 22,
     "id": 43,
     "date": [
-      2022,
+      2002,
       11,
       16
     ],
     "produced": "Brazil",
-    "quantity": 5
+    "quantity": 5,
+    "type": "fruit"
   },
   {
     "name": "Папайя",
     "nameEn": "Papaya",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/papaya.jpg",
     "price": 7,
     "color": "green",
     "kcal": 57,
     "id": 44,
     "date": [
-      2022,
+      2002,
       12,
       22
     ],
     "produced": "Egypt",
-    "quantity": 58
+    "quantity": 58,
+    "type": "fruit"
   },
   {
     "name": "Помело",
     "nameEn": "Pomelo",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/pomelo.jpg",
     "price": 17,
     "color": "yellow",
     "kcal": 49,
     "id": 45,
     "date": [
-      2022,
+      2002,
       12,
       19
     ],
     "produced": "South Africa",
-    "quantity": 50
+    "quantity": 50,
+    "type": "fruit"
   },
   {
     "name": "Карамбола",
     "nameEn": "Carambola",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/carambola.jpg",
     "price": 33,
     "color": "yellow",
     "kcal": 82,
     "id": 46,
     "date": [
-      2022,
+      2002,
       12,
       20
     ],
     "produced": "Portugal",
-    "quantity": 37
+    "quantity": 37,
+    "type": "fruit"
   },
   {
     "name": "Тамаринд",
     "nameEn": "Tamarind",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/tamarind.jpg",
     "price": 19,
     "color": "brown",
     "kcal": 8,
     "id": 47,
     "date": [
-      2022,
+      2002,
       9,
       21
     ],
     "produced": "Spain",
-    "quantity": 45
+    "quantity": 45,
+    "type": "fruit"
   },
   {
     "name": "Фейхоа",
     "nameEn": "Feijoa",
-    "fruit": true,
-    "vegetable": false,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/feijoa.jpg",
     "price": 17,
     "color": "green",
     "kcal": 98,
     "id": 48,
     "date": [
-      2022,
+      2002,
       12,
       23
     ],
     "produced": "Spain",
-    "quantity": 79
+    "quantity": 79,
+    "type": "fruit"
   },
   {
     "name": "Шелковица",
     "nameEn": "Mulberry",
-    "fruit": false,
-    "vegetable": false,
     "vegan": true,
     "exotic": false,
-    "berry": true,
     "picture": "./img/items/mulberry.jpg",
     "price": 48,
     "color": "black",
     "kcal": 18,
     "id": 49,
     "date": [
-      2022,
+      2002,
       9,
       20
     ],
     "produced": "South Africa",
-    "quantity": 83
+    "quantity": 83,
+    "type": "berry"
   },
   {
     "name": "Бананы сушёные",
     "nameEn": "Dried bananas",
-    "fruit": true,
-    "vegetable": false,
     "vegan": false,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/dried-bananas.jpg",
     "price": 14,
     "color": "blue",
     "kcal": 81,
     "id": 50,
     "date": [
-      2022,
+      2002,
       9,
       16
     ],
     "produced": "Portugal",
-    "quantity": 57
+    "quantity": 57,
+    "type": "fruit"
   },
   {
     "name": "Изюм",
     "nameEn": "Raisins",
-    "fruit": true,
-    "vegetable": false,
     "vegan": false,
     "exotic": false,
-    "berry": false,
     "picture": "./img/items/raisins.jpg",
     "price": 13,
     "color": "yellow",
     "kcal": 4,
     "id": 51,
     "date": [
-      2022,
+      2002,
       12,
       10
     ],
     "produced": "Egypt",
-    "quantity": 64
+    "quantity": 64,
+    "type": "fruit"
   },
   {
     "name": "Курага",
     "nameEn": "Dried apricots",
-    "fruit": true,
-    "vegetable": false,
     "vegan": false,
     "exotic": false,
-    "berry": false,
     "picture": "./img/items/dried-apricots.jpg",
     "price": 39,
     "color": "orange",
     "kcal": 96,
     "id": 52,
     "date": [
-      2022,
+      2002,
       10,
       5
     ],
     "produced": "Thailand",
-    "quantity": 76
+    "quantity": 76,
+    "type": "fruit"
   },
   {
     "name": "Финики",
     "nameEn": "Dates",
-    "fruit": true,
-    "vegetable": false,
     "vegan": false,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/dates.jpg",
     "price": 38,
     "color": "brown",
     "kcal": 38,
     "id": 53,
     "date": [
-      2022,
+      2002,
       11,
       15
     ],
     "produced": "Thailand",
-    "quantity": 92
+    "quantity": 92,
+    "type": "fruit"
   },
   {
     "name": "Чернослив",
     "nameEn": "Prunes",
-    "fruit": true,
-    "vegetable": false,
     "vegan": false,
     "exotic": false,
-    "berry": false,
     "picture": "./img/items/prunes.jpg",
     "price": 26,
     "color": "black",
     "kcal": 65,
     "id": 54,
     "date": [
-      2022,
+      2002,
       11,
       5
     ],
     "produced": "Turkey",
-    "quantity": 66
+    "quantity": 66,
+    "type": "fruit"
   },
   {
     "name": "Батат",
     "nameEn": "Sweet potato",
-    "fruit": false,
-    "vegetable": true,
     "vegan": true,
     "exotic": true,
-    "berry": false,
     "picture": "./img/items/sweet-potato.jpg",
     "price": 8,
     "color": "brown",
     "kcal": 71,
     "id": 55,
     "date": [
-      2022,
+      2002,
       10,
       27
     ],
     "produced": "Turkey",
-    "quantity": 88
+    "quantity": 88,
+    "type": "vegetable"
   }
 ]

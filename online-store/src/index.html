@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="options__color-filter color-filter">
-          <span><span class="color-filter__red"></span></span>
+          <span class="color-filter__color-wrapper"><span class="color-filter__red" id="red"></span></span>
           <span class="color-filter__color-wrapper"><span class="color-filter__yellow" id="yellow"></span></span>
           <span class="color-filter__color-wrapper"><span class="color-filter__orange" id="orange"></span></span>
           <span class="color-filter__color-wrapper"><span class="color-filter__blue" id="blue"></span></span>
@@ -58,8 +58,29 @@
           <span class="color-filter__color-wrapper"><span class="color-filter__brown" id="brown"></span></span>
           <span class="color-filter__color-wrapper"><span class="color-filter__green" id="green"></span></span>
         </div>
+        <div class="options__produced-filter produced-filter">
+          <span class="produced-filter__wrapper"><span id="spain">Spain</span></span>
+          <span class="produced-filter__wrapper"><span id="egypt">Egypt</span></span>
+          <span class="produced-filter__wrapper"><span id="South Africa">South Africa</span></span>
+          <span class="produced-filter__wrapper"><span id="Israel">Israel</span></span>
+          <span class="produced-filter__wrapper"><span id="Portugal">Portugal</span></span>
+          <span class="produced-filter__wrapper"><span id="Brazil">Brazil</span></span>
+          <span class="produced-filter__wrapper"><span id="Turkey">Turkey</span></span>
+          <span class="produced-filter__wrapper"><span id="Thailand">Thailand</span></span>
+        </div>
+        <div class="options__other other-filter">
+          <span class="other-filter__wrapper like-filter" id="isLike"><span>
+              <svg class="options__img">
+                <use xlink:href="img/sprite.svg#like"></use>
+              </svg>
+              Only favorite</span></span>
+          <span class="other-filter__wrapper" id="vegan"><span>Vegan</span></span>
+          <span class="other-filter__wrapper" id="fruit"><span>Fruits</span></span>
+          <span class="other-filter__wrapper" id="vegetable"><span>Vegetables</span></span>
+          <span class="other-filter__wrapper" id="berry"><span>Berries</span></span>
+        </div>
         <div class="options__name-filter name-filter">
-          <input type="search" placeholder="search by name" class="name-filter__input" autofocus>
+          <input type="search" placeholder="search by name" class="name-filter__input" autofocus autocomplete="off">
         </div>
       </div>
       <div class="main__container">

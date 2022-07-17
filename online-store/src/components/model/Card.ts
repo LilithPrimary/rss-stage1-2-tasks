@@ -33,6 +33,7 @@ class Card {
     cardPrice.textContent = `$${this.cardInfo.price}/kg`;
     [this.showMoreBtn, this.cartBtn, this.likeBtn].forEach(el => el.classList.add("button"));
     this.showMoreBtn.textContent = "Show more";
+    this.showMoreBtn.classList.add("card__show-more-btn");
     this.likeBtn.classList.add("card__like-btn");
     this.likeBtn.innerHTML =
       `<svg class="card__like-img">
