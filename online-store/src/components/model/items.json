@@ -534,7 +534,7 @@
     "exotic": false,
     "picture": {
       "top": 160,
-      "left": 1120
+      "left": 1040
     },
     "price": 39,
     "color": "red",
@@ -554,7 +554,10 @@
     "nameEn": "Cranberry",
     "vegan": true,
     "exotic": false,
-    "picture": "./img/items/cranberry.jpg",
+    "picture": {
+      "top": 240,
+      "left": 960
+    },
     "price": 25,
     "color": "red",
     "kcal": 59,
@@ -573,9 +576,12 @@
     "nameEn": "Gooseberry",
     "vegan": true,
     "exotic": false,
-    "picture": "./img/items/gooseberry.jpg",
+    "picture": {
+      "top": 240,
+      "left": 1360
+    },
     "price": 29,
-    "color": "green",
+    "color": "brown",
     "kcal": 76,
     "id": 27,
     "date": [
@@ -592,7 +598,10 @@
     "nameEn": "Raspberry",
     "vegan": true,
     "exotic": false,
-    "picture": "./img/items/raspberry.jpg",
+    "picture": {
+      "top": 160,
+      "left": 480
+    },
     "price": 9,
     "color": "red",
     "kcal": 58,
@@ -611,9 +620,12 @@
     "nameEn": "Currant",
     "vegan": true,
     "exotic": false,
-    "picture": "./img/items/currant.jpg",
+    "picture": {
+      "top": 240,
+      "left": 400
+    },
     "price": 7,
-    "color": "black",
+    "color": "red",
     "kcal": 63,
     "id": 29,
     "date": [
@@ -630,7 +642,10 @@
     "nameEn": "Avocado",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/avocado.jpg",
+    "picture": {
+      "top": 160,
+      "left": 2560
+    },
     "price": 39,
     "color": "green",
     "kcal": 68,
@@ -649,7 +664,10 @@
     "nameEn": "Pineapple",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/pineapple.jpg",
+    "picture": {
+      "top": 80,
+      "left": 1440
+    },
     "price": 18,
     "color": "brown",
     "kcal": 34,
@@ -668,7 +686,10 @@
     "nameEn": "Guava",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/guava.jpg",
+    "picture": {
+      "top": 240,
+      "left": 2320
+    },
     "price": 5,
     "color": "yellow",
     "kcal": 5,
@@ -687,7 +708,10 @@
     "nameEn": "Jambolan",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/jambolan.jpg",
+    "picture": {
+      "top": 240,
+      "left": 2480
+    },
     "price": 23,
     "color": "black",
     "kcal": 76,
@@ -706,7 +730,10 @@
     "nameEn": "Jackfruit",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/jackfruit.jpg",
+    "picture": {
+      "top": 240,
+      "left": 2400
+    },
     "price": 31,
     "color": "green",
     "kcal": 16,
@@ -725,7 +752,10 @@
     "nameEn": "Durian",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/durian.jpg",
+    "picture": {
+      "top": 320,
+      "left": 880
+    },
     "price": 7,
     "color": "green",
     "kcal": 83,
@@ -744,7 +774,10 @@
     "nameEn": "Kiwano",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/kiwano.jpg",
+    "picture": {
+      "top": 320,
+      "left": 1200
+    },
     "price": 24,
     "color": "orange",
     "kcal": 54,
@@ -763,7 +796,10 @@
     "nameEn": "Clementine",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/clementine.jpg",
+    "picture": {
+      "top": 320,
+      "left": 960
+    },
     "price": 20,
     "color": "orange",
     "kcal": 24,
@@ -782,7 +818,10 @@
     "nameEn": "Kumquat",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/kumquat.jpg",
+    "picture": {
+      "top": 320,
+      "left": 80
+    },
     "price": 29,
     "color": "orange",
     "kcal": 84,
@@ -801,7 +840,10 @@
     "nameEn": "Lychee",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/lychee.jpg",
+    "picture": {
+      "top": 240,
+      "left": 2080
+    },
     "price": 32,
     "color": "red",
     "kcal": 63,
@@ -820,7 +862,10 @@
     "nameEn": "Mango",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/mango.jpg",
+    "picture": {
+      "top": 80,
+      "left": 0
+    },
     "price": 25,
     "color": "orange",
     "kcal": 59,
@@ -839,7 +884,10 @@
     "nameEn": "Passion fruit",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/passion-fruit.jpg",
+    "picture": {
+      "top": 80,
+      "left": 640
+    },
     "price": 3,
     "color": "brown",
     "kcal": 53,
@@ -858,7 +906,10 @@
     "nameEn": "Medlar",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/medlar.jpg",
+    "picture": {
+      "top": 0,
+      "left": 2480
+    },
     "price": 7,
     "color": "orange",
     "kcal": 14,
@@ -877,7 +928,10 @@
     "nameEn": "Naranjilla",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/naranjilla.jpg",
+    "picture": {
+      "top": 320,
+      "left": 1280
+    },
     "price": 40,
     "color": "orange",
     "kcal": 22,
@@ -896,7 +950,10 @@
     "nameEn": "Papaya",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/papaya.jpg",
+    "picture": {
+      "top": 80,
+      "left": 480
+    },
     "price": 7,
     "color": "green",
     "kcal": 57,
@@ -915,7 +972,10 @@
     "nameEn": "Pomelo",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/pomelo.jpg",
+    "picture": {
+      "top": 80,
+      "left": 2080
+    },
     "price": 17,
     "color": "yellow",
     "kcal": 49,
@@ -934,7 +994,10 @@
     "nameEn": "Carambola",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/carambola.jpg",
+    "picture": {
+      "top": 160,
+      "left": 2400
+    },
     "price": 33,
     "color": "yellow",
     "kcal": 82,
@@ -953,7 +1016,10 @@
     "nameEn": "Tamarind",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/tamarind.jpg",
+    "picture": {
+      "top": 160,
+      "left": 160
+    },
     "price": 19,
     "color": "brown",
     "kcal": 8,
@@ -972,7 +1038,10 @@
     "nameEn": "Feijoa",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/feijoa.jpg",
+    "picture": {
+      "top": 320,
+      "left": 560
+    },
     "price": 17,
     "color": "green",
     "kcal": 98,
@@ -991,7 +1060,10 @@
     "nameEn": "Mulberry",
     "vegan": true,
     "exotic": false,
-    "picture": "./img/items/mulberry.jpg",
+    "picture": {
+      "top": 0,
+      "left": 2080
+    },
     "price": 48,
     "color": "black",
     "kcal": 18,
@@ -1010,9 +1082,12 @@
     "nameEn": "Dried bananas",
     "vegan": false,
     "exotic": true,
-    "picture": "./img/items/dried-bananas.jpg",
+    "picture": {
+      "top": 240,
+      "left": 0
+    },
     "price": 14,
-    "color": "blue",
+    "color": "yellow",
     "kcal": 81,
     "id": 50,
     "date": [
@@ -1029,7 +1104,10 @@
     "nameEn": "Raisins",
     "vegan": false,
     "exotic": false,
-    "picture": "./img/items/raisins.jpg",
+    "picture": {
+      "top": 80,
+      "left": 2240
+    },
     "price": 13,
     "color": "yellow",
     "kcal": 4,
@@ -1048,7 +1126,10 @@
     "nameEn": "Dried apricots",
     "vegan": false,
     "exotic": false,
-    "picture": "./img/items/dried-apricots.jpg",
+    "picture": {
+      "top": 160,
+      "left": 1200
+    },
     "price": 39,
     "color": "orange",
     "kcal": 96,
@@ -1067,7 +1148,10 @@
     "nameEn": "Dates",
     "vegan": false,
     "exotic": true,
-    "picture": "./img/items/dates.jpg",
+    "picture": {
+      "top": 320,
+      "left": 800
+    },
     "price": 38,
     "color": "brown",
     "kcal": 38,
@@ -1086,7 +1170,10 @@
     "nameEn": "Prunes",
     "vegan": false,
     "exotic": false,
-    "picture": "./img/items/prunes.jpg",
+    "picture": {
+      "top": 80,
+      "left": 2000
+    },
     "price": 26,
     "color": "black",
     "kcal": 65,
@@ -1105,7 +1192,10 @@
     "nameEn": "Sweet potato",
     "vegan": true,
     "exotic": true,
-    "picture": "./img/items/sweet-potato.jpg",
+    "picture": {
+      "top": 640,
+      "left": 2080
+    },
     "price": 8,
     "color": "brown",
     "kcal": 71,

@@ -46,7 +46,6 @@ export default class Controller {
 
   sliderOnChange() {
     this.sliderPrice.slider.noUiSlider?.on("update", (values) => {
-      console.log(JSON.stringify(this.options));
       this.options.price = values;
       this.createCardsArray();
     })
@@ -58,7 +57,6 @@ export default class Controller {
 
 
   startTracking() {
-    console.log("Start tracking");
     this.sortBtns();
     this.colorFilter();
     this.producedFilter();
@@ -199,7 +197,6 @@ export default class Controller {
       const cards = this.cards.cards.filter(el => el.cardInfo.isLike);
       this.options.like = [];
       cards.forEach(el => this.options.like.push(<number>el.cardInfo.id));
-      console.log(this.options.like);
       this.createCardsArray();
     }));
   }
