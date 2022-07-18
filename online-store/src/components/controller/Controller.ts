@@ -203,13 +203,19 @@ export default class Controller {
 
   resetOptions() {
     const resetBtn = document.querySelector(".reset-btn");
-    resetBtn?.addEventListener("click", () => reset(this.options, this.sliderAmount, this.sliderPrice));
+    resetBtn?.addEventListener("click", () => reset(this.options, this.sliderAmount, this.sliderPrice, false));
     this.createCardsArray();
   }
 
   workWithLocalStorage() {
     window.addEventListener('load', () => this.getLocalStorage())
     window.addEventListener('beforeunload', () => this.setLocalStorage());
+    const cleanLSBtn = document.querySelector(".clean-ls-btn");
+    cleanLSBtn?.addEventListener("click", () => {
+      localStorage.removeItem("optionsLP");
+      reset(this.options, this.sliderAmount, this.sliderPrice, true, this.cards.cards);
+      this.createCardsArray();
+    });
   }
 
   getLocalStorage() {
@@ -218,7 +224,6 @@ export default class Controller {
       restoreSettings(this.options, this.sliderPrice, this.sliderAmount, this.cards.cards);
       this.createCardsArray();
     }
-    // localStorage.clear();
   }
 
   setLocalStorage() {

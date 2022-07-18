@@ -409,6 +409,16 @@
   transform: scale(0.99);
 }
 
+.clean-ls-btn {
+  color: var(--color-grey);
+  transition: 0.3s;
+}
+
+.clean-ls-btn:active {
+  transform: scale(0.99);
+  color: var(--color-black);
+}
+
 .card {
   height: 150px;
   width: 100%;
