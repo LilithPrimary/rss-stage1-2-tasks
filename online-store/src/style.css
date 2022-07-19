@@ -184,7 +184,7 @@
 }
 
 .color-filter::after {
-  content: "Coose colors";
+  content: "Choose colors";
   display: block;
   width: 100px;
   height: 1rem;
