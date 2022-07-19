@@ -6,7 +6,10 @@ export default function reset(options: IFilterOptions, sliderPrice: Slider, slid
   if (isHard) {
     options.sort = ["string", false];
     options.like = [];
-    if (cards) resetLikes(cards);
+    if (cards) {
+      resetLikes(cards);
+      resetCart(cards)
+    }
   }
   options.color = [];
   options.nameEn = [];
@@ -20,6 +23,7 @@ export default function reset(options: IFilterOptions, sliderPrice: Slider, slid
   resetColors();
   resetProducers();
   resetOther();
+  resetSearch();
 }
 
 function resetSlider(sliderPrice: Slider, sliderAmount: Slider) {
@@ -47,4 +51,15 @@ function resetLikes(cards: Card[]) {
     el.likeBtn.classList.remove("card__like-btn--checked");
     el.cardInfo.isLike = false;
   });
-} 
+}
+
+function resetSearch() {
+  const input = <HTMLInputElement>document.querySelector(".name-filter__input");
+  input.value = "";
+}
+
+function resetCart(cards: Card[]) {
+  const cart = <HTMLSpanElement>document.querySelector(".header__cart-counter");
+  cart.textContent = "0";
+  cards.forEach(el => el.cartBtn.classList.remove("card__cart-btn--checked"));
+}
