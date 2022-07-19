@@ -27,7 +27,7 @@ export default class Filter {
   slidersFilter() {
     ["price", "quantity"].forEach(el => {
       if (!this.options[el].length) return;
-      this.cards = this.cards.filter(element => element.cardInfo[el] > this.options[el][0] && element.cardInfo[el] < this.options[el][1]);
+      this.cards = this.cards.filter(element => element.cardInfo[el] >= this.options[el][0] && element.cardInfo[el] <= this.options[el][1]);
     })
     return this.cards;
   }
