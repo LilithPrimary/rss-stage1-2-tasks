@@ -313,8 +313,8 @@
     "vegan": true,
     "exotic": false,
     "picture": {
-      "top": 320,
-      "left": 960
+      "top": 80,
+      "left": 320
     },
     "price": 50,
     "color": "orange",

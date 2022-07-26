@@ -7,7 +7,7 @@ class Cards {
 
   fillCards() {
     items.forEach(el => {
-      const cardInfo: ICard = <ICard>el;
+      const cardInfo: ICard = el;
       const card = new Card(cardInfo);
       this.cards.push(card);
     });

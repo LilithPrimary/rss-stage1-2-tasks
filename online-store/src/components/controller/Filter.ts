@@ -1,5 +1,7 @@
 import Card from "components/model/Card";
 import { IFilterOptions } from "components/types/IFilterOptions";
+import { ICard } from "components/types/ICard";
+
 
 export default class Filter {
   constructor(public cards: Card[], public options: IFilterOptions) {
@@ -8,27 +10,43 @@ export default class Filter {
   }
 
   filterCards() {
-    ["color", "nameEn", "produced", "type"].forEach(el => {
-      if (!this.options[el].length) return;
+    (["color", "nameEn", "produced", "type"] as (keyof IFilterOptions)[]).forEach(el => {
+      if (!this.options[el].length) {
+        return this.cards;
+      }
       const filters = new RegExp(`(${this.options[el].join("|")})+`, 'i');
-      this.cards = this.cards.filter(element => filters.test(<string>element.cardInfo[el]));
+      this.cards = this.cards.filter(element => filters.test(<string>element.cardInfo[el as keyof ICard]));
     });
     return this.cards;
   }
 
   filterByValue() {
-    ["isLike", "vegan"].forEach(el => {
-      if (!this.options[el][0]) return;
-      this.cards = this.cards.filter(element => element.cardInfo[el]);
+    (["isLike", "vegan"] as (keyof IFilterOptions)[]).forEach(el => {
+      if (!this.options[el][0]) {
+        return this.cards;
+      }
+      this.cards = this.cards.filter(element => element.cardInfo[el as keyof ICard]);
     })
     return this.cards;
   }
 
   slidersFilter() {
-    ["price", "quantity"].forEach(el => {
-      if (!this.options[el].length) return;
-      this.cards = this.cards.filter(element => element.cardInfo[el] >= this.options[el][0] && element.cardInfo[el] <= this.options[el][1]);
-    })
+    if (!this.options.price.length) {
+      return this.cards;
+    }
+    this.cards = this.cards.filter(element => element.cardInfo.price >= this.options.price[0] && element.cardInfo.price <= this.options.price[1]);
+    if (!this.options.price.length) {
+      return this.cards;
+    }
+    this.cards = this.cards.filter(element => element.cardInfo.quantity >= this.options.quantity[0] && element.cardInfo.quantity <= this.options.quantity[1]);
+
+    // (["price", "quantity"] as (keyof IFilterOptions)[]).forEach(el => {
+    //   if (!this.options[el].length) {
+    //     return this.cards;
+    //   }
+    //   this.cards = this.cards.filter(element => element.cardInfo[el as keyof ICard] >= this.options[el][0] && element.cardInfo[el as keyof ICard] <= this.options[el][1]);
+    // })
+
     return this.cards;
   }
 }

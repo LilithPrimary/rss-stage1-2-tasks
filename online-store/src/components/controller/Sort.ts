@@ -8,7 +8,9 @@ export default class Sort {
   constructor(public cards: Card[], public options: SortOption) {
     this.cards = cards;
     this.options = options;
-    if (options[0] === "string") this.voidSort();
+    if (options[0] === "string") {
+      this.voidSort();
+    }
     options[0] === "Name Sort" ? this.sortByName(options[1]) : this.sortByDate(options[1]);
   }
 

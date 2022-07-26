@@ -1,4 +1,4 @@
-import { CardValues, ICard } from "components/types/ICard";
+import { ICard } from "components/types/ICard";
 
 class Card {
   public likeBtn: HTMLButtonElement = document.createElement("button");
@@ -50,13 +50,7 @@ class Card {
     reverseTitle.textContent = `${this.cardInfo.nameEn}`;
     const itemType: HTMLSpanElement = document.createElement("span");
     itemType.classList.add("card__price");
-    let type: CardValues;
-    switch (true) {
-      case this.cardInfo.fruit: type = "fruit"; break;
-      case this.cardInfo.vegetable: type = "vegetable"; break;
-      default: type = "berry";
-    }
-    itemType.textContent = `Type: ${type}`;
+    itemType.textContent = `Type: ${this.cardInfo.type}`;
     const bestBefore: HTMLSpanElement = document.createElement("span");
     bestBefore.classList.add("card__price");
     const date = this.cardInfo.date;

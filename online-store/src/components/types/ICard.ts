@@ -1,8 +1,18 @@
 type Position = Record<string, number>;
-
-export type CardValues = string | boolean | number | Position | Array<number>;
 export interface ICard {
-  [key: string]: CardValues;
+  name: string;
+  nameEn: string;
+  vegan: boolean;
+  exotic: boolean;
   picture: Position;
-  date: Array<number>;
+  price: number;
+  color: string;
+  kcal: number;
+  id: number;
+  date: number[];
+  produced: string;
+  quantity: number;
+  type: string;
+  isInCart?: boolean;
+  isLike?: boolean;
 }

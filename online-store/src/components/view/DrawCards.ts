@@ -6,6 +6,7 @@ export default class DrawCards {
   }
 
   draw() {
+    // console.log("Draw", this.cards);
     document.body.classList.add("preload");
     const cardContainer = <HTMLDivElement>document.querySelector(".main__container");
     if (!this.cards.length) {

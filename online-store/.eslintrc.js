@@ -12,7 +12,6 @@ module.exports = {
   ],
   rules: {
     '@typescript-eslint/no-explicit-any': 2,
-    "no-debugger": "off",
     "no-console": 0,
     "class-methods-use-this": "off"
   },
