@@ -4,7 +4,7 @@
     "nameEn": "Apricot",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 1120
     },
@@ -13,7 +13,7 @@
     "kcal": 78,
     "id": 1,
     "date": [
-      2002,
+      2022,
       11,
       2
     ],
@@ -26,7 +26,7 @@
     "nameEn": "Quince",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 2160
     },
@@ -35,7 +35,7 @@
     "kcal": 69,
     "id": 2,
     "date": [
-      2002,
+      2022,
       10,
       16
     ],
@@ -48,7 +48,7 @@
     "nameEn": "Oranges",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 720
     },
@@ -57,7 +57,7 @@
     "kcal": 84,
     "id": 3,
     "date": [
-      2002,
+      2022,
       8,
       17
     ],
@@ -70,7 +70,7 @@
     "nameEn": "Watermelon",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 240
     },
@@ -79,7 +79,7 @@
     "kcal": 65,
     "id": 4,
     "date": [
-      2002,
+      2022,
       9,
       29
     ],
@@ -92,7 +92,7 @@
     "nameEn": "Bananas",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 240
     },
@@ -101,7 +101,7 @@
     "kcal": 53,
     "id": 5,
     "date": [
-      2002,
+      2022,
       9,
       16
     ],
@@ -114,7 +114,7 @@
     "nameEn": "Garnet",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 1760
     },
@@ -123,7 +123,7 @@
     "kcal": 38,
     "id": 6,
     "date": [
-      2002,
+      2022,
       11,
       21
     ],
@@ -136,7 +136,7 @@
     "nameEn": "Grapefruit",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 1440
     },
@@ -145,7 +145,7 @@
     "kcal": 6,
     "id": 7,
     "date": [
-      2002,
+      2022,
       8,
       22
     ],
@@ -158,7 +158,7 @@
     "nameEn": "Pear",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 1120
     },
@@ -167,7 +167,7 @@
     "kcal": 53,
     "id": 8,
     "date": [
-      2002,
+      2022,
       10,
       26
     ],
@@ -180,7 +180,7 @@
     "nameEn": "Melon",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 0,
       "left": 1920
     },
@@ -189,7 +189,7 @@
     "kcal": 25,
     "id": 9,
     "date": [
-      2002,
+      2022,
       10,
       17
     ],
@@ -202,7 +202,7 @@
     "nameEn": "Cantaloupe",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 240
     },
@@ -211,7 +211,7 @@
     "kcal": 59,
     "id": 10,
     "date": [
-      2002,
+      2022,
       11,
       29
     ],
@@ -224,7 +224,7 @@
     "nameEn": "Figs",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 720
     },
@@ -233,7 +233,7 @@
     "kcal": 85,
     "id": 11,
     "date": [
-      2002,
+      2022,
       10,
       26
     ],
@@ -246,7 +246,7 @@
     "nameEn": "Kiwi",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 0
     },
@@ -255,7 +255,7 @@
     "kcal": 100,
     "id": 12,
     "date": [
-      2002,
+      2022,
       9,
       16
     ],
@@ -268,7 +268,7 @@
     "nameEn": "Lime",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 1920
     },
@@ -277,7 +277,7 @@
     "kcal": 15,
     "id": 13,
     "date": [
-      2002,
+      2022,
       11,
       3
     ],
@@ -290,7 +290,7 @@
     "nameEn": "Lemon",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 1600
     },
@@ -299,7 +299,7 @@
     "kcal": 34,
     "id": 14,
     "date": [
-      2002,
+      2022,
       12,
       11
     ],
@@ -312,7 +312,7 @@
     "nameEn": "Tangerines",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 320
     },
@@ -321,7 +321,7 @@
     "kcal": 16,
     "id": 15,
     "date": [
-      2002,
+      2022,
       8,
       23
     ],
@@ -334,7 +334,7 @@
     "nameEn": "Peach",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 1520
     },
@@ -343,7 +343,7 @@
     "kcal": 62,
     "id": 16,
     "date": [
-      2002,
+      2022,
       8,
       11
     ],
@@ -356,7 +356,7 @@
     "nameEn": "Plum",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 0
     },
@@ -365,7 +365,7 @@
     "kcal": 66,
     "id": 17,
     "date": [
-      2002,
+      2022,
       11,
       26
     ],
@@ -378,7 +378,7 @@
     "nameEn": "Persimmon",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 1360
     },
@@ -387,7 +387,7 @@
     "kcal": 75,
     "id": 18,
     "date": [
-      2002,
+      2022,
       12,
       3
     ],
@@ -400,7 +400,7 @@
     "nameEn": "Apples",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 1440
     },
@@ -409,7 +409,7 @@
     "kcal": 1,
     "id": 19,
     "date": [
-      2002,
+      2022,
       12,
       27
     ],
@@ -422,7 +422,7 @@
     "nameEn": "Elderberry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 640
     },
@@ -431,7 +431,7 @@
     "kcal": 61,
     "id": 20,
     "date": [
-      2002,
+      2022,
       8,
       17
     ],
@@ -444,7 +444,7 @@
     "nameEn": "Grapes",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 1280
     },
@@ -453,7 +453,7 @@
     "kcal": 16,
     "id": 21,
     "date": [
-      2002,
+      2022,
       9,
       27
     ],
@@ -466,7 +466,7 @@
     "nameEn": "Cherry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 2320
     },
@@ -475,7 +475,7 @@
     "kcal": 61,
     "id": 22,
     "date": [
-      2002,
+      2022,
       11,
       10
     ],
@@ -488,7 +488,7 @@
     "nameEn": "Blueberry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 1920
     },
@@ -497,7 +497,7 @@
     "kcal": 50,
     "id": 23,
     "date": [
-      2002,
+      2022,
       8,
       23
     ],
@@ -510,7 +510,7 @@
     "nameEn": "Blackberry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 0,
       "left": 2320
     },
@@ -519,7 +519,7 @@
     "kcal": 76,
     "id": 24,
     "date": [
-      2002,
+      2022,
       10,
       3
     ],
@@ -532,7 +532,7 @@
     "nameEn": "Strawberries",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 1040
     },
@@ -541,7 +541,7 @@
     "kcal": 75,
     "id": 25,
     "date": [
-      2002,
+      2022,
       8,
       2
     ],
@@ -554,7 +554,7 @@
     "nameEn": "Cranberry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 960
     },
@@ -563,7 +563,7 @@
     "kcal": 59,
     "id": 26,
     "date": [
-      2002,
+      2022,
       11,
       10
     ],
@@ -576,7 +576,7 @@
     "nameEn": "Gooseberry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 1360
     },
@@ -585,7 +585,7 @@
     "kcal": 76,
     "id": 27,
     "date": [
-      2002,
+      2022,
       12,
       6
     ],
@@ -598,7 +598,7 @@
     "nameEn": "Raspberry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 480
     },
@@ -607,7 +607,7 @@
     "kcal": 58,
     "id": 28,
     "date": [
-      2002,
+      2022,
       11,
       16
     ],
@@ -620,7 +620,7 @@
     "nameEn": "Currant",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 400
     },
@@ -629,7 +629,7 @@
     "kcal": 63,
     "id": 29,
     "date": [
-      2002,
+      2022,
       8,
       5
     ],
@@ -642,7 +642,7 @@
     "nameEn": "Avocado",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 2560
     },
@@ -651,7 +651,7 @@
     "kcal": 68,
     "id": 30,
     "date": [
-      2002,
+      2022,
       8,
       20
     ],
@@ -664,7 +664,7 @@
     "nameEn": "Pineapple",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 1440
     },
@@ -673,7 +673,7 @@
     "kcal": 34,
     "id": 31,
     "date": [
-      2002,
+      2022,
       12,
       20
     ],
@@ -686,7 +686,7 @@
     "nameEn": "Guava",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 2320
     },
@@ -695,7 +695,7 @@
     "kcal": 5,
     "id": 32,
     "date": [
-      2002,
+      2022,
       8,
       5
     ],
@@ -708,7 +708,7 @@
     "nameEn": "Jambolan",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 2480
     },
@@ -717,7 +717,7 @@
     "kcal": 76,
     "id": 33,
     "date": [
-      2002,
+      2022,
       10,
       3
     ],
@@ -730,7 +730,7 @@
     "nameEn": "Jackfruit",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 2400
     },
@@ -739,7 +739,7 @@
     "kcal": 16,
     "id": 34,
     "date": [
-      2002,
+      2022,
       10,
       9
     ],
@@ -752,7 +752,7 @@
     "nameEn": "Durian",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 880
     },
@@ -761,7 +761,7 @@
     "kcal": 83,
     "id": 35,
     "date": [
-      2002,
+      2022,
       8,
       7
     ],
@@ -774,7 +774,7 @@
     "nameEn": "Kiwano",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 1200
     },
@@ -783,7 +783,7 @@
     "kcal": 54,
     "id": 36,
     "date": [
-      2002,
+      2022,
       9,
       9
     ],
@@ -796,7 +796,7 @@
     "nameEn": "Clementine",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 960
     },
@@ -805,7 +805,7 @@
     "kcal": 24,
     "id": 37,
     "date": [
-      2002,
+      2022,
       11,
       19
     ],
@@ -818,7 +818,7 @@
     "nameEn": "Kumquat",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 80
     },
@@ -827,7 +827,7 @@
     "kcal": 84,
     "id": 38,
     "date": [
-      2002,
+      2022,
       9,
       8
     ],
@@ -840,7 +840,7 @@
     "nameEn": "Lychee",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 2080
     },
@@ -849,7 +849,7 @@
     "kcal": 63,
     "id": 39,
     "date": [
-      2002,
+      2022,
       8,
       9
     ],
@@ -862,7 +862,7 @@
     "nameEn": "Mango",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 0
     },
@@ -871,7 +871,7 @@
     "kcal": 59,
     "id": 40,
     "date": [
-      2002,
+      2022,
       10,
       25
     ],
@@ -884,7 +884,7 @@
     "nameEn": "Passion fruit",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 640
     },
@@ -893,7 +893,7 @@
     "kcal": 53,
     "id": 41,
     "date": [
-      2002,
+      2022,
       10,
       28
     ],
@@ -906,7 +906,7 @@
     "nameEn": "Medlar",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 0,
       "left": 2480
     },
@@ -915,7 +915,7 @@
     "kcal": 14,
     "id": 42,
     "date": [
-      2002,
+      2022,
       11,
       25
     ],
@@ -928,7 +928,7 @@
     "nameEn": "Naranjilla",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 1280
     },
@@ -937,7 +937,7 @@
     "kcal": 22,
     "id": 43,
     "date": [
-      2002,
+      2022,
       11,
       16
     ],
@@ -950,7 +950,7 @@
     "nameEn": "Papaya",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 480
     },
@@ -959,7 +959,7 @@
     "kcal": 57,
     "id": 44,
     "date": [
-      2002,
+      2022,
       12,
       22
     ],
@@ -972,7 +972,7 @@
     "nameEn": "Pomelo",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 2080
     },
@@ -981,7 +981,7 @@
     "kcal": 49,
     "id": 45,
     "date": [
-      2002,
+      2022,
       12,
       19
     ],
@@ -994,7 +994,7 @@
     "nameEn": "Carambola",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 2400
     },
@@ -1003,7 +1003,7 @@
     "kcal": 82,
     "id": 46,
     "date": [
-      2002,
+      2022,
       12,
       20
     ],
@@ -1016,7 +1016,7 @@
     "nameEn": "Tamarind",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 160
     },
@@ -1025,7 +1025,7 @@
     "kcal": 8,
     "id": 47,
     "date": [
-      2002,
+      2022,
       9,
       21
     ],
@@ -1038,7 +1038,7 @@
     "nameEn": "Feijoa",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 560
     },
@@ -1047,7 +1047,7 @@
     "kcal": 98,
     "id": 48,
     "date": [
-      2002,
+      2022,
       12,
       23
     ],
@@ -1060,7 +1060,7 @@
     "nameEn": "Mulberry",
     "vegan": true,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 0,
       "left": 2080
     },
@@ -1069,7 +1069,7 @@
     "kcal": 18,
     "id": 49,
     "date": [
-      2002,
+      2022,
       9,
       20
     ],
@@ -1082,7 +1082,7 @@
     "nameEn": "Dried bananas",
     "vegan": false,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 240,
       "left": 0
     },
@@ -1091,7 +1091,7 @@
     "kcal": 81,
     "id": 50,
     "date": [
-      2002,
+      2022,
       9,
       16
     ],
@@ -1104,7 +1104,7 @@
     "nameEn": "Raisins",
     "vegan": false,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 2240
     },
@@ -1113,7 +1113,7 @@
     "kcal": 4,
     "id": 51,
     "date": [
-      2002,
+      2022,
       12,
       10
     ],
@@ -1126,7 +1126,7 @@
     "nameEn": "Dried apricots",
     "vegan": false,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 160,
       "left": 1200
     },
@@ -1135,7 +1135,7 @@
     "kcal": 96,
     "id": 52,
     "date": [
-      2002,
+      2022,
       10,
       5
     ],
@@ -1148,7 +1148,7 @@
     "nameEn": "Dates",
     "vegan": false,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 320,
       "left": 800
     },
@@ -1157,7 +1157,7 @@
     "kcal": 38,
     "id": 53,
     "date": [
-      2002,
+      2022,
       11,
       15
     ],
@@ -1170,7 +1170,7 @@
     "nameEn": "Prunes",
     "vegan": false,
     "exotic": false,
-    "picture": {
+    "spritePosition": {
       "top": 80,
       "left": 2000
     },
@@ -1179,7 +1179,7 @@
     "kcal": 65,
     "id": 54,
     "date": [
-      2002,
+      2022,
       11,
       5
     ],
@@ -1192,7 +1192,7 @@
     "nameEn": "Sweet potato",
     "vegan": true,
     "exotic": true,
-    "picture": {
+    "spritePosition": {
       "top": 640,
       "left": 2080
     },
@@ -1201,7 +1201,7 @@
     "kcal": 71,
     "id": 55,
     "date": [
-      2002,
+      2022,
       10,
       27
     ],

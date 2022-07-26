@@ -26,8 +26,4 @@ export default class Slider {
       }
     })
   }
-
-  // onChange(callback: (values: (number | string)[]) => (number | string)[]) {
-  //   return this.slider.noUiSlider?.on("update", (values) => callback(values));
-  // }
 }

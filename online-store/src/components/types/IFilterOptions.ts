@@ -1,8 +1,9 @@
 export type SortOption = [string, boolean];
+
 export interface IFilterOptions {
   sort: SortOption;
   color: string[];
-  nameEn: string[];
+  nameEn: string;
   like: number[];
   produced: string[];
   isLike: boolean[];

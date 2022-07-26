@@ -22,7 +22,7 @@ class Card {
     const cardImg: HTMLDivElement = document.createElement("div");
     cardImg.classList.add("card__img");
     cardImg.style.backgroundImage = "url('./img/sprite.jpg')";
-    cardImg.style.backgroundPosition = `top -${this.cardInfo.picture.top}px left -${this.cardInfo.picture.left}px`
+    cardImg.style.backgroundPosition = `top -${this.cardInfo.spritePosition.top}px left -${this.cardInfo.spritePosition.left}px`
     const cardDescription: HTMLDivElement = document.createElement("div");
     cardDescription.classList.add("card__description");
     const cardTitle: HTMLHeadingElement = document.createElement("h3");

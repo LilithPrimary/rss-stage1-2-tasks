@@ -1,0 +1,1 @@
+export type FilterParam = 'color' | 'nameEn' | 'produced' | 'type' | 'isLike' | 'vegan' | 'price' | 'quantity';

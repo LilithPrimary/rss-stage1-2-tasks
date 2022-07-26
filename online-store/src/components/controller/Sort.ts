@@ -1,4 +1,4 @@
-import Card from "components/model/Card";
+import Card from "components/view/Card";
 import { SortOption } from "components/types/IFilterOptions";
 
 export default class Sort {
@@ -9,26 +9,28 @@ export default class Sort {
     this.cards = cards;
     this.options = options;
     if (options[0] === "string") {
-      this.voidSort();
+      this.clearSort();
     }
     options[0] === "Name Sort" ? this.sortByName(options[1]) : this.sortByDate(options[1]);
   }
 
-  voidSort() {
+  clearSort() {
     this.cardArr = this.cards;
   }
 
   sortByName(ascending: boolean) {
-    this.cardArr = ascending ?
-      this.cards.sort((a, b) => (<string>a.cardInfo.nameEn).toLowerCase().localeCompare((<string>b.cardInfo.nameEn).toLowerCase())) :
-      this.cards.sort((a, b) => (<string>b.cardInfo.nameEn).toLowerCase().localeCompare((<string>a.cardInfo.nameEn).toLowerCase()))
+    this.cardArr = this.cards.sort((a, b) => ascending ? this.compareString(a, b) : this.compareString(b, a));
   }
 
   sortByDate(ascending: boolean) {
-    this.cardArr = ascending ?
-      this.cards.sort((a, b) =>
-        Number(new Date(a.cardInfo.date[0], a.cardInfo.date[1], a.cardInfo.date[2])) - Number(new Date(b.cardInfo.date[0], b.cardInfo.date[1], b.cardInfo.date[2]))) :
-      this.cards.sort((a, b) =>
-        Number(new Date(b.cardInfo.date[0], b.cardInfo.date[1], b.cardInfo.date[2])) - Number(new Date(a.cardInfo.date[0], a.cardInfo.date[1], a.cardInfo.date[2])));
+    this.cardArr = this.cards.sort((a, b) => ascending ? this.compareDate(a, b) : this.compareDate(b, a));
+  }
+
+  compareDate(a: Card, b: Card) {
+    return Number(new Date(a.cardInfo.date[0], a.cardInfo.date[1], a.cardInfo.date[2])) - Number(new Date(b.cardInfo.date[0], b.cardInfo.date[1], b.cardInfo.date[2]));
+  }
+
+  compareString(a: Card, b: Card) {
+    return a.cardInfo.nameEn.toLowerCase().localeCompare(<string>b.cardInfo.nameEn.toLowerCase());
   }
 }

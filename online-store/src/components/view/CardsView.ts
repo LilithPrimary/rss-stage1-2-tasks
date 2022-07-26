@@ -1,12 +1,11 @@
-import Card from "components/model/Card";
+import Card from "components/view/Card";
 
-export default class DrawCards {
+export default class CardsView {
   constructor(public cards: Card[]) {
     this.cards = cards;
   }
 
   draw() {
-    // console.log("Draw", this.cards);
     document.body.classList.add("preload");
     const cardContainer = <HTMLDivElement>document.querySelector(".main__container");
     if (!this.cards.length) {

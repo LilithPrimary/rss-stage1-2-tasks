@@ -1,5 +1,5 @@
-import Card from "components/model/Card";
-import Slider from "components/model/Slider";
+import Card from "components/view/Card";
+import Slider from "./Slider";
 import { IFilterOptions } from "components/types/IFilterOptions";
 
 export function restoreSettings(options: IFilterOptions, sliderPrice: Slider, sliderAmount: Slider, cards: Card[]) {

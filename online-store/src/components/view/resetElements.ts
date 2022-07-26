@@ -1,5 +1,5 @@
-import Card from "components/model/Card";
-import Slider from "components/model/Slider";
+import Card from "components/view/Card";
+import Slider from "../view/Slider";
 
 
 export function resetSoft(sliderPrice: Slider, sliderAmount: Slider) {
@@ -11,6 +11,7 @@ export function resetSoft(sliderPrice: Slider, sliderAmount: Slider) {
 }
 
 export function resetHard(cards: Card[]) {
+  localStorage.removeItem("optionsLP");
   resetLikes(cards);
   resetCart(cards);
 }

@@ -1,15 +1,17 @@
 type Position = Record<string, number>;
+
+type DateTuple = [number, number, number];
 export interface ICard {
   name: string;
   nameEn: string;
   vegan: boolean;
   exotic: boolean;
-  picture: Position;
+  spritePosition: Position;
   price: number;
   color: string;
   kcal: number;
   id: number;
-  date: number[];
+  date: DateTuple;
   produced: string;
   quantity: number;
   type: string;

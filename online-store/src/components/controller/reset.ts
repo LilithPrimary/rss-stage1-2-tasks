@@ -1,5 +1,5 @@
-import Card from "components/model/Card";
-import Slider from "components/model/Slider";
+import Card from "components/view/Card";
+import Slider from "../view/Slider";
 import { IFilterOptions } from "components/types/IFilterOptions";
 import { resetHard, resetSoft } from "../view/resetElements";
 
@@ -12,10 +12,10 @@ export default function reset(options: IFilterOptions, sliderPrice: Slider, slid
     }
   }
   options.color = [];
-  options.nameEn = [];
+  options.nameEn = "";
   options.produced = [];
-  options.isLike = [false];
-  options.vegan = [false];
+  options.isLike = [];
+  options.vegan = [];
   options.type = [];
   options.price = [];
   options.quantity = [];

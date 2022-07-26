@@ -2,11 +2,10 @@ import { getLSCallback, setLSCallback } from "components/types/callback";
 
 export function localStorageSet(callback: setLSCallback) {
   window.addEventListener('beforeunload', () => {
-    console.log("setLS");  
+    console.log("setLS");
     localStorage.setItem('optionsLP', JSON.stringify(callback()));
   });
 }
-
 
 export function localStorageGet(callback: getLSCallback) {
   window.addEventListener('load', () => {
@@ -15,13 +14,3 @@ export function localStorageGet(callback: getLSCallback) {
     callback(options, isLS);
   });
 }
-
-// function getLocalStorage() {
-//   if (localStorage.getItem('optionsLP')) {
-//     return JSON.parse(<string>localStorage.getItem('optionsLP'));
-//   }
-// }
-
-// function setLocalStorage(options: IFilterOptions) {
-  
-// }

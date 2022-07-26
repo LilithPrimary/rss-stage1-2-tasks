@@ -1,32 +1,31 @@
-import Cards from "components/model/Cards";
-import Card from "components/model/Card";
-import Sort from "./Sort";
-import DrawCards from "../view/DrawCards";
-import { IFilterOptions } from "components/types/IFilterOptions";
-import Filter from "./Filter";
-import reset from "./reset";
-// import { restoreSettings } from "../view/restoreSettings";
-import { Elements } from "../view/Elements";
-import { FilterCallback } from "../types/callback";
-import { localStorageGet, localStorageSet } from "../view/LocalStorageLoads";
-import { restoreSettings } from "../view/restoreSettings";
+import Cards from 'components/model/Cards';
+import Card from 'components/view/Card';
+import Sort from './Sort';
+import CardsView from '../view/CardsView';
+import { IFilterOptions } from 'components/types/IFilterOptions';
+import Filter from './Filter';
+import reset from './reset';
+import { Elements } from '../view/Elements';
+import { FilterCallback } from '../types/callback';
+import { localStorageGet, localStorageSet } from '../view/LocalStorageLoads';
+import { restoreSettings } from '../view/restoreSettings';
 
 export default class Controller {
   public options: IFilterOptions = {
-    sort: ["string", false],
+    sort: ['string', false],
     color: [],
-    nameEn: [],
+    nameEn: '',
     like: [],
     produced: [],
-    isLike: [false],
-    vegan: [false],
+    isLike: [],
+    vegan: [],
     type: [],
     price: [],
     quantity: []
   };
   public htmlElement = new Elements();
-  public sliderPrice = this.htmlElement.findSlider("sliderPrice");
-  public sliderAmount = this.htmlElement.findSlider("sliderAmount");;
+  public sliderPrice = this.htmlElement.findSlider('sliderPrice');
+  public sliderAmount = this.htmlElement.findSlider('sliderAmount');;
 
   constructor(public cards: Cards) {
     this.cards = cards;
@@ -41,11 +40,11 @@ export default class Controller {
   }
 
   sliderOnChange() {
-    this.htmlElement.sliderRender("sliderPrice", (values: number[]) => {
+    this.htmlElement.sliderRender('sliderPrice', (values: number[]) => {
       this.options.price = values;
       this.createCardsArray();
     })
-    this.htmlElement.sliderRender("sliderAmount", (values: number[]) => {
+    this.htmlElement.sliderRender('sliderAmount', (values: number[]) => {
       this.options.quantity = values;
       this.createCardsArray();
     })
@@ -53,7 +52,7 @@ export default class Controller {
 
 
   startTracking() {
-    this.workWithLocalStorage();
+    this.LocalStorageLoads();
     this.sortBtns();
     this.initColorFilter();
     this.initProducedFilter();
@@ -66,23 +65,23 @@ export default class Controller {
   }
 
   initColorFilter() {
-    this.htmlElement.filterRender("colorBtns", <FilterCallback>((e) => this.color(<Element>e)));
+    this.htmlElement.filterRender('colorBtns', <FilterCallback>((e) => this.color(<Element>e)));
   }
 
   initProducedFilter() {
-    this.htmlElement.filterRender("producedBtns", <FilterCallback>((e) => this.produced(<Element>e)));
+    this.htmlElement.filterRender('producedBtns', <FilterCallback>((e) => this.produced(<Element>e)));
   }
 
   initOtherFilter() {
-    this.htmlElement.filterRender("otherFilterBtns", (e) => {
-      const id = e?.id as keyof IFilterOptions;
+    this.htmlElement.filterRender('otherFilterBtns', (e) => {
+      const id = <'isLike' | 'vegan'>e?.id;
       this.startOtherFilter(<Element>e, id);
     });
   }
 
-  startOtherFilter(element: Element, id: keyof IFilterOptions) {
-    if ((["isLike", "vegan"]).includes(id)) {
-      this.options[id][0] = this.options[id][0] ? false : true
+  startOtherFilter(element: Element, id: 'isLike' | 'vegan') {
+    if ((['isLike', 'vegan']).includes(id)) {
+      this.options[id][0] ? this.options[id].pop() : this.options[id][0] = true
     }
     else if (this.options.type.includes(id)) {
       const i = this.options.type.indexOf(id);
@@ -90,37 +89,37 @@ export default class Controller {
     } else {
       this.options.type.push(id);
     }
-    this.htmlElement.toggleBtn(element, "other");
+    this.htmlElement.toggleBtn(element, 'other');
     this.createCardsArray();
   }
 
   sortBtns() {
-    this.htmlElement.sortRender("sortNameBtns", (data: boolean) => {
+    this.htmlElement.sortRender('sortNameBtns', (data: boolean) => {
       this.startNameSort(data);
     });
-    this.htmlElement.sortRender("sortDateBtns", (data: boolean) => {
+    this.htmlElement.sortRender('sortDateBtns', (data: boolean) => {
       this.startDateSort(data);
     });
   }
 
   startNameSort(ascending: boolean) {
-    this.options.sort = ["Name Sort", ascending];
+    this.options.sort = ['Name Sort', ascending];
     this.createCardsArray();
   }
 
   startDateSort(ascending: boolean) {
-    this.options.sort = ["Date Sort", ascending];
+    this.options.sort = ['Date Sort', ascending];
     this.createCardsArray();
   }
 
   initNameFilter() {
-    this.htmlElement.inputRender("nameInput", (data: string) => {
+    this.htmlElement.inputRender('nameInput', (data: string) => {
       this.startNameFilter(data);
     })
   }
 
   startNameFilter(value: string) {
-    this.options.nameEn[0] = value;
+    this.options.nameEn = value;
     this.createCardsArray();
   }
 
@@ -129,12 +128,12 @@ export default class Controller {
     if (!color) {
       return;
     }
-    if (this.htmlElement.isBtnActive(element, "color")) {
-      this.htmlElement.removeBtnClass(element, "color");
+    if (this.htmlElement.isBtnActive(element, 'color')) {
+      this.htmlElement.removeBtnClass(element, 'color');
       const i = this.options.color.indexOf(color);
       this.options.color.splice(i, 1);
     } else {
-      this.htmlElement.addBtnClass(element, "color");
+      this.htmlElement.addBtnClass(element, 'color');
       this.options.color.push(color);
     }
     this.createCardsArray();
@@ -142,12 +141,12 @@ export default class Controller {
 
   produced(element: Element) {
     const country = element.id;
-    if (this.htmlElement.isBtnActive(element, "produced")) {
-      this.htmlElement.removeBtnClass(element, "produced");
+    if (this.htmlElement.isBtnActive(element, 'produced')) {
+      this.htmlElement.removeBtnClass(element, 'produced');
       const i = this.options.produced.indexOf(country);
       this.options.produced.splice(i, 1);
     } else {
-      this.htmlElement.addBtnClass(element, "produced");
+      this.htmlElement.addBtnClass(element, 'produced');
       this.options.produced.push(country);
     }
     this.createCardsArray();
@@ -158,13 +157,11 @@ export default class Controller {
     let cards = sorting.cardArr;
     const optionsFilter = new Filter(this.cards.cards, this.options);
     cards = optionsFilter.filterCards();
-    cards = optionsFilter.filterByValue();
-    cards = optionsFilter.slidersFilter();
     this.draw(cards);
   }
 
   draw(cards: Card[]) {
-    const draw = new DrawCards(cards);
+    const draw = new CardsView(cards);
     this.htmlElement.cleanCardsArea();
     draw.draw();
   }
@@ -175,7 +172,7 @@ export default class Controller {
 
   likeTracker() {
     this.htmlElement.likesRender(this.cards.cards, (el: Card) => {
-      this.htmlElement.toggleBtn(el.likeBtn, "like");
+      this.htmlElement.toggleBtn(el.likeBtn, 'like');
       el.cardInfo.isLike = el.cardInfo.isLike ? false : true;
       const cards = this.cards.cards.filter(el => el.cardInfo.isLike);
       this.options.like = [];
@@ -185,20 +182,19 @@ export default class Controller {
   }
 
   resetOptions() {
-    this.htmlElement.resetRender("resetBtn", () => {
+    this.htmlElement.resetRender('resetBtn', () => {
       reset(this.options, this.sliderAmount, this.sliderPrice, false);
       this.createCardsArray();
     })
-    this.htmlElement.resetRender("cleanLSBtn", () => {
-      localStorage.removeItem("optionsLP");
+    this.htmlElement.resetRender('cleanLSBtn', () => {
       reset(this.options, this.sliderAmount, this.sliderPrice, true, this.cards.cards);
       this.createCardsArray();
     })
   }
 
-  workWithLocalStorage() {
+  LocalStorageLoads() {
     localStorageGet((optns, isLocalStorage) => {
-      console.log("getCallback", optns, isLocalStorage);
+      console.log('getCallback', optns, isLocalStorage);
       if (isLocalStorage) {
         this.options = optns;
         restoreSettings(this.options, this.sliderPrice, this.sliderAmount, this.cards.cards);
@@ -209,17 +205,4 @@ export default class Controller {
       return this.options;
     });
   }
-
-  // getLocalStorage() {
-  //   if (localStorage.getItem('optionsLP')) {
-  //     this.options = JSON.parse(<string>localStorage.getItem('optionsLP'));
-  //     restoreSettings(this.options, this.sliderPrice, this.sliderAmount, this.cards.cards);
-  //     this.createCardsArray();
-  //   }
-  // }
-
-  // setLocalStorage() {
-  //   localStorage.setItem('optionsLP', JSON.stringify(this.options));
-  // }
-
 }
