@@ -1,5 +1,5 @@
-import Card from "components/view/Card";
-import { IFilterOptions } from "./IFilterOptions";
+import Card from 'components/view/Card';
+import { IFilterOptions } from './IFilterOptions';
 
 export type FilterCallback = (e?: Element) => void;
 export type SortCallback = (data: boolean) => void;

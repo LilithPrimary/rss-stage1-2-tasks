@@ -1,6 +1,6 @@
-import Card from "components/view/Card";
-import { FiltersDictionary } from "components/types/FilterDictionary";
-import { IFilterOptions } from "components/types/IFilterOptions";
+import Card from 'components/view/Card';
+import { FiltersDictionary } from 'components/types/FilterDictionary';
+import { IFilterOptions } from 'components/types/IFilterOptions';
 
 export const makeFilters = (options: IFilterOptions): FiltersDictionary => ({
   'color': (element: Card) => options.color.includes(element.cardInfo.color),

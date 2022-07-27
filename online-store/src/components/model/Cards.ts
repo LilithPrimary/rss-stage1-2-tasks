@@ -1,6 +1,6 @@
-import Card from "../view/Card";
-import { ICard } from "components/types/ICard";
-import items from "./items.json";
+import Card from '../view/Card';
+import { ICard } from 'components/types/ICard';
+import items from './items.json';
 
 class Cards {
   cards: Card[] = [];
@@ -11,6 +11,7 @@ class Cards {
       const card = new Card(cardInfo);
       this.cards.push(card);
     });
+    return this
   }
 
 }

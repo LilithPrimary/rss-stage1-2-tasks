@@ -1,5 +1,5 @@
-import Card from "components/view/Card";
-import { SortOption } from "components/types/IFilterOptions";
+import Card from 'components/view/Card';
+import { SortOption } from 'components/types/IFilterOptions';
 
 export default class Sort {
 
@@ -8,10 +8,10 @@ export default class Sort {
   constructor(public cards: Card[], public options: SortOption) {
     this.cards = cards;
     this.options = options;
-    if (options[0] === "string") {
+    if (options[0] === 'string') {
       this.clearSort();
     }
-    options[0] === "Name Sort" ? this.sortByName(options[1]) : this.sortByDate(options[1]);
+    options[0] === 'Name Sort' ? this.sortByName(options[1]) : this.sortByDate(options[1]);
   }
 
   clearSort() {
