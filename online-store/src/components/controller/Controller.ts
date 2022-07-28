@@ -1,15 +1,12 @@
 import Cards from 'components/model/Cards';
-import Card from 'components/view/Card';
-import Sort from './Sort';
+import Card from 'components/view/CardView';
 import CardsView from '../view/CardsView';
 import { IFilterOptions } from 'components/types/IFilterOptions';
-import Filter from './Filter';
 import reset from './reset';
 import { Elements } from '../view/Elements';
 import { FilterCallback } from '../types/callback';
 import { localStorageGet, localStorageSet } from '../view/LocalStorageLoads';
 import { restoreSettings } from '../view/restoreSettings';
-
 export default class Controller {
   public options: IFilterOptions = {
     sort: ['string', false],
@@ -153,10 +150,7 @@ export default class Controller {
   }
 
   createCardsArray() {
-    const sorting = new Sort(this.cards.cards, this.options.sort);
-    let cards = sorting.cardArr;
-    const optionsFilter = new Filter(this.cards.cards, this.options);
-    cards = optionsFilter.filterCards();
+    const cards = this.cards.selectCards(this.options);
     this.draw(cards);
   }
 

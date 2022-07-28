@@ -1,10 +1,8 @@
-import Card from 'components/view/Card';
+import Card from 'components/view/CardView';
 import { IFilterOptions } from 'components/types/IFilterOptions';
 import { FilterFn } from 'components/types/FilterFn';
 import { makeFilters } from '../controller/makeFilters';
 import { getActiveFilters } from '../controller/getActiveFilters';
-
-
 export default class Filter {
   constructor(public cards: Card[], public options: IFilterOptions) {
     this.cards = cards;

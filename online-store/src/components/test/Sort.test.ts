@@ -1,9 +1,9 @@
-import Cards from "../model/Cards";
-import { IFilterOptions } from "components/types/IFilterOptions";
-import Sort from "../controller/Sort";
-import Card from "../view/Card";
+import Cards from '../model/Cards';
+import { IFilterOptions } from 'components/types/IFilterOptions';
+import Sort from '../controller/Sort';
+import Card from '../view/CardView';
 
-describe("Sort.sortByName method test", () => {
+describe('Sort.sortByName method test', () => {
   let sortTest: Sort;
   const options: IFilterOptions = {
     sort: ['Name Sort', false],

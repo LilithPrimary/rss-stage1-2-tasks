@@ -1,7 +1,7 @@
-import Card from "../view/Card";
-import Cards from "../model/Cards";
+import Card from '../view/CardView';
+import Cards from '../model/Cards';
 
-describe("Cards class test", () => {
+describe('Cards class test', () => {
   const cards = new Cards();
   beforeEach(() => {
     cards.fillCards();

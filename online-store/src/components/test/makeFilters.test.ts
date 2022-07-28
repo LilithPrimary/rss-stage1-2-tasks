@@ -1,8 +1,8 @@
-import { FiltersDictionary } from "components/types/FilterDictionary";
-import { IFilterOptions } from "components/types/IFilterOptions";
-import { makeFilters } from "../controller/makeFilters";
+import { FiltersDictionary } from 'components/types/FilterDictionary';
+import { IFilterOptions } from 'components/types/IFilterOptions';
+import { makeFilters } from '../controller/makeFilters';
 
-describe("makeFilter test", () => {
+describe('makeFilters test', () => {
   const options: IFilterOptions = {
     sort: ['string', false],
     color: [],

@@ -1,6 +1,5 @@
-import Card from 'components/view/Card';
+import Card from 'components/view/CardView';
 import { SortOption } from 'components/types/IFilterOptions';
-
 export default class Sort {
 
   public cardArr: Card[] = [];

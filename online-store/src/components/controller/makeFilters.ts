@@ -1,4 +1,4 @@
-import Card from 'components/view/Card';
+import Card from 'components/view/CardView';
 import { FiltersDictionary } from 'components/types/FilterDictionary';
 import { IFilterOptions } from 'components/types/IFilterOptions';
 

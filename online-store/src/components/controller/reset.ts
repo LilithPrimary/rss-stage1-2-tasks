@@ -1,4 +1,4 @@
-import Card from 'components/view/Card';
+import Card from 'components/view/CardView';
 import Slider from '../view/Slider';
 import { IFilterOptions } from 'components/types/IFilterOptions';
 import { resetHard, resetSoft } from '../view/resetElements';

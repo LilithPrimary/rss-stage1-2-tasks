@@ -1,7 +1,7 @@
 import Slider from './Slider';
 import { target } from 'nouislider';
 import { SortCallback, FilterCallback, InputCallback, SliderCallback, ElementCallback } from '../types/callback';
-import Card from 'components/view/Card';
+import Card from 'components/view/CardView';
 
 export class Elements {
   public cardsArea = <HTMLDivElement>document.querySelector('.main__container');

@@ -1,8 +1,8 @@
-import { getActiveFilters } from "../controller/getActiveFilters";
-import { IFilterOptions } from "components/types/IFilterOptions";
-import { makeFilters } from "../controller/makeFilters";
+import { getActiveFilters } from '../controller/getActiveFilters';
+import { IFilterOptions } from 'components/types/IFilterOptions';
+import { makeFilters } from '../controller/makeFilters';
 
-describe("getActiveFilters test", () => {
+describe('getActiveFilters test', () => {
   const options1: IFilterOptions = {
     sort: ['string', false],
     color: [],
@@ -18,7 +18,7 @@ describe("getActiveFilters test", () => {
 
   const options2: IFilterOptions = {
     sort: ['string', false],
-    color: ["test1", "test2"],
+    color: ['test1', 'test2'],
     nameEn: '',
     like: [],
     produced: [],

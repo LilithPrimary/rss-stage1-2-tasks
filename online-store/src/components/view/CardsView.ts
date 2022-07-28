@@ -1,4 +1,4 @@
-import Card from 'components/view/Card';
+import Card from 'components/view/CardView';
 
 export default class CardsView {
   constructor(public cards: Card[]) {

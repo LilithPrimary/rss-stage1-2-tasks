@@ -1,8 +1,8 @@
-import Cards from "../model/Cards";
-import { IFilterOptions } from "components/types/IFilterOptions";
-import Filter from "../controller/Filter";
+import Cards from '../model/Cards';
+import { IFilterOptions } from 'components/types/IFilterOptions';
+import Filter from '../controller/Filter';
 
-describe("Filter.filterCards method test", () => {
+describe('Filter.filterCards method test', () => {
   let filterTest: Filter;
   const options: IFilterOptions = {
     sort: ['string', false],

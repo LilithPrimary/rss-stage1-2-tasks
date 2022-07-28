@@ -1,4 +1,4 @@
-import Card from 'components/view/Card';
+import Card from 'components/view/CardView';
 import { IFilterOptions } from './IFilterOptions';
 
 export type FilterCallback = (e?: Element) => void;
