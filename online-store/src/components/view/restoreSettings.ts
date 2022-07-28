@@ -3,7 +3,6 @@ import Slider from './Slider';
 import { IFilterOptions } from 'components/types/IFilterOptions';
 
 export function restoreSettings(options: IFilterOptions, sliderPrice: Slider, sliderAmount: Slider, cards: Card[]) {
-  console.log('restore');
   restoreSlider(sliderPrice, sliderAmount, options);
   restoreColors(options);
   restoreProducers(options);
@@ -12,7 +11,6 @@ export function restoreSettings(options: IFilterOptions, sliderPrice: Slider, sl
 }
 
 function restoreSlider(sliderPrice: Slider, sliderAmount: Slider, options: IFilterOptions) {
-  console.log('slider');
   sliderPrice.slider.noUiSlider?.set(options.price);
   sliderAmount.slider.noUiSlider?.set(options.quantity);
 }

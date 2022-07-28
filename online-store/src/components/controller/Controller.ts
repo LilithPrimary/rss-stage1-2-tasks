@@ -188,7 +188,6 @@ export default class Controller {
 
   LocalStorageLoads() {
     localStorageGet((optns, isLocalStorage) => {
-      console.log('getCallback', optns, isLocalStorage);
       if (isLocalStorage) {
         this.options = optns;
         restoreSettings(this.options, this.sliderPrice, this.sliderAmount, this.cards.cards);

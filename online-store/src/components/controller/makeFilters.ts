@@ -4,7 +4,7 @@ import { IFilterOptions } from 'components/types/IFilterOptions';
 
 export const makeFilters = (options: IFilterOptions): FiltersDictionary => ({
   'color': (element: Card) => options.color.includes(element.cardInfo.color),
-  'nameEn': (element: Card) => options.nameEn.includes(element.cardInfo.nameEn),
+  'nameEn': (element: Card) => element.cardInfo.nameEn.toLowerCase().includes(options.nameEn.toLowerCase()),
   'produced': (element: Card) => options.produced.includes(element.cardInfo.produced),
   'type': (element: Card) => options.type.includes(element.cardInfo.type),
   'isLike': (element: Card) => <boolean>element.cardInfo.isLike,

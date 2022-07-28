@@ -2,7 +2,6 @@ import { getLSCallback, setLSCallback } from 'components/types/callback';
 
 export function localStorageSet(callback: setLSCallback) {
   window.addEventListener('beforeunload', () => {
-    console.log('setLS');
     localStorage.setItem('optionsLP', JSON.stringify(callback()));
   });
 }
