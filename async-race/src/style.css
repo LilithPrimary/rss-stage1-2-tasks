@@ -1,0 +1,233 @@
+:root {
+  --color-black: rgb(62, 66, 65);
+  --color-blue: rgb(186, 221, 217);
+  --color-orange: rgb(254, 204, 0);
+  --color-yellow: rgba(252, 236, 15);
+  --color-grey: #e8e8e8;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-grey);
+  font-family: "Rubik";
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  padding: 30px;
+  padding-top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main__wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.header {
+  width: 100%;
+  height: 245px;
+  background-image: url("assets/img/header.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1440px;
+}
+
+.main__ctrls {
+  width: 450px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  background: darkgray;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: -175px;
+}
+
+.ctrls__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: solid 2px white;
+  padding-top: 20px;
+  position: relative;
+}
+
+.ctrls__wrapper::before {
+  content: "";
+  background-color: darkgray;
+  display: block;
+  padding: 0 10px;
+  position: absolute;
+  color: white;
+  top: -10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.ctrls__create::before {
+  content: "Create car";
+}
+
+.ctrls__edit::before {
+  content: "Edit car";
+}
+
+.ctrls__input {
+  outline: none;
+  padding: 0 10px;
+  height: 40px;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.ctrls__input:focus {
+  border: 1px solid var(--color-orange);
+}
+
+.ctrls__color {
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+}
+
+.ctrl__btn {
+  background-color: transparent;
+  color: greenyellow;
+  font-size: 40px;
+}
+
+.ctrl__create-car-btn {}
+
+.material-symbols-outlined {}
+
+.car {
+  width: 100%;
+  border: var(--color-blue) solid 2px;
+  padding: 10px;
+  background: var(--color-black);
+  border-radius: 10px;
+}
+
+.car__btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  transition: .3s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.car__btn {
+  color: white;
+  font-size: 50px;
+}
+
+.car__delete-btn {
+  font-size: 35px;
+}
+
+.car__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car__name {
+  color: white;
+  font-size: 20px;
+}
+
+.car__track {
+  border-bottom: dashed 3px var(--color-yellow);
+  position: relative;
+}
+
+.car__img {
+  transition: 3s;
+  margin-bottom: -13px;
+  vertical-align: bottom;
+  position: relative;
+  left: 0;
+  font-size: 80px;
+  color: var(--color-blue);
+}
+
+.car__finish {
+  font-size: 50px;
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+  color: var(--color-orange);
+}
+
+.car__img--drive {
+  left: calc(100% - 100px);
+}
+
+.btn--disabled {
+  pointer-events: none;
+  color: gray;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  max-width: 1440px;
+  width: 100%;
+  background-color: var(--color-yellow);
+  padding: 20px;
+}
+
+.rslogo {
+  width: 30px;
+  height: 30px;
+}
+
+.link {
+  fill: var(--color-black);
+  text-decoration: none;
+  color: var(--color-black);
+  transition: 0.3s;
+}
+
+@media (min-width: 768px) {
+  .btn:hover {
+    color: var(--color-orange);
+  }
+
+  .link:hover {
+    fill: var(--color-orange);
+    color: var(--color-orange);
+  }
+
+}
