@@ -50,7 +50,7 @@ export class Car {
 
   renderCar() {
     const carEl = createPageElement('div', {
-      id: this.car.id,
+      id: this.car.id.toString(),
       classes: ['main__car', 'car'],
     });
     const carTop = createPageElement('div', {

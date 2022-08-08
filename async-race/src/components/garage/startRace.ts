@@ -18,6 +18,7 @@ export const startRace = async (ctrl: ControlPanel) => {
   try {
     const winner = await Promise.any(cars.map((car) => startDriving(car)));
     await determineWinner(winner);
+    await ctrl.winnerPage.renderWinnersTable();
   } catch (err) {
     const msg = <Error>err;
     await determineWinner(msg);

@@ -1,17 +1,17 @@
 interface IOptions {
-  id?: number;
+  id?: string;
   classes: string[];
   text?: string;
   color?: string;
 }
 
 export function createPageElement(tag: string, {
-  id = -1, classes, text = 'empty', color = 'none',
+  id = '', classes, text = 'empty', color = 'none',
 }: IOptions) {
   const element = document.createElement(tag);
   element.classList.add(...classes);
-  if (id !== -1) {
-    element.id = id.toString();
+  if (id !== '') {
+    element.id = id;
   }
   if (text !== 'empty') {
     element.textContent = text;

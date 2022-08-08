@@ -54,7 +54,6 @@
 
 .header__btn {
   font-size: 20px;
-  font-weight: 600;
 }
 
 .main__win-message {
@@ -220,6 +219,10 @@
 .btn--disabled {
   pointer-events: none;
   color: gray;
+}
+
+.btn--active {
+  transform: scale(1.2);
 }
 
 .footer {

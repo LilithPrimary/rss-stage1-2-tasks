@@ -8,13 +8,13 @@ const findOutColor = async (id: number) => {
   return responce;
 };
 
-export const createRow = async (winner: IWinnerBody, i: number) => {
+export const createRow = async (winner: IWinnerBody) => {
   const row = createPageElement('div', {
     classes: ['table__row'],
   });
   const cellN = createPageElement('div', {
     classes: ['table__cell'],
-    text: (i + 1).toString(),
+    text: winner.id.toString(),
   });
   const cellCar = createPageElement('div', {
     classes: ['table__cell', 'material-symbols-outlined'],

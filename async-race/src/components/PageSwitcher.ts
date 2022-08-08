@@ -9,7 +9,7 @@ export class PageSwitcher {
   }
 
   public racePageBtn = createPageElement('button', {
-    classes: ['btn', 'header__btn'],
+    classes: ['btn', 'header__btn', 'btn--active'],
     text: 'race',
   });
 
@@ -29,11 +29,9 @@ export class PageSwitcher {
 
   addListeners() {
     this.racePageBtn.addEventListener('click', () => {
-      console.log('race');
       this.switchToRacePage();
     });
     this.winnersPageBtn.addEventListener('click', () => {
-      console.log('winner');
       this.switchToWinnerPage();
     });
   }
@@ -41,10 +39,17 @@ export class PageSwitcher {
   switchToRacePage() {
     this.ctrl.racePage.style.display = 'flex';
     this.winner.wrapper.style.display = 'none';
+    this.toggleBtnsStyle();
   }
 
   switchToWinnerPage() {
     this.ctrl.racePage.style.display = 'none';
     this.winner.wrapper.style.display = 'flex';
+    this.toggleBtnsStyle();
+  }
+
+  toggleBtnsStyle() {
+    this.racePageBtn.classList.toggle('btn--active');
+    this.winnersPageBtn.classList.toggle('btn--active');
   }
 }

@@ -3,7 +3,6 @@ import { getWinner } from './getWinner';
 
 export async function updateWinner(url: string, body: IWinnerBody) {
   const winner = await getWinner(url, body.id);
-  console.log('update was: ', winner);
   const response = await fetch(`${url}winners/${body.id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -12,6 +11,5 @@ export async function updateWinner(url: string, body: IWinnerBody) {
       time: body.time < winner.time ? body.time : winner.time,
     }),
   });
-  console.log('update is: ', await response.json());
   return response;
 }

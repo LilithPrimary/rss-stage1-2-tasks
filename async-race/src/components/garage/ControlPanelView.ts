@@ -1,12 +1,15 @@
-import { IObserver } from 'components/types/IObserver';
+import { UpdateCallback } from 'components/types/UpdateCallback';
 import { Car } from '../CarView';
 import { createPageElement } from '../createPageElement';
 import { addCar } from './addCar';
+import { generateRandomCars } from './generateRandomCars';
 import { resetRace } from './resetRace';
 import { setChanges } from './setChanges';
 import { startRace } from './startRace';
+import { Observable } from '../Observable';
+import { WinnerTable } from '../winners/WinnerTableView';
 
-type Callback = (car: ControlPanel) => void;
+const obs = Observable<Car[]>();
 
 const setTextTypeToInput = (el: HTMLInputElement) => {
   const element = el;
@@ -20,7 +23,7 @@ const setColorTypeToInput = (el: HTMLInputElement) => {
 };
 
 export class ControlPanel {
-  constructor(public observer: IObserver) {
+  constructor(public observer: typeof obs) {
     this.observer = observer;
     this.observer.subscribe(this.setCars);
   }
@@ -82,6 +85,8 @@ export class ControlPanel {
     classes: ['garage__wrapper'],
   });
 
+  public winnerPage = new WinnerTable();
+
   renderPanel() {
     const wrapper = createPageElement('div', {
       classes: ['main__ctrls', 'ctrls'],
@@ -115,11 +120,12 @@ export class ControlPanel {
     });
     this.setEventListner(this.btnStartRace, startRace);
     this.setEventListner(this.btnResetRace, resetRace);
+    this.setEventListner(this.btnCreateRandomCars, generateRandomCars);
     btnsWrapper.append(this.btnStartRace, this.btnResetRace, this.btnCreateRandomCars);
     return btnsWrapper;
   }
 
-  setEventListner(el: HTMLElement, callback: Callback) {
+  setEventListner(el: HTMLElement, callback: UpdateCallback<ControlPanel>) {
     el.addEventListener('click', () => callback(this));
   }
 

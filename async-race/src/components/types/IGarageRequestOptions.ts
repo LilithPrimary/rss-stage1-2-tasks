@@ -1,10 +1,7 @@
-interface IBody {
-  name: string,
-  color: string
-}
+import { IGarageRequestBody } from './IGarageRequestBody';
 
 export interface IGarageRequestOptions {
   options?: string;
-  body?: IBody;
+  body?: IGarageRequestBody;
   id?: number;
 }

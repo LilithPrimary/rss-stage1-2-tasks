@@ -49,15 +49,17 @@
   transform: scale(0.95);
 }
 
-.ask::before {
+.asc::before {
   content: '↑';
+  color: white;
   position: absolute;
   font-weight: 700;
   left: 20px;
 }
 
-.desk::before {
+.desc::before {
   content: '↓';
+  color: white;
   position: absolute;
   font-weight: 700;
   left: 20px;

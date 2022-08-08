@@ -13,4 +13,5 @@ export const setChanges = async (ctrl: ControlPanel) => {
   ctrl.editWrapper.style.display = 'none';
   ctrl.editingCar.carImg.style.color = ctrl.colorEditInput.value;
   ctrl.editingCar.carName.textContent = ctrl.nameEditInput.value;
+  await ctrl.winnerPage.renderWinnersTable();
 };
