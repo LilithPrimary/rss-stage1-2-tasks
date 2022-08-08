@@ -91,7 +91,7 @@ export class ControlPanel {
 
   public winnerPage = new WinnerTable();
 
-  public pagination = new PaginationBlock(this, paginationCallback);
+  public pagination = new PaginationBlock(paginationCallback.bind(null, this));
 
   renderPanel() {
     const wrapper = createPageElement('div', {

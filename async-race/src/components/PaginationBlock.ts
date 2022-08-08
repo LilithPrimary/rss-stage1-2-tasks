@@ -1,5 +1,4 @@
 import { createPageElement } from './createPageElement';
-import { ControlPanel } from './garage/ControlPanelView';
 import { UpdateCallback } from './types/UpdateCallback';
 
 interface IBtnsStyle {
@@ -20,8 +19,7 @@ const setBtnsStyle = ({ btns, curPage, lastPage }: IBtnsStyle) => {
 };
 
 export class PaginationBlock {
-  constructor(public ctrl: ControlPanel, public callback: UpdateCallback<ControlPanel>) {
-    this.ctrl = ctrl;
+  constructor(public callback: UpdateCallback<void>) {
     this.callback = callback;
   }
 
@@ -75,11 +73,11 @@ export class PaginationBlock {
   addListeners() {
     this.backBtn.addEventListener('click', async () => {
       this.currentPage -= 1;
-      this.callback(this.ctrl);
+      this.callback();
     });
     this.forwardBtn.addEventListener('click', async () => {
       this.currentPage += 1;
-      this.callback(this.ctrl);
+      this.callback();
     });
   }
 }
