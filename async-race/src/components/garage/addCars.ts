@@ -6,5 +6,5 @@ import { createCar } from './garageRequests/createCar';
 
 export const addCars = async (ctrls: ControlPanel, cars: IGarageRequestBody[]) => {
   await Promise.all(cars.map((car) => createCar(URL, { body: car })));
-  ctrls.observer.update(await createCarsArray(URL, ctrls));
+  ctrls.observer.update(await createCarsArray(ctrls));
 };

@@ -7,6 +7,6 @@ import { deleteCar } from './garageRequests/deleteCar';
 export const removeCar = async (car: Car) => {
   await deleteCar(URL, car.id);
   await deleteWinner(URL, car.id);
-  car.ctrl.observer.update(await createCarsArray(URL, car.ctrl));
+  car.ctrl.observer.update(await createCarsArray(car.ctrl));
   await car.ctrl.winnerPage.renderWinnersTable();
 };

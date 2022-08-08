@@ -216,6 +216,25 @@
   left: calc(100% - 100px);
 }
 
+.pagination__wrapper {
+  padding-top: 20px;
+  display: flex;
+  column-gap: 10px;
+  margin: 0 auto;
+}
+
+.pagination__number {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  width: 30px;
+}
+
+.pagination__btn {
+  text-align: center;
+  font-size: 30px;
+}
+
 .btn--disabled {
   pointer-events: none;
   color: gray;

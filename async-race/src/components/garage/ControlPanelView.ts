@@ -6,10 +6,10 @@ import { generateRandomCars } from './generateRandomCars';
 import { resetRace } from './resetRace';
 import { setChanges } from './setChanges';
 import { startRace } from './startRace';
-import { Observable } from '../Observable';
 import { WinnerTable } from '../winners/WinnerTableView';
-
-const obs = Observable<Car[]>();
+import { PaginationBlock } from '../PaginationBlock';
+import { obs } from '../types/carObserver';
+import { createCarsArray } from './createCarsArray';
 
 const setTextTypeToInput = (el: HTMLInputElement) => {
   const element = el;
@@ -20,6 +20,10 @@ const setTextTypeToInput = (el: HTMLInputElement) => {
 const setColorTypeToInput = (el: HTMLInputElement) => {
   const element = el;
   element.type = 'color';
+};
+
+const paginationCallback = async (ctrl: ControlPanel) => {
+  ctrl.observer.update(await createCarsArray(ctrl));
 };
 
 export class ControlPanel {
@@ -87,6 +91,8 @@ export class ControlPanel {
 
   public winnerPage = new WinnerTable();
 
+  public pagination = new PaginationBlock(this, paginationCallback);
+
   renderPanel() {
     const wrapper = createPageElement('div', {
       classes: ['main__ctrls', 'ctrls'],
@@ -95,7 +101,7 @@ export class ControlPanel {
       classes: ['ctrls__wrapper', 'ctrls__create'],
     });
 
-    this.setEventListner(this.btnCreate, addCar);
+    this.setEventListener(this.btnCreate, addCar);
     createWrapper.append(this.nameInput, this.colorInput, this.btnCreate);
     this.editWrapper.append(this.nameEditInput, this.colorEditInput, this.btnEdit);
 
@@ -103,7 +109,8 @@ export class ControlPanel {
     setColorTypeToInput(this.colorInput);
     setTextTypeToInput(this.nameEditInput);
     setColorTypeToInput(this.colorEditInput);
-    this.setEventListner(this.btnEdit, setChanges);
+
+    this.setEventListener(this.btnEdit, setChanges);
     this.editWrapper.style.display = 'none';
     wrapper.append(createWrapper, this.editWrapper, this.createCtrlBtns(), this.carCounter);
     return wrapper;
@@ -118,14 +125,14 @@ export class ControlPanel {
     const btnsWrapper = createPageElement('div', {
       classes: ['ctrls__wrapper', 'ctrls__btns'],
     });
-    this.setEventListner(this.btnStartRace, startRace);
-    this.setEventListner(this.btnResetRace, resetRace);
-    this.setEventListner(this.btnCreateRandomCars, generateRandomCars);
+    this.setEventListener(this.btnStartRace, startRace);
+    this.setEventListener(this.btnResetRace, resetRace);
+    this.setEventListener(this.btnCreateRandomCars, generateRandomCars);
     btnsWrapper.append(this.btnStartRace, this.btnResetRace, this.btnCreateRandomCars);
     return btnsWrapper;
   }
 
-  setEventListner(el: HTMLElement, callback: UpdateCallback<ControlPanel>) {
+  setEventListener(el: HTMLElement, callback: UpdateCallback<ControlPanel>) {
     el.addEventListener('click', () => callback(this));
   }
 

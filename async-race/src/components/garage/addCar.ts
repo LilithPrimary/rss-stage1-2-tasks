@@ -11,5 +11,5 @@ export const addCar = async (ctrls: ControlPanel) => {
     },
   });
   ctrls.nameInput.value = '';
-  ctrls.observer.update(await createCarsArray(URL, ctrls));
+  ctrls.observer.update(await createCarsArray(ctrls));
 };

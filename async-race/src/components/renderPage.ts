@@ -28,6 +28,7 @@ export async function renderPage(pageSwitcher: PageSwitcher, cars: Car[]) {
     classes: ['cars__wrapper'],
   });
   pageSwitcher.ctrl.racePage.append(pageSwitcher.ctrl.renderPanel(), carsWrapper, winnerMessage);
+  pageSwitcher.ctrl.racePage.append(pageSwitcher.ctrl.pagination.renderPaginationBlock());
   main?.append(pageSwitcher.ctrl.racePage, await pageSwitcher.winner.renderWinnersPage());
   renderGaragePage(cars);
 }

@@ -7,11 +7,11 @@ import { WinnerTable } from './winners/WinnerTableView';
 import { PageSwitcher } from './PageSwitcher';
 import { Car } from './CarView';
 
-export async function start(URL: string) {
+export async function start() {
   const observer = Observable<Car[]>();
   observer.subscribe(renderGaragePage);
   const ctrlPanel = new ControlPanel(observer);
-  const cars = await createCarsArray(URL, ctrlPanel);
+  const cars = await createCarsArray(ctrlPanel);
   const winners = new WinnerTable();
   ctrlPanel.winnerPage = winners;
   const pageSwitcher = new PageSwitcher(ctrlPanel, winners);
