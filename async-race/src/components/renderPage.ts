@@ -1,7 +1,9 @@
-import { ControlPanel } from './ControlPanelView';
+import { Car } from './CarView';
 import { createPageElement } from './createPageElement';
+import { renderGaragePage } from './garage/renderGaragePage';
+import { PageSwitcher } from './PageSwitcher';
 
-export function renderPage(ctrlPanel: ControlPanel, cars: HTMLElement[]) {
+export async function renderPage(pageSwitcher: PageSwitcher, cars: Car[]) {
   document.body.innerHTML = `<header class="header"></header>
   <main class="main">
   </main>
@@ -16,11 +18,16 @@ export function renderPage(ctrlPanel: ControlPanel, cars: HTMLElement[]) {
       </a>
     </div>
   </footer>`;
-
-  const main = document.querySelector('.main');
-  const wrapper = createPageElement('div', {
-    classes: ['main__wrapper'],
+  document.body.firstElementChild?.append(pageSwitcher.renderSwitchBtns());
+  const winnerMessage = createPageElement('div', {
+    classes: ['main__win-message'],
+    text: 'winners',
   });
-  wrapper.append(ctrlPanel.renderPanel(), ...cars);
-  main?.append(wrapper);
+  const main = document.querySelector('.main');
+  const carsWrapper = createPageElement('div', {
+    classes: ['cars__wrapper'],
+  });
+  pageSwitcher.ctrl.racePage.append(pageSwitcher.ctrl.renderPanel(), carsWrapper, winnerMessage);
+  main?.append(pageSwitcher.ctrl.racePage, await pageSwitcher.winner.renderWinnersPage());
+  renderGaragePage(cars);
 }

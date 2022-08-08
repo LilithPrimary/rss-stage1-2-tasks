@@ -1,10 +1,9 @@
-
 interface IBody {
   name: string,
   color: string
 }
 
-export interface IRequest {
+export interface IGarageRequestOptions {
   options?: string;
   body?: IBody;
   id?: number;

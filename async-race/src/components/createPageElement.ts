@@ -5,7 +5,9 @@ interface IOptions {
   color?: string;
 }
 
-export function createPageElement(tag: string, { id = -1, classes, text = 'empty', color = 'none' }: IOptions) {
+export function createPageElement(tag: string, {
+  id = -1, classes, text = 'empty', color = 'none',
+}: IOptions) {
   const element = document.createElement(tag);
   element.classList.add(...classes);
   if (id !== -1) {

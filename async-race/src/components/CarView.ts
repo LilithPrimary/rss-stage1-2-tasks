@@ -1,11 +1,19 @@
 import { createPageElement } from './createPageElement';
+import { changeCar } from './garage/changeCar';
+import { ControlPanel } from './garage/ControlPanelView';
+import { moveCar } from './garage/moveCar';
+import { removeCar } from './garage/removeCar';
+import { stopCar } from './garage/stopCar';
 import { ICar } from './types/ICar';
 
+type Callback = (car: Car) => void;
 export class Car {
-
-  constructor(public car: ICar) {
+  constructor(public car: ICar, public ctrl: ControlPanel) {
     this.car = car;
+    this.ctrl = ctrl;
   }
+
+  public carTime = 0;
 
   public startBtn = createPageElement('button', {
     classes: ['btn', 'car__btn', 'car__start-btn', 'material-symbols-outlined'],
@@ -57,6 +65,12 @@ export class Car {
     const carBtnWrapper = createPageElement('div', {
       classes: ['car__btn-wrapper'],
     });
+
+    this.setEventListner(this.startBtn, moveCar);
+    this.setEventListner(this.stopBtn, stopCar);
+    this.setEventListner(this.deleteBtn, removeCar);
+    this.setEventListner(this.editBtn, changeCar);
+
     carBtnWrapper.append(this.startBtn, this.stopBtn, this.editBtn, this.deleteBtn);
     return carBtnWrapper;
   }
@@ -73,4 +87,7 @@ export class Car {
     return carTrak;
   }
 
+  setEventListner(el: HTMLElement, callback: Callback) {
+    el.addEventListener('click', () => callback(this));
+  }
 }
