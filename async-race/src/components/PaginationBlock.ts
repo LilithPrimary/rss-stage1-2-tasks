@@ -8,7 +8,10 @@ interface IBtnsStyle {
 }
 
 const setBtnsStyle = ({ btns, curPage, lastPage }: IBtnsStyle) => {
-  btns.forEach((el) => el.classList.remove('btn--disabled'));
+  btns.forEach((btn) => btn.classList.remove('btn--disabled'));
+  if (lastPage === 0) {
+    btns.forEach((btn) => btn.classList.add('btn--disabled'));
+  }
   const [bntBack, btnForward] = btns;
   if (curPage === 1) {
     bntBack.classList.add('btn--disabled');

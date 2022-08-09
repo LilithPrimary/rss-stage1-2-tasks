@@ -4,11 +4,18 @@ import { startDriving } from './startDriving';
 import { startEngine } from './startEngine';
 import { stopCar } from './stopCar';
 
+const toggleCtrls = (ctrl: ControlPanel) => {
+  ctrl.btnCreate.classList.toggle('btn--disabled');
+  ctrl.btnCreateRandomCars.classList.toggle('btn--disabled');
+};
+
 const disableStartBtn = (ctrl: ControlPanel) => {
   ctrl.btnStartRace.classList.add('btn--disabled');
+  toggleCtrls(ctrl);
 };
 const enableStopBtn = (ctrl: ControlPanel) => {
   ctrl.btnResetRace.classList.remove('btn--disabled');
+  toggleCtrls(ctrl);
 };
 
 export const startRace = async (ctrl: ControlPanel) => {

@@ -1,6 +1,7 @@
 import { Car } from '../CarView';
 import { URL } from '../app';
 import { switchToDriveMode } from './engineRequests/switchToDriveMode';
+import { stopBtnEnable } from './stopBtnEnable';
 
 const stopBrokenCar = (el: Car) => {
   const car = el;
@@ -20,6 +21,7 @@ export async function startDriving(el: Car) {
     options: 'drive',
     id: car.id,
   });
+  stopBtnEnable(car);
   if (response.status === 500) {
     stopBrokenCar(el);
     throw Error('broke');
