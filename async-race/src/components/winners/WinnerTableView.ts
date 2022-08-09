@@ -1,6 +1,7 @@
 import './winners.css';
 import { createPageElement } from '../createPageElement';
 import { createWinnersArray } from './createWinnersArray';
+import { PaginationBlock } from '../PaginationBlock';
 
 interface ISortOptions {
   sort: string,
@@ -25,6 +26,10 @@ const changeSortBtnStyle = (options: ISortOptions) => {
   const el = document.querySelector('.desc') || document.querySelector('.asc');
   el?.classList.remove('asc', 'desc');
   document.getElementById(options.sort)?.classList.add(options.order.toLowerCase());
+};
+
+const paginationCallback = async (winners: WinnerTable) => {
+  await winners.renderWinnersTable();
 };
 
 export class WinnerTable {
@@ -59,7 +64,11 @@ export class WinnerTable {
     order: '',
   };
 
-  public page = 1;
+  public counter = createPageElement('div', {
+    classes: ['winners__counter'],
+  });
+
+  public pagination = new PaginationBlock(paginationCallback.bind(null, this));
 
   createHeader() {
     const header = createPageElement('div', {
@@ -77,8 +86,8 @@ export class WinnerTable {
     const table = createPageElement('div', {
       classes: ['win__table', 'table'],
     });
-    table.append(this.createHeader(), this.carsWrapper);
-    this.wrapper.append(table);
+    table.append(this.createHeader(), this.carsWrapper, this.pagination.renderPaginationBlock());
+    this.wrapper.append(this.counter, table);
     this.wrapper.style.display = 'none';
     return this.wrapper;
   }
@@ -91,10 +100,14 @@ export class WinnerTable {
 
   async renderWinnersTable() {
     const options = getOptions(this.sortOptions.sort, this.sortOptions.order);
-    const rows = await createWinnersArray(options, this.page);
+    const { rows, count } = await createWinnersArray(options, this.pagination.currentPage);
+    const winners = await rows;
+    this.pagination.setLastPage(+count);
+    this.counter.textContent = `Total amount: ${count}`;
     changeSortBtnStyle(this.sortOptions);
+    this.pagination.setPage();
     this.carsWrapper.innerHTML = '';
-    this.carsWrapper.append(...rows);
+    this.carsWrapper.append(...winners);
   }
 
   addListeners() {

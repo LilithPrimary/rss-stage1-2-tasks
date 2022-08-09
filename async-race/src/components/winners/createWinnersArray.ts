@@ -1,9 +1,15 @@
+import { IWinnerBody } from 'components/types/IWinnerRequestOptions';
 import { URL } from '../app';
 import { createRow } from './createRow';
 import { getWinners } from './winnersRequests/getWinners';
 
 export const createWinnersArray = async (options: string, page = 1) => {
-  const winners = await getWinners(URL, page, options);
+  const pageLimit = 10;
+  const response = await getWinners(URL, page.toString(), options, pageLimit.toString());
+  const winners = (await response.json()) as IWinnerBody[];
   const rows = winners.map((el) => createRow(el));
-  return Promise.all(rows);
+  return {
+    rows: Promise.all(rows),
+    count: <string>response.headers.get('X-Total-Count'),
+  };
 };
