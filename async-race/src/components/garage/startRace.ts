@@ -1,5 +1,6 @@
 import { ControlPanel } from './ControlPanelView';
 import { determineWinner } from './determineWinner';
+import { showMsg } from './showMsg';
 import { startDriving } from './startDriving';
 import { startEngine } from './startEngine';
 import { stopCar } from './stopCar';
@@ -19,6 +20,10 @@ const enableStopBtn = (ctrl: ControlPanel) => {
 };
 
 export const startRace = async (ctrl: ControlPanel) => {
+  if (!ctrl.cars.length) {
+    showMsg('Anybody here?');
+    return;
+  }
   disableStartBtn(ctrl);
   await Promise.all(ctrl.cars.map((car) => stopCar(car)));
   const cars = await Promise.all(ctrl.cars.map((car) => startEngine(car)));

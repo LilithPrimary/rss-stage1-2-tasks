@@ -16,7 +16,7 @@ const setBtnsStyle = ({ btns, curPage, lastPage }: IBtnsStyle) => {
   if (curPage === 1) {
     bntBack.classList.add('btn--disabled');
   }
-  if (curPage === lastPage) {
+  if (curPage >= lastPage) {
     btnForward.classList.add('btn--disabled');
   }
 };
@@ -62,6 +62,11 @@ export class PaginationBlock {
   setLastPage(val: number) {
     const carPerPage = 7;
     this.lastPage = Math.ceil(val / carPerPage);
+    if (this.lastPage < this.currentPage) {
+      this.currentPage = this.lastPage;
+      return true;
+    }
+    return false;
   }
 
   setPage() {
