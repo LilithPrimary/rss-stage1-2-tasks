@@ -68,7 +68,9 @@ export class WinnerTable {
     classes: ['winners__counter'],
   });
 
-  public pagination = new PaginationBlock(paginationCallback.bind(null, this));
+  private winnersPerPage = 10;
+
+  public pagination = new PaginationBlock(paginationCallback.bind(null, this), this.winnersPerPage);
 
   createHeader() {
     const header = createPageElement('div', {
@@ -102,7 +104,10 @@ export class WinnerTable {
     const options = getOptions(this.sortOptions.sort, this.sortOptions.order);
     const { rows, count } = await createWinnersArray(options, this.pagination.currentPage);
     const winners = await rows;
-    this.pagination.setLastPage(+count);
+    if (this.pagination.setLastPage(+count)) {
+      await this.renderWinnersTable();
+      return;
+    }
     this.counter.textContent = `Total amount: ${count}`;
     changeSortBtnStyle(this.sortOptions);
     this.pagination.setPage();

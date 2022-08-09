@@ -22,8 +22,9 @@ const setBtnsStyle = ({ btns, curPage, lastPage }: IBtnsStyle) => {
 };
 
 export class PaginationBlock {
-  constructor(public callback: UpdateCallback<void>) {
+  constructor(public callback: UpdateCallback<void>, private itemPerPage: number) {
     this.callback = callback;
+    this.itemPerPage = itemPerPage;
   }
 
   public lastPage = 1;
@@ -60,9 +61,8 @@ export class PaginationBlock {
   }
 
   setLastPage(val: number) {
-    const carPerPage = 7;
-    this.lastPage = Math.ceil(val / carPerPage);
-    if (this.lastPage < this.currentPage) {
+    this.lastPage = Math.ceil(val / this.itemPerPage);
+    if (this.lastPage < this.currentPage && this.currentPage !== 1) {
       this.currentPage = this.lastPage;
       return true;
     }

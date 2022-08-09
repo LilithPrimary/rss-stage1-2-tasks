@@ -91,7 +91,9 @@ export class ControlPanel {
 
   public winnerPage = new WinnerTable();
 
-  public pagination = new PaginationBlock(paginationCallback.bind(null, this));
+  private carPerPage = 7;
+
+  public pagination = new PaginationBlock(paginationCallback.bind(null, this), this.carPerPage);
 
   renderPanel() {
     const wrapper = createPageElement('div', {
