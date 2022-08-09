@@ -13,7 +13,7 @@ export async function renderPage(pageSwitcher: PageSwitcher, cars: Car[]) {
       <a target="_blank" href="https://github.com/lilithprimary" class="link">LilithPrimary</a>
       <a target="_blank" href="https://rs.school/" class="link">
         <svg class="rslogo">
-          <use xlink:href="img/sprite.svg#rslogo"></use>
+          <use xlink:href="assets/img/sprite.svg#rslogo"></use>
         </svg>
       </a>
     </div>
