@@ -52,7 +52,7 @@ const baseConfig = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'src/assets/img', to: 'img' },
+        { from: 'src/assets', to: 'assets' },
       ],
     }),
   ],
