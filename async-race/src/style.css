@@ -197,13 +197,14 @@
 .car__track {
   border-bottom: dashed 3px var(--color-yellow);
   position: relative;
+  display: flex;
+  justify-content: start;
 }
 
 .car__img {
   margin-bottom: -13px;
   vertical-align: bottom;
   position: relative;
-  left: 0;
   font-size: 80px;
   color: var(--color-blue);
 }

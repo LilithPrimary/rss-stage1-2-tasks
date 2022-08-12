@@ -1,6 +1,6 @@
-import { IWinnerBody } from 'components/types/IWinnerRequestOptions';
+import { IWinnerBody } from 'types/IWinnerRequestOptions';
 import { deleteWinner } from '../../winners/winnersRequests/deleteWinner';
-import { URL } from '../../Constants/URL';
+import { URL } from '../../../constants/URL';
 import { Car } from '../view/CarView';
 import { createCarsArray } from '../createCarsArray';
 import { deleteCar } from '../API/garageRequests/deleteCar';

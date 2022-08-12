@@ -1,4 +1,4 @@
-import { IWinnerBody } from 'components/types/IWinnerRequestOptions';
+import { IWinnerBody } from 'types/IWinnerRequestOptions';
 import { updateWinner } from './updateWinner';
 
 export async function createWinner(url: string, body: IWinnerBody) {

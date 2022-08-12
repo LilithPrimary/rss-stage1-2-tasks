@@ -1,5 +1,5 @@
 import { Car } from 'components/garage/view/CarView';
-import { URL } from '../../Constants/URL';
+import { URL } from '../../../constants/URL';
 import { ControlPanel } from '../ControlPanel';
 import { updateCar } from '../API/garageRequests/updateCar';
 

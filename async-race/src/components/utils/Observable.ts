@@ -1,4 +1,5 @@
-import { UpdateCallback } from './types/UpdateCallback';
+// import { Car } from './garage/view/CarView';
+import { UpdateCallback } from '../../types/UpdateCallback';
 
 export const Observable = <T>() => {
   let data: T;

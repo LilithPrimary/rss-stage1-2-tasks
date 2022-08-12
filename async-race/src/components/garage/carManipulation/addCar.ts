@@ -1,4 +1,4 @@
-import { URL } from '../../Constants/URL';
+import { URL } from '../../../constants/URL';
 import { ControlPanel } from '../ControlPanel';
 import { createCarsArray } from '../createCarsArray';
 import { createCar } from '../API/garageRequests/createCar';

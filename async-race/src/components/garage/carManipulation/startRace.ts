@@ -25,10 +25,10 @@ export const startRace = async (ctrl: ControlPanel) => {
     return;
   }
   disableStartBtn(ctrl);
-  await Promise.all(ctrl.cars.map((car) => stopCar(car)));
-  const cars = await Promise.all(ctrl.cars.map((car) => startEngine(car)));
+  await Promise.all(ctrl.cars.map(stopCar));
+  const cars = await Promise.all(ctrl.cars.map(startEngine));
   try {
-    const winner = await Promise.any(cars.map((car) => startDriving(car)));
+    const winner = await Promise.any(cars.map(startDriving));
     await determineWinner(winner);
     await ctrl.winnerPage.renderWinnersTable();
   } catch (err) {

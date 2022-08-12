@@ -1,10 +1,10 @@
-import { createPageElement } from '../../view/createPageElement';
+import { createPageElement } from '../../utils/createPageElement';
 import { changeCar } from '../carManipulation/changeCar';
 import { ControlPanel } from '../ControlPanel';
 import { moveCar } from '../carManipulation/moveCar';
 import { removeCar } from '../carManipulation/removeCar';
 import { stopCar } from '../carManipulation/stopCar';
-import { ICar } from '../../types/ICar';
+import { ICar } from '../../../types/ICar';
 
 type Callback = (car: Car) => void;
 export class Car {

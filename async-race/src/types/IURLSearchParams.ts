@@ -1,6 +1,6 @@
 import { IGarageRequestBody } from './IGarageRequestBody';
 
-export interface IGarageRequestOptions {
+export interface IURLSearchParams {
   options?: string;
   body?: IGarageRequestBody;
   id?: number;

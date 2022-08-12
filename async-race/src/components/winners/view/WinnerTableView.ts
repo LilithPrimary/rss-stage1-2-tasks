@@ -1,7 +1,8 @@
 import '../styles/winners.css';
-import { createPageElement } from '../../view/createPageElement';
+import { createPageElement } from '../../utils/createPageElement';
 import { createWinnersArray } from '../createWinnersArray';
 import { PaginationBlock } from '../../PaginationBlock';
+import { WINNERS_PAGE_LIMIT } from '../Constans/winnersPageLimit';
 
 interface ISortOptions {
   sort: string,
@@ -68,9 +69,7 @@ export class WinnerTable {
     classes: ['winners__counter'],
   });
 
-  private winnersPerPage = 10;
-
-  public pagination = new PaginationBlock(paginationCallback.bind(null, this), this.winnersPerPage);
+  public pagination = new PaginationBlock(paginationCallback.bind(null, this), WINNERS_PAGE_LIMIT);
 
   createHeader() {
     const header = createPageElement('div', {

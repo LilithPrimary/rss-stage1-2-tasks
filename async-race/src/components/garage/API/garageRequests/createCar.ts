@@ -1,6 +1,6 @@
-import { IGarageRequestOptions } from 'components/types/IGarageRequestOptions';
+import { IURLSearchParams } from 'types/IURLSearchParams';
 
-export async function createCar(url: string, { body }: IGarageRequestOptions) {
+export async function createCar(url: string, { body }: IURLSearchParams) {
   const response = await fetch(`${url}garage`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

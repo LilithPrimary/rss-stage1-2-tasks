@@ -1,5 +1,5 @@
 import { Car } from '../view/CarView';
-import { URL } from '../../Constants/URL';
+import { URL } from '../../../constants/URL';
 import { switchToDriveMode } from '../API/engineRequests/switchToDriveMode';
 import { stopBtnEnable } from '../view/stopBtnEnable';
 

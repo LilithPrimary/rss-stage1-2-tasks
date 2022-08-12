@@ -1,4 +1,4 @@
-import { createPageElement } from './view/createPageElement';
+import { createPageElement } from './utils/createPageElement';
 import { ControlPanel } from './garage/ControlPanel';
 import { WinnerTable } from './winners/view/WinnerTableView';
 

@@ -1,5 +1,5 @@
 import { Car } from '../garage/view/CarView';
-import { createPageElement } from './createPageElement';
+import { createPageElement } from '../utils/createPageElement';
 import { renderGaragePage } from '../garage/view/renderGaragePage';
 import { PageSwitcher } from '../PageSwitcher';
 

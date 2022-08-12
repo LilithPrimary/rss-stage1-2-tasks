@@ -1,5 +1,5 @@
 import './assets/style/normalize.css';
 import './style.css';
-import { app } from './components/app';
+import { app } from './components/App';
 
-app();
+await app();

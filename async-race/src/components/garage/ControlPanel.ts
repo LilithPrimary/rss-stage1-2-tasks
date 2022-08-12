@@ -6,16 +6,21 @@ import { setChanges } from './carManipulation/setChanges';
 import { startRace } from './carManipulation/startRace';
 import { WinnerTable } from '../winners/view/WinnerTableView';
 import { PaginationBlock } from '../PaginationBlock';
-import { obs } from '../types/carObserver';
+import { IObserver } from '../../types/IObserver';
 import { createCarsArray } from './createCarsArray';
 import { ControlPanelView } from './view/ControlPanelView';
+import { GARAGE_PAGE_LIMIT } from './constants/pageLimit';
 
 const paginationCallback = async (ctrl: ControlPanel) => {
-  ctrl.observer.update(await createCarsArray(ctrl));
+  createCarsArray(ctrl)
+    .then(ctrl.observer.update)
+    .catch((err) => {
+      throw Error(<string>err);
+    });
 };
 
 export class ControlPanel {
-  constructor(public observer: typeof obs) {
+  constructor(public observer: IObserver<Car[]>) {
     this.observer = observer;
     this.observer.subscribe(this.setCars);
     this.setListeners();
@@ -27,9 +32,7 @@ export class ControlPanel {
 
   public winnerPage = new WinnerTable();
 
-  private carPerPage = 7;
-
-  public pagination = new PaginationBlock(paginationCallback.bind(null, this), this.carPerPage);
+  public pagination = new PaginationBlock(paginationCallback.bind(null, this), GARAGE_PAGE_LIMIT);
 
   public btns = new ControlPanelView(this);
 

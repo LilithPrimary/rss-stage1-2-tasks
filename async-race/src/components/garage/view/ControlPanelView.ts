@@ -1,6 +1,6 @@
 import { Car } from 'components/garage/view/CarView';
-import { UpdateCallback } from 'components/types/UpdateCallback';
-import { createPageElement } from '../../view/createPageElement';
+import { UpdateCallback } from 'types/UpdateCallback';
+import { createPageElement } from '../../utils/createPageElement';
 import { ControlPanel } from '../ControlPanel';
 
 const setTextTypeToInput = (el: HTMLInputElement) => {

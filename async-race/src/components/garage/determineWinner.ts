@@ -1,6 +1,6 @@
-import { IParticipiants } from 'components/types/IParticipiant';
+import { IParticipiants } from 'types/IParticipiant';
 import { createWinner } from '../winners/winnersRequests/createWinner';
-import { URL } from '../Constants/URL';
+import { URL } from '../../constants/URL';
 import { showMsg } from './view/showMsg';
 
 export const determineWinner = async (winner: IParticipiants | Error) => {
