@@ -1,10 +1,10 @@
-import { createPageElement } from './createPageElement';
-import { changeCar } from './garage/changeCar';
-import { ControlPanel } from './garage/ControlPanelView';
-import { moveCar } from './garage/moveCar';
-import { removeCar } from './garage/removeCar';
-import { stopCar } from './garage/stopCar';
-import { ICar } from './types/ICar';
+import { createPageElement } from '../../view/createPageElement';
+import { changeCar } from '../carManipulation/changeCar';
+import { ControlPanel } from '../ControlPanel';
+import { moveCar } from '../carManipulation/moveCar';
+import { removeCar } from '../carManipulation/removeCar';
+import { stopCar } from '../carManipulation/stopCar';
+import { ICar } from '../../types/ICar';
 
 type Callback = (car: Car) => void;
 export class Car {
@@ -66,10 +66,10 @@ export class Car {
       classes: ['car__btn-wrapper'],
     });
 
-    this.setEventListner(this.startBtn, moveCar);
-    this.setEventListner(this.stopBtn, stopCar);
-    this.setEventListner(this.deleteBtn, removeCar);
-    this.setEventListner(this.editBtn, changeCar);
+    this.setListner(this.startBtn, moveCar);
+    this.setListner(this.stopBtn, stopCar);
+    this.setListner(this.deleteBtn, removeCar);
+    this.setListner(this.editBtn, changeCar);
 
     carBtnWrapper.append(this.startBtn, this.stopBtn, this.editBtn, this.deleteBtn);
     return carBtnWrapper;
@@ -87,7 +87,7 @@ export class Car {
     return carTrak;
   }
 
-  setEventListner(el: HTMLElement, callback: Callback) {
+  setListner(el: HTMLElement, callback: Callback) {
     el.addEventListener('click', () => callback(this));
   }
 }

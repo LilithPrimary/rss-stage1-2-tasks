@@ -1,7 +1,7 @@
-import { Car } from './CarView';
+import { Car } from '../garage/view/CarView';
 import { createPageElement } from './createPageElement';
-import { renderGaragePage } from './garage/renderGaragePage';
-import { PageSwitcher } from './PageSwitcher';
+import { renderGaragePage } from '../garage/view/renderGaragePage';
+import { PageSwitcher } from '../PageSwitcher';
 
 export async function renderPage(pageSwitcher: PageSwitcher, cars: Car[]) {
   document.body.innerHTML = `<header class="header"></header>
@@ -27,8 +27,8 @@ export async function renderPage(pageSwitcher: PageSwitcher, cars: Car[]) {
   const carsWrapper = createPageElement('div', {
     classes: ['cars__wrapper'],
   });
-  pageSwitcher.ctrl.racePage.append(pageSwitcher.ctrl.renderPanel(), carsWrapper, winnerMessage);
-  pageSwitcher.ctrl.racePage.append(pageSwitcher.ctrl.pagination.renderPaginationBlock());
-  main?.append(pageSwitcher.ctrl.racePage, await pageSwitcher.winner.renderWinnersPage());
+  cars[0].ctrl.btns.racePage.append(cars[0].ctrl.btns.renderPanel(), carsWrapper);
+  cars[0].ctrl.btns.racePage.append(winnerMessage, cars[0].ctrl.pagination.renderPaginationBlock());
+  main?.append(cars[0].ctrl.btns.racePage, await pageSwitcher.winner.renderWinnersPage());
   renderGaragePage(cars);
 }

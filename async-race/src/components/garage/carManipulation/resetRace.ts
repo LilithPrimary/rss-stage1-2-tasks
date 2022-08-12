@@ -1,9 +1,9 @@
-import { ControlPanel } from './ControlPanelView';
+import { ControlPanel } from '../ControlPanel';
 import { stopCar } from './stopCar';
 
 const disableStopBtn = (ctrl: ControlPanel) => {
-  ctrl.btnStartRace.classList.remove('btn--disabled');
-  ctrl.btnResetRace.classList.add('btn--disabled');
+  ctrl.btns.btnStartRace.classList.remove('btn--disabled');
+  ctrl.btns.btnResetRace.classList.add('btn--disabled');
 };
 
 export const resetRace = async (ctrl: ControlPanel) => {

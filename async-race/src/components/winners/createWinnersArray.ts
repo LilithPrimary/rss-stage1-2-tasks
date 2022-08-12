@@ -1,6 +1,6 @@
 import { IWinnerBody } from 'components/types/IWinnerRequestOptions';
-import { URL } from '../app';
-import { createRow } from './createRow';
+import { URL } from '../Constants/URL';
+import { createRow } from './view/createRow';
 import { getWinners } from './winnersRequests/getWinners';
 
 export const createWinnersArray = async (options: string, page = 1) => {

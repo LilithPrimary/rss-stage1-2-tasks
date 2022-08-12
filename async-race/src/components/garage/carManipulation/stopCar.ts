@@ -1,7 +1,7 @@
-import { Car } from '../CarView';
-import { manipulateEngine } from './engineRequests/manipulateEngine';
-import { URL } from '../app';
-import { stopBtnDisable } from './stopBtnDisable';
+import { Car } from '../view/CarView';
+import { manipulateEngine } from '../API/engineRequests/manipulateEngine';
+import { URL } from '../../Constants/URL';
+import { stopBtnDisable } from '../view/stopBtnDisable';
 
 const removeCarStyles = (el: HTMLElement) => {
   const car = el;

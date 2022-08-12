@@ -1,11 +1,11 @@
-import { renderPage } from './renderPage';
-import { ControlPanel } from './garage/ControlPanelView';
+import { renderPage } from './view/renderPage';
+import { ControlPanel } from './garage/ControlPanel';
 import { createCarsArray } from './garage/createCarsArray';
 import { Observable } from './Observable';
-import { renderGaragePage } from './garage/renderGaragePage';
-import { WinnerTable } from './winners/WinnerTableView';
+import { renderGaragePage } from './garage/view/renderGaragePage';
+import { WinnerTable } from './winners/view/WinnerTableView';
 import { PageSwitcher } from './PageSwitcher';
-import { Car } from './CarView';
+import { Car } from './garage/view/CarView';
 
 export async function start() {
   const observer = Observable<Car[]>();

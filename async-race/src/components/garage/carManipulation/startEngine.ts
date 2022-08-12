@@ -1,7 +1,7 @@
-import { URL } from '../app';
-import { Car } from '../CarView';
-import { manipulateEngine } from './engineRequests/manipulateEngine';
-import { startBtnDisable } from './startBtnDisable';
+import { URL } from '../../Constants/URL';
+import { Car } from '../view/CarView';
+import { manipulateEngine } from '../API/engineRequests/manipulateEngine';
+import { startBtnDisable } from '../view/startBtnDisable';
 
 interface IStartInfo {
   'velocity': number;
@@ -13,7 +13,7 @@ const calcRaceTime = (info: IStartInfo) => info.distance / info.velocity;
 const setAnimationTime = (raceTime: number, el: Car) => {
   const car = el;
   car.carTime = +(raceTime / 1000).toFixed(2);
-  car.carImg.style.transition = `left ${raceTime}ms`;
+  car.carImg.style.transition = `left ${raceTime / 1.5}ms`;
 };
 
 export async function startEngine(el: Car) {

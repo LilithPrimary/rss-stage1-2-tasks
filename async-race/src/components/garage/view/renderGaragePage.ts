@@ -1,4 +1,4 @@
-import { Car } from 'components/CarView';
+import { Car } from 'components/garage/view/CarView';
 
 export const renderGaragePage = (cars: Car[]) => {
   const wrapper = <HTMLDivElement>document.querySelector('.cars__wrapper');

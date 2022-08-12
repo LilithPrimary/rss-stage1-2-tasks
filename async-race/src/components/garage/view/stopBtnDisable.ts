@@ -1,4 +1,4 @@
-import { Car } from '../CarView';
+import { Car } from './CarView';
 
 export const stopBtnDisable = (car: Car) => {
   car.startBtn.classList.remove('btn--disabled');

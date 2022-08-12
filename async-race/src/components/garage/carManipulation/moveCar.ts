@@ -1,7 +1,7 @@
-import { Car } from '../CarView';
+import { Car } from '../view/CarView';
 import { startDriving } from './startDriving';
 import { startEngine } from './startEngine';
-import { stopBtnEnable } from './stopBtnEnable';
+import { stopBtnEnable } from '../view/stopBtnEnable';
 import { stopCar } from './stopCar';
 
 export const moveCar = async (car: Car) => {

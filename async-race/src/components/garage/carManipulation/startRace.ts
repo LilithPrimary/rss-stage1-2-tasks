@@ -1,21 +1,21 @@
-import { ControlPanel } from './ControlPanelView';
-import { determineWinner } from './determineWinner';
-import { showMsg } from './showMsg';
+import { ControlPanel } from '../ControlPanel';
+import { determineWinner } from '../determineWinner';
+import { showMsg } from '../view/showMsg';
 import { startDriving } from './startDriving';
 import { startEngine } from './startEngine';
 import { stopCar } from './stopCar';
 
 const toggleCtrls = (ctrl: ControlPanel) => {
-  ctrl.btnCreate.classList.toggle('btn--disabled');
-  ctrl.btnCreateRandomCars.classList.toggle('btn--disabled');
+  ctrl.btns.btnCreate.classList.toggle('btn--disabled');
+  ctrl.btns.btnCreateRandomCars.classList.toggle('btn--disabled');
 };
 
 const disableStartBtn = (ctrl: ControlPanel) => {
-  ctrl.btnStartRace.classList.add('btn--disabled');
+  ctrl.btns.btnStartRace.classList.add('btn--disabled');
   toggleCtrls(ctrl);
 };
 const enableStopBtn = (ctrl: ControlPanel) => {
-  ctrl.btnResetRace.classList.remove('btn--disabled');
+  ctrl.btns.btnResetRace.classList.remove('btn--disabled');
   toggleCtrls(ctrl);
 };
 

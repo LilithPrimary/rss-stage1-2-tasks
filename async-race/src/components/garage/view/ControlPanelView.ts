@@ -1,15 +1,7 @@
+import { Car } from 'components/garage/view/CarView';
 import { UpdateCallback } from 'components/types/UpdateCallback';
-import { Car } from '../CarView';
-import { createPageElement } from '../createPageElement';
-import { addCar } from './addCar';
-import { generateRandomCars } from './generateRandomCars';
-import { resetRace } from './resetRace';
-import { setChanges } from './setChanges';
-import { startRace } from './startRace';
-import { WinnerTable } from '../winners/WinnerTableView';
-import { PaginationBlock } from '../PaginationBlock';
-import { obs } from '../types/carObserver';
-import { createCarsArray } from './createCarsArray';
+import { createPageElement } from '../../view/createPageElement';
+import { ControlPanel } from '../ControlPanel';
 
 const setTextTypeToInput = (el: HTMLInputElement) => {
   const element = el;
@@ -22,14 +14,9 @@ const setColorTypeToInput = (el: HTMLInputElement) => {
   element.type = 'color';
 };
 
-const paginationCallback = async (ctrl: ControlPanel) => {
-  ctrl.observer.update(await createCarsArray(ctrl));
-};
-
-export class ControlPanel {
-  constructor(public observer: typeof obs) {
-    this.observer = observer;
-    this.observer.subscribe(this.setCars);
+export class ControlPanelView {
+  constructor(private ctrls: ControlPanel) {
+    this.ctrls = ctrls;
   }
 
   public nameInput = <HTMLInputElement>createPageElement('input', {
@@ -77,23 +64,13 @@ export class ControlPanel {
     text: 'add_circle',
   });
 
-  public editingCar = new Car({ name: 'test', color: 'white', id: 0 }, this);
-
-  public carCounter = createPageElement('div', {
-    classes: ['ctrls__counter'],
-  });
-
-  public cars: Car[] = [];
-
   public racePage = createPageElement('div', {
     classes: ['garage__wrapper'],
   });
 
-  public winnerPage = new WinnerTable();
-
-  private carPerPage = 7;
-
-  public pagination = new PaginationBlock(paginationCallback.bind(null, this), this.carPerPage);
+  public carCounter = createPageElement('div', {
+    classes: ['ctrls__counter'],
+  });
 
   renderPanel() {
     const wrapper = createPageElement('div', {
@@ -102,43 +79,31 @@ export class ControlPanel {
     const createWrapper = createPageElement('div', {
       classes: ['ctrls__wrapper', 'ctrls__create'],
     });
-
-    this.setEventListener(this.btnCreate, addCar);
     createWrapper.append(this.nameInput, this.colorInput, this.btnCreate);
     this.editWrapper.append(this.nameEditInput, this.colorEditInput, this.btnEdit);
-
     setTextTypeToInput(this.nameInput);
     setColorTypeToInput(this.colorInput);
     setTextTypeToInput(this.nameEditInput);
     setColorTypeToInput(this.colorEditInput);
-
-    this.setEventListener(this.btnEdit, setChanges);
     this.editWrapper.style.display = 'none';
     wrapper.append(createWrapper, this.editWrapper, this.createCtrlBtns(), this.carCounter);
     return wrapper;
-  }
-
-  setEditValue(car: Car) {
-    this.colorEditInput.value = car.carImg.style.color;
-    this.nameEditInput.value = car.carName.textContent || '';
   }
 
   createCtrlBtns() {
     const btnsWrapper = createPageElement('div', {
       classes: ['ctrls__wrapper', 'ctrls__btns'],
     });
-    this.setEventListener(this.btnStartRace, startRace);
-    this.setEventListener(this.btnResetRace, resetRace);
-    this.setEventListener(this.btnCreateRandomCars, generateRandomCars);
     btnsWrapper.append(this.btnStartRace, this.btnResetRace, this.btnCreateRandomCars);
     return btnsWrapper;
   }
 
-  setEventListener(el: HTMLElement, callback: UpdateCallback<ControlPanel>) {
-    el.addEventListener('click', () => callback(this));
+  setListener(el: HTMLElement, callback: UpdateCallback<ControlPanel>) {
+    el.addEventListener('click', () => callback(this.ctrls));
   }
 
-  setCars = (cars: Car[]) => {
-    this.cars = cars;
-  };
+  setEditValue(car: Car) {
+    this.colorEditInput.value = car.carImg.style.color;
+    this.nameEditInput.value = car.carName.textContent || '';
+  }
 }

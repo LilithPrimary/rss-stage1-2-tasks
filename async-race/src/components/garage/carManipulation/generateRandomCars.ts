@@ -1,6 +1,6 @@
-import { MARKS, MODELS } from '../tractors';
+import { MARKS, MODELS } from '../../Constants/tractors';
 import { addCars } from './addCars';
-import { ControlPanel } from './ControlPanelView';
+import { ControlPanel } from '../ControlPanel';
 
 const getRandomItem = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
 

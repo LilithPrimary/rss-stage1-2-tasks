@@ -1,4 +1,4 @@
-import { createPageElement } from './createPageElement';
+import { createPageElement } from './view/createPageElement';
 import { UpdateCallback } from './types/UpdateCallback';
 
 interface IBtnsStyle {

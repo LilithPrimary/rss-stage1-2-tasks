@@ -1,7 +1,7 @@
-import './winners.css';
-import { createPageElement } from '../createPageElement';
-import { createWinnersArray } from './createWinnersArray';
-import { PaginationBlock } from '../PaginationBlock';
+import '../styles/winners.css';
+import { createPageElement } from '../../view/createPageElement';
+import { createWinnersArray } from '../createWinnersArray';
+import { PaginationBlock } from '../../PaginationBlock';
 
 interface ISortOptions {
   sort: string,

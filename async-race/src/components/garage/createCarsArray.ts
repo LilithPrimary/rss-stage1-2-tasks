@@ -1,13 +1,13 @@
-import { URL } from '../app';
-import { Car } from '../CarView';
+import { URL } from '../Constants/URL';
+import { Car } from './view/CarView';
 import { ICar } from '../types/ICar';
-import { ControlPanel } from './ControlPanelView';
-import { getCars } from './garageRequests/getCars';
+import { ControlPanel } from './ControlPanel';
+import { getCars } from './API/garageRequests/getCars';
 
 export const createCarsArray = async (ctrl: ControlPanel) => {
   let response = await getCars(URL, ctrl.pagination.currentPage);
   const count = <string>response.headers.get('X-Total-Count');
-  ctrl.carCounter.textContent = `Total amount: ${count}`;
+  ctrl.btns.carCounter.textContent = `Total amount: ${count}`;
   if (ctrl.pagination.setLastPage(+count)) {
     response = await getCars(URL, ctrl.pagination.currentPage);
   }

@@ -1,7 +1,7 @@
-import { Car } from '../CarView';
-import { URL } from '../app';
-import { switchToDriveMode } from './engineRequests/switchToDriveMode';
-import { stopBtnEnable } from './stopBtnEnable';
+import { Car } from '../view/CarView';
+import { URL } from '../../Constants/URL';
+import { switchToDriveMode } from '../API/engineRequests/switchToDriveMode';
+import { stopBtnEnable } from '../view/stopBtnEnable';
 
 const stopBrokenCar = (el: Car) => {
   const car = el;

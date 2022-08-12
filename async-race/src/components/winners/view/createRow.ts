@@ -1,7 +1,7 @@
 import { IWinnerBody } from 'components/types/IWinnerRequestOptions';
-import { getCar } from '../garage/garageRequests/getCar';
-import { createPageElement } from '../createPageElement';
-import { URL } from '../app';
+import { getCar } from '../../garage/API/garageRequests/getCar';
+import { createPageElement } from '../../view/createPageElement';
+import { URL } from '../../Constants/URL';
 
 const findOutColor = async (id: number) => {
   const responce = await getCar(URL, id);

@@ -1,6 +1,6 @@
-import { createPageElement } from './createPageElement';
-import { ControlPanel } from './garage/ControlPanelView';
-import { WinnerTable } from './winners/WinnerTableView';
+import { createPageElement } from './view/createPageElement';
+import { ControlPanel } from './garage/ControlPanel';
+import { WinnerTable } from './winners/view/WinnerTableView';
 
 export class PageSwitcher {
   constructor(public ctrl: ControlPanel, public winner: WinnerTable) {
@@ -37,13 +37,13 @@ export class PageSwitcher {
   }
 
   switchToRacePage() {
-    this.ctrl.racePage.style.display = 'flex';
+    this.ctrl.btns.racePage.style.display = 'flex';
     this.winner.wrapper.style.display = 'none';
     this.toggleBtnsStyle();
   }
 
   switchToWinnerPage() {
-    this.ctrl.racePage.style.display = 'none';
+    this.ctrl.btns.racePage.style.display = 'none';
     this.winner.wrapper.style.display = 'flex';
     this.toggleBtnsStyle();
   }
