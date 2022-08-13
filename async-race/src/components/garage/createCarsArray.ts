@@ -1,25 +1,26 @@
+import { ICar } from 'types/ICar';
 import { URL } from '../../constants/URL';
 import { Car } from './view/CarView';
-import { ICar } from '../../types/ICar';
 import { ControlPanel } from './ControlPanel';
 import { getCars } from './API/garageRequests/getCars';
 
-export const createCarsArray = async (ctrl: ControlPanel) => {
-  let response = await getCars(URL, ctrl.pagination.currentPage);
-
-  const count = <string>response.headers.get('X-Total-Count');
-
-  ctrl.btns.carCounter.textContent = `Total amount: ${count}`;
-
-  if (ctrl.pagination.setLastPage(+count)) {
-    response = await getCars(URL, ctrl.pagination.currentPage);
-  }
-
+const createCarInstances = (cars: ICar[], ctrl: ControlPanel) => {
   ctrl.pagination.setPage();
-
-  const cars = (await response.json()) as ICar[];
 
   ctrl.cars = cars.map((car) => new Car(car, ctrl));
 
   return ctrl.cars;
+};
+
+export const createCarsArray = async (ctrl: ControlPanel) => {
+  const { cars, count } = await getCars(URL, ctrl.pagination.currentPage);
+
+  ctrl.btns.carCounter.textContent = `Total amount: ${count}`;
+
+  if (ctrl.pagination.setLastPage(+count)) {
+    const newResponse = await getCars(URL, ctrl.pagination.currentPage);
+    return createCarInstances(newResponse.cars, ctrl);
+  }
+
+  return createCarInstances(cars, ctrl);
 };

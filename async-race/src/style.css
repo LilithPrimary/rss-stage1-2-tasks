@@ -198,7 +198,6 @@
   border-bottom: dashed 3px var(--color-yellow);
   position: relative;
   display: flex;
-  justify-content: start;
 }
 
 .car__img {
@@ -265,6 +264,8 @@
   background-color: var(--color-yellow);
   padding: 20px;
 }
+
+
 
 .rslogo {
   width: 30px;
