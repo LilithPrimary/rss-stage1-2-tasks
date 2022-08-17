@@ -1,5 +1,20 @@
 {
   "parser": "@typescript-eslint/parser",
+  // "sort-imports": [
+  //   "error",
+  //   {
+  //     "ignoreCase": false,
+  //     "ignoreDeclarationSort": false,
+  //     "ignoreMemberSort": false,
+  //     "memberSyntaxSortOrder": [
+  //       "none",
+  //       "all",
+  //       "multiple",
+  //       "single"
+  //     ],
+  //     "allowSeparatedGroups": false
+  //   }
+  // ],
   "plugins": [
     "@typescript-eslint",
     "import"
@@ -24,7 +39,6 @@
       "rules": {
         "import/prefer-default-export": "off",
         "import/no-default-export": "error",
-        "linebreak-style": 0,
         "eol-last": 0,
         "keyword-spacing": 0,
         "@typescript-eslint/no-misused-promises": [
