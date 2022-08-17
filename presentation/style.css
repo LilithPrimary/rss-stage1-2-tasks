@@ -1,0 +1,79 @@
+.page__name {
+  font-size: 10px;
+}
+
+.page__text {
+  font-size: 20px;
+  margin-bottom: -50px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-logo {
+  height: 200px;
+  margin: 0 !important;
+  gap: 20px;
+}
+
+.env__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 500px;
+}
+
+.brouser {
+  border: 2px white solid;
+  border-radius: 10px;
+  width: 400px;
+  padding: 20px;
+}
+
+.mobile {
+  border: 2px white solid;
+  border-radius: 10px;
+  width: 200px;
+  padding: 20px;
+}
+
+.text-in-frame {
+  font-size: 20px;
+}
+
+.list li {
+  font-size: 30px;
+}
+
+.list {
+  padding-top: 50px;
+}
+
+.ten-tree-wrapper,
+.create-dom-tree {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dom-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sources-list li {
+  font-size: 25px;
+}
