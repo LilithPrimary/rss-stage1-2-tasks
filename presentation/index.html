@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="assets/img/favicon.svg" />
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<aside class="notes">
+					Hello, my name is Galia and I want to tell you a little bit about the React today. Not much, just base.
+				</aside>
+				<div class="page first-page">
+					<span class="page__text">about</span>
+					<img src="assets/img/reactjs-ar21.svg" alt="react" class="logo react-logo">
+					<span class="page__name">by LilithPrimary</span>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					First of all, starting with interesting things. In the ads for employees the companies write: You need to know
+					html, css, js, ts, python, java, c, assembler, many other scary words… and framework. Prefer React. Ok, but
+					from official documentation we know that React is a Javascript library. Who is the lier?
+				</aside>
+				<div class="page">
+					<h2>Library or Framework?</h2>
+					<img src="assets/img/ads.png" alt="ads" class="ads">
+					<span class="fragment" data-fragment-index="1">spoiler: library</span>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					<p> Let's see. Both - libraries and frameworks - are reusable code written by someone else.
+						Their purpose is to help you solve common problems in easier ways.
+						But we have some differences.
+						A stupid example – sorry for that. A library is like building your own desktop. You can choose any
+						components
+						that you like. You can add some features. But you don't need to design your own video card or assemble a
+						monitor
+						from an old TV - someone else has already done it for us and we can use it. But if you want - you can =).
+					</p>
+
+					<p>A framework is something like Apple. You have no choice. No, of course, you can influence the amount of
+						memory, for example, but you will not be able to collect something of your own. Apple clearly dictates where
+						you can do something and where you are powerless.</p>
+
+					<p> Little stupid example, but something like this. This technical difference between a framework and library
+						called inversion of control. The framework manages the programmer's code, not the programmer manages the
+						framework</p>
+				</aside>
+				<div style="padding-bottom: 80px">
+					<h6 class="header-6">Both:</h6>
+					<p>Code written by someone else that
+						helps you perform some common tasks
+						in a less verbose way.
+					</p>
+				</div>
+				<div class="fragment" data-fragment-index="1">
+					<h6 class="header-6">differences:</h6>
+					<p>
+						A framework inverts the control of the program.
+						It tells the developer what they need. A library doesn’t.
+						The programmer calls the library where and when they need it.
+					</p>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					Ok, now we know that React is a Javascript library. And it’s free and open-source . And created by Facebook -
+					well, no one is perfect. And what does React actually do?
+				</aside>
+				<div class="page__facebook">
+					<h6>React</h6>
+					<p>(also known as React.js or ReactJS) is a free and open-source
+						front-end JavaScript library.
+					</p>
+					<p class="fragment" data-fragment-index="1">
+						Maintained by Meta (formerly Facebook).
+					</p>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					It builds user interfaces. React makes user interfaces very easy to build by cutting each page into pieces. We
+					call these pieces components. In the picture we can see google page devided into components.
+				</aside>
+				<p>
+					A way to build user interfaces.
+				</p>
+				<img src="assets/img/scheme.png" alt="scheme" class="fragment" data-fragment-index="1">
+				<p class="fragment" data-fragment-index="1">
+					Cutting each page into pieces - <strong>components</strong>
+				</p>
+			</section>
+			<section>
+				<aside class="notes">
+					A React component is a bit of code that represents a piece of the page. On the picture we see JavaScript
+					function that returns a piece of code. That code is a piece of a web page.
+					To build a page, we call these functions in a certain order, put together the result, and show it to the user.
+					Ok. Also in the picture we see an infernal mix of javascript and html. What is it?
+				</aside>
+				<div>
+					<p>Each component is a JavaScript function
+						that returns a piece of code that represents
+						a piece of a web page</p>
+					<img src="assets/img/code.png" alt="code">
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					React uses a language called JSX that looks like HTML but works inside JavaScript, which HTML usually doesn’t
+					do.
+					Fundamentally, JSX just provides syntactic sugar for the React.createElement(component, props, ...children)
+					function.
+				</aside>
+				<div>
+					<h4>JSX</h4>
+					<p class="fragment" data-fragment-index="1">Neither a string nor HTML</p>
+					<p class="fragment" data-fragment-index="2">Syntactic sugar for the React.createElement(component, props,
+						...children) function</p>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					When we talk about React, it may seem that we mean the creation of browsers web applications. But no, React is
+					independent of the browser and designed to create a user interface. For rendering components in browser we use
+					React DOM library. We can also use React to create apps for iOS and Android. For this we need React native
+					library.
+
+					Ok, let’s find out why it is so cool.
+				</aside>
+				<h2 class="fragment" data-fragment-index="1">React</h2>
+				<div class="env__wrapper">
+					<div class="brouser">
+						<h4>brouser</h4>
+						<span class="text-in-frame">React</span>&nbsp;<span class="text-in-frame fragment"
+							data-fragment-index="1">DOM</span>
+					</div>
+					<div class="mobile fragment" data-fragment-index="2">
+						<h4>IOS</h4>
+						<span class="text-in-frame">React native</span>
+					</div>
+					<div class="mobile fragment" data-fragment-index="2">
+						<h4>Android</h4>
+						<span class="text-in-frame">React native</span>
+					</div>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					React DOM. Document Object Model. Represents the User Interface of your application. Every time there is a
+					change in the state of your application UI, the DOM gets updated to represent that change.
+
+					The DOM is represented as a tree data structure. Because of that, the changes and updates to the DOM are fast.
+
+					But after the change, the updated element and its children have to be re-rendered to update the application
+					UI. The re-rendering or re-painting of the UI is what makes it slow. Therefore, the more UI components you
+					have, the more expensive the DOM updates could be, because they would need to be re-rendered for every DOM
+					update.
+				</aside>
+				<h2>Document Object Model</h2>
+				<span>Representation the UI of application</span>
+				<ul class="list">
+					<li class="fragment" data-fragment-index="2">Tree data structure - changes and updates - fast</li>
+					<li class="fragment" data-fragment-index="3">UI - re-rendering or re-painting - slow</li>
+				</ul>
+			</section>
+			<section>
+				<aside class="notes">
+					DOM manipulation is the heart of the modern web. Unfortunately, it is also a lot slower than most JavaScript
+					operations. This slowness is made worse by the fact that most JavaScript frameworks update the DOM much more
+					than they have to.
+					For example, let’s imagine that you have a list that contains ten items. You change first item. Most
+					JavaScript
+					frameworks would rebuild the entire list (it's not my words, I find it in internet!). That’s ten times more
+					work than necessary! Only one item changed,
+					but the rest nine was rebuilt too.
+					To solve this problem, the people at React invent something called the virtual DOM.
+				</aside>
+				<h2>Browser DOM</h2>
+				<div class="ten-tree-wrapper">
+					<img src="assets/img/ten-tree-1.jpg" alt="tree" class="fragment" data-fragment-index="1">
+					<img src="assets/img/ten-tree-2.jpg" alt="tree" class="fragment" data-fragment-index="2">
+					<img src="assets/img/ten-tree-3.jpg" alt="tree" class="fragment" data-fragment-index="3">
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					In React, for every DOM object create a “virtual DOM object.” A virtual DOM object is a
+					representation of a DOM object, like a lightweight copy. A virtual DOM object has the same properties as a
+					real DOM object, but it has't the real power to directly change what’s on the screen.
+
+					Manipulating the DOM is slow. Manipulating the virtual DOM is much faster because nothing gets drawn onscreen.
+					It looks like as editing a blueprint.
+				</aside>
+				<h2>The VIRTUAL DOM</h2>
+				<p>The Virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept
+					in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called
+					<strong>reconciliation</strong>.
+				</p>
+			</section>
+			<section>
+				<aside class="notes">
+					<p>
+						When new elements are added to the UI, a virtual DOM, which is represented as a tree is created. Each
+						element is a node on this tree.
+					</p>
+					<p>
+						If the state of any of these elements changes, a new virtual DOM tree is
+						created.
+						This tree is then compared with the previous virtual DOM tree.
+					</p>
+				</aside>
+				<div class="create-dom-tree">
+					<div class="dom-wrapper">
+						<h6>RDOM</h6>
+						<img src="assets/img/rdom.jpg" alt="">
+					</div>
+					<div class="dom-wrapper fragment" data-fragment-index="1">
+						<h6>VDOM</h6>
+						<img src="assets/img/rdom.jpg" alt="">
+					</div>
+					<div class="dom-wrapper fragment" data-fragment-index="2">
+						<h6>New VDOM</h6>
+						<img src="assets/img/cdom.jpg" alt="">
+					</div>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					<p>
+						Once this is done, the virtual DOM calculates the best possible method to make these changes to the real
+						DOM. This ensures that there are minimal operations on the real DOM.
+					</p>
+					<p>
+						The whole parent subtree then gets re-rendered to give the updated UI. This updated tree is then batch
+						updated to the real DOM.
+					</p>
+				</aside>
+				<div class="create-dom-tree">
+					<div class="dom-wrapper">
+						<h6>Re-rendered VDOM</h6>
+						<img src="assets/img/vdom-up.jpg" alt="">
+					</div>
+					<div class="dom-wrapper fragment" data-fragment-index="1">
+						<h6>Updated RDOM</h6>
+						<img src="assets/img/vdom-up.jpg" alt="">
+					</div>
+				</div>
+			</section>
+			<section>
+				<aside class="notes">
+					Ok, that’s all what I want to tell you about React, but, of course, not all about React =). Hope, it was
+					interesting. Thank you for watching. Bye!
+				</aside>
+				<div class="end">
+					<h4>Sources:</h4>
+					<ul class="sources-list">
+						<li><a
+								href="https://www.freecodecamp.org/news/the-difference-between-a-framework-and-a-library-bd133054023f">The
+								Difference Between a Framework and a Library</a></li>
+						<li><a
+								href="https://www.freecodecamp.org/news/everything-you-need-to-know-about-react-eaedf53238c4">Everything
+								You Should Know About React</a></li>
+						<li><a href="https://javascript.plainenglish.io/react-the-virtual-dom-comprehensive-guide-acd19c5e327a">The
+								Comprehensive Guide to React’s Virtual DOM</a></li>
+						<li><a href="https://reactjs.org/">React</a></li>
+						<li><a href="https://www.youtube.com/watch?v=GNrdg3PzpJQ&ab_channel=UlbiTV">React JS фундаментальный курс от
+								А до Я</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
