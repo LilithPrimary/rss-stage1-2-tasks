@@ -1,1 +1,1 @@
-export const URL = 'https://bananasite.ru/api/async-race/';
+export const URL = 'https://asyn-race-rs.onrender.com/';
