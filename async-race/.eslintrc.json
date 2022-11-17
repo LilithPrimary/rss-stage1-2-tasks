@@ -1,20 +1,5 @@
 {
   "parser": "@typescript-eslint/parser",
-  // "sort-imports": [
-  //   "error",
-  //   {
-  //     "ignoreCase": false,
-  //     "ignoreDeclarationSort": false,
-  //     "ignoreMemberSort": false,
-  //     "memberSyntaxSortOrder": [
-  //       "none",
-  //       "all",
-  //       "multiple",
-  //       "single"
-  //     ],
-  //     "allowSeparatedGroups": false
-  //   }
-  // ],
   "plugins": [
     "@typescript-eslint",
     "import"
@@ -32,9 +17,7 @@
         "airbnb-typescript/base"
       ],
       "parserOptions": {
-        "project": [
-          "./tsconfig.json"
-        ]
+        "project": "tsconfig.json"
       },
       "rules": {
         "import/prefer-default-export": "off",

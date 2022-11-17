@@ -18,6 +18,7 @@ export async function renderPage(pageSwitcher: PageSwitcher, cars: Car[]) {
       </a>
     </div>
   </footer>`;
+
   document.body.firstElementChild?.append(pageSwitcher.renderSwitchBtns());
   const winnerMessage = createPageElement('div', {
     classes: ['main__win-message'],

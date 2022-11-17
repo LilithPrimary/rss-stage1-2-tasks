@@ -6,8 +6,11 @@ import { renderGaragePage } from './garage/view/renderGaragePage';
 import { WinnerTable } from './winners/view/WinnerTableView';
 import { PageSwitcher } from './PageSwitcher';
 import { Car } from './garage/view/CarView';
+import { spinner } from './view/spinner';
 
 export async function app() {
+  spinner();
+
   const observer = Observable<Car[]>();
 
   observer.subscribe(renderGaragePage);
